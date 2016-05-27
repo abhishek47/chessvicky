@@ -22,6 +22,42 @@
 
     @yield('content')
 
+
+       <!-- Footer -->
+   <div class="footer" id="social">
+   <div class="container">
+     <div class="row">
+       
+      <!-- Address -->
+      <p >
+          <b class="brand"><i class="fa fa-copyright"></i> ChessVicky {{ date('Y') }}</b></p>
+         <p> Nashik,Maharashtra<p/>
+         <p> India - 422002</p>
+          <p>Email : <a href="mailto:contact@chessvicky.com">contact@chessvicky.com</a></p>
+             
+      </p>
+    
+     
+   </div>
+   </div> 
+  
+   </div>
+    <div class="copyright">
+        <p class="text-center"><i class="fa fa-code"></i> Powered By <a href="http://www.trumpetstechnologies.com/" target="_blank">Trumpets Technologies Pvt. Ltd.</a></p>
+   </div>
+
+
+
+
+   <script src="js/jquery.min.js"></script>
+   <script src="js/bootstrap.js"></script>
+   <script src="js/app.js"></script>
+
+
+</body>
+</html>
+
+
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="/js/bootstrap.min.js"></script>

@@ -79,6 +79,10 @@
    	   	   	  <i class="fa fa-play-circle-o"></i> Watch The Video    
    	   	   </a>
    	   </section>
+       
+       <div class="container">
+   	   <hr/>
+      </div>
 
    	   <section id="pricing">
    	   	  <div class="container text-center">
@@ -122,7 +126,10 @@
    	   	  	 </div>
    	   	  </div>
    	   </section>
-
+     
+      <div class="container">
+   	   <hr/>
+      </div>
    	   <section id="vision">
    	   	   <div class="container"> 
    	   	   	  <div class="row">

@@ -2,9 +2,19 @@
 
 @import url('elements.css');
 
+
+
+/* RESETS */
+
 body {
 	font-family: 'Lora', serif;
 }
+
+p {
+	font-size: 16px;
+}
+
+
 
 
 /* HEADER */
@@ -43,7 +53,7 @@ body {
 /* PRICING */
 
 #pricing {
-	margin-top: 105px;
+	padding-top: 65px;
 	margin-bottom: 45px;
 
 }
@@ -66,7 +76,7 @@ body {
 
 #vision {
 	padding-top: 65px;
-	margin-bottom: 45px;
+	margin-bottom: 105px;
 }
 
 #vision h3 {
@@ -76,3 +86,82 @@ body {
 #vision img {
 	height: 90px;
 }
+
+
+/* LOGIN & SIGNUP FORMS */
+
+
+
+
+/* FOOTER */
+
+.footer {
+	
+	width: 100%;
+	margin: 0 auto;
+    background-image: linear-gradient(90deg, rgb(48, 60, 66) 100%, rgb(55, 66, 75) 50%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+	    color: white;
+	    padding-top: 25px;
+	    padding-bottom: 35px;
+	    text-align: center; 
+}
+
+.footer p {
+	font-size: 16px;
+	line-height: 16px;
+
+}
+
+.footer ul {
+	    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li {
+	margin: 16px 0;
+}
+
+.footer ul li a, .footer a {
+	color: #cfd8dc;
+}
+
+.footer ul li a:hover, .footer a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer p {
+	color: #fff;
+}
+
+.footer .brand {
+	font-size: 20px;
+}
+
+.copyright {
+	background-color: #455a64;;
+	color: white;
+	margin-bottom: 0px;
+	padding: 15px;
+
+}
+.copyright p {
+	font-size: 16px;
+	margin: 0px;
+	color: #fff;
+}
+
+.copyright a {
+	color: #cfd8dc;
+}
+
+
