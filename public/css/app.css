@@ -1,0 +1,78 @@
+
+
+@import url('elements.css');
+
+body {
+	font-family: 'Lora', serif;
+}
+
+
+/* HEADER */
+
+.navbar-default {
+	margin-bottom: 0px;
+	padding-top: 10px; 
+	height: 70px;
+}
+
+/* BANNER */
+
+
+.jumbotron {
+	margin-bottom: 25px;
+}
+
+
+/* FEATURES */
+
+#features {
+	margin-top: 55px;
+}
+
+#features .item {
+	margin-bottom: 25px;
+}
+
+#video {
+
+	margin-top: 45px;
+	margin-bottom: 45px;
+}
+
+
+/* PRICING */
+
+#pricing {
+	margin-top: 105px;
+	margin-bottom: 45px;
+
+}
+
+#pricing .item {
+	padding-right: 45px;
+	padding-left: 45px;
+	padding-top: 15px;
+	padding-bottom: 45px;
+	border: 1px solid #000;
+}
+
+#pricing .btn-default {
+   width: 100%;
+   margin-top: 15px;
+}
+
+
+/* VISION */
+
+#vision {
+	padding-top: 65px;
+	margin-bottom: 45px;
+}
+
+#vision h3 {
+	margin-top: 0px;
+}
+
+#vision img {
+	height: 90px;
+}
