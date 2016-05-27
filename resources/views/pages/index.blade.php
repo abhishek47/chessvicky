@@ -149,7 +149,7 @@
    	   	   	  	 		<img src="images/user.png" class="img-circle">
    	   	   	  	 	</div>
    	   	   	  	 	<div class="col-md-9">
-   	   	   	  	 	    <h3>Vision 2020</h3>
+   	   	   	  	 	    <h3>Abhishek Wani</h3>
    	   	   	  	 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
    	   	   	  	 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
    	   	   	  	 		</p>
