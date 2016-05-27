@@ -1,7 +1,7 @@
 @extends ('layouts/pages')
 
 @section('content')
-   <div class="wrapper">
+   <div >
    	   
    	   @include('pages/header')
 
