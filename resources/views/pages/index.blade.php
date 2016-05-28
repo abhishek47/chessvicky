@@ -168,64 +168,81 @@
    	   <hr/>
       </div>
 
-   	   <section id="pricing">
-   	   	  <div class="container text-center">
-   	   	  	 <div class="row">
-   	   	  	 	<div class="col-md-5 col-md-offset-1 item">
-   	   	  	 	  <h3 >
-   	   	  	 	  	 <b>monthly</b>
-   	   	  	 	  </h3>
-   	   	  	 	  <h2 >
-   	   	  	 	  	  &#8377; 700
-   	   	  	 	  </h2>
-   	   	  	 	  <p>
-   	   	  	 	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   	   	  	 	  	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-   	   	  	 	  	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   	   	  	 	  	consequat.
-   	   	  	 	  </p>
-   	   	  	 	  <a href="" class="btn btn-default">
-   	   	  	 	  	I would prefer this!
-   	   	  	 	  </a>
-   	   	  	 	</div>
+   	 <section id="pricePlans">
 
-   	   	  	 	<div class="col-md-5 item">
-   	   	  	 	   <h3 >
-   	   	  	 	  	 <b>yearly</b>
-   	   	  	 	  </h3>
-   	   	  	 	   <h2 >
-   	   	  	 	  	  &#8377; 6999
-   	   	  	 	  </h2>
-   	   	  	 	   <p>
-   	   	  	 	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   	   	  	 	  	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-   	   	  	 	  	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   	   	  	 	  	consequat.
-   	   	  	 	  </p>
-   	   	  	 	  <a href="" class="btn btn-default">
-   	   	  	 	  	Looks much better!
-   	   	  	 	  </a>
-   	   	  	 	</div>
+      <ul id="plans">
+         <li class="plan">
+            <ul class="planContainer">
+               <li class="title"><h2>Free Trial</h2></li>
+               <li class="price"><p>&#8377;0/<span>month</span></p></li>
+               <li>
+                  <ul class="options">
+                     <li>Free For <span>14 days</span></li>
+                     <li>No <span>Billing Details</span></li>
+                    <li>Watch Unlimited <span>Courses</span></li>
+                     <li>Premium <span>articles</span></li>
+                    <li>And <span>more</span></li>
+                  </ul>
+               </li>
+               <li class="button"><a href="#">START TRIAL</a></li>
+            </ul>
+         </li>
 
-   	   	  	 </div>
-   	   	  </div>
-   	   </section>
+         <li class="plan">
+            <ul class="planContainer">
+               <li class="title"><h2 class="bestPlanTitle">Monthly</h2></li>
+               <li class="price"><p class="bestPlanPrice">&#8377;700/month</p></li>
+               <li>
+                  <ul class="options">
+                     <li>2x <span>option 1</span></li>
+                     <li>Win <span>Cash Prizes</span></li>
+                     <li>Watch Unlimited <span>Courses</span></li>
+                     <li>Premium <span>articles</span></li>
+                    <li>And <span>more</span></li>
+                  </ul>
+               </li>
+               <li class="button"><a class="bestPlanButton" href="#">JOIN NOW</a></li>
+            </ul>
+         </li>
 
+         <li class="plan">
+            <ul class="planContainer">
+               <li class="title"><h2>Quaterly</h2></li>
+               <li class="price"><p>&#8377;3900/<span>6 months</span></p></li>
+               <li>
+                  <ul class="options">
+                     <li>Get 15 Days <span>Free</span></li>
+                     <li>Win <span>Cash Prizes</span></li>
+                    <li>Watch Unlimited <span>Courses</span></li>
+                     <li>Premium <span>articles</span></li>
+                     <li>And <span>more</span></li>
+                  </ul>
+               </li>
+               <li class="button"><a href="#">JOIN NOW</a></li>
+            </ul>
+         </li>
+
+         <li class="plan">
+            <ul class="planContainer">
+               <li class="title"><h2>Annualy</h2></li>
+               <li class="price"><p>&#8377;7000/<span>year</span></p></li>
+               <li>
+                  <ul class="options">
+                      <li>Get 1 Month <span>Free</span></li>
+                     <li>Win <span>Cash Prizes</span></li>
+                     <li>Watch Unlimited <span>Courses</span></li>
+                     <li>Premium <span>articles</span></li>
+                     <li>And <span>more</span></li>
+                  </ul>
+               </li>
+               <li class="button"><a href="#">JOIN NOW</a></li>
+            </ul>
+         </li>
+      </ul> <!-- End ul#plans -->
       
-         <section id="trial-button">
-
-             <div class="container text-center">
-               <h2>Not Sure About This?</h2>
-               <br>
-
-                    <a class="btn btn-border-theme">
-                    <i class="fa fa-user"></i> Sign Up For a 14-day Trial   
-               </a>
-               <p class="small">
-                   ** NO BILLING DETAILS REQUIRED
-               </p>
-             </div>
-         </section>
+   </section>
+      
+         
 
      
       <div class="container">
