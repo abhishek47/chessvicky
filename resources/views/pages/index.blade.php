@@ -3,9 +3,15 @@
 @section('content')
    <div >
    	   
-   	   @include('pages/header')
+   	
 
    	   @include('pages/banner')
+
+         <section id="stats"> 
+             <div class="container text-center">
+               <h2>Something to be here</h2>
+             </div>
+         </section>
 
    	   <section id="features">
    	   	    <div class="container">
@@ -18,17 +24,17 @@
    	   	    		</div>
    	   	    		<div class="col-md-3 item">
    	   	    		    <h3>Articles</h3>
-   	   	    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+   	   	    			<p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
    	   	    		</div>
    	   	    		<div class="col-md-3 item">
    	   	    		    <h3>Player Profiles</h3>
-   	   	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   	   	    			consequat.
+   	   	    			<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+   	   	    			consequat.</p>
    	   	    		</div>
    	   	    		<div class="col-md-3 item">
    	   	    		    <h3>Daily Challenges</h3>
-   	   	    			Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .
+   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur </p>
    	   	    		</div>
    	   	    		<div class="col-md-3 item">
    	   	    		   <h3>Cash Prizes</h3>
@@ -38,34 +44,34 @@
    	   	    		</div>
    	   	    		<div class="col-md-3 item">
    	   	    		   <h3>SuperIdols</h3>
-   	   	    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+   	   	    			<p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
    	   	    		</div>
    	   	    		<div class="col-md-3 item">
    	   	    		    <h3>Forum</h3>
-   	   	    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   	   	    			consequat.
+   	   	    			<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+   	   	    			consequat.</p>
    	   	    		</div>
    	   	    		<div class="col-md-3 item">
    	   	    		    <h3>News Feed</h3>
-   	   	    			Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .
+   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .</p>
    	   	    		</div>
 
    	   	    		<div class="col-md-3 item">
    	   	    		    <h3>Resources</h3>
-   	   	    			Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .
+   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur .</p>
    	   	    		</div>
 
    	   	    		<div class="col-md-3 item">
    	   	    		    <h3>Play Chess with friends</h3>
-   	   	    			Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .
+   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .</p>
    	   	    		</div>
    	   	    		<div class="col-md-3 item">
    	   	    		    <h3>And More...</h3>
-   	   	    			Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .
+   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .</p>
    	   	    		</div>
 
    	   	    		
@@ -74,11 +80,7 @@
    	   	    </div>
    	   </section>
 
-   	   <section id="video">
-   	   	   <a class="btn btn-border-theme">
-   	   	   	  <i class="fa fa-play-circle-o"></i> Watch The Video    
-   	   	   </a>
-   	   </section>
+   	  
        
        <div class="container">
    	   <hr/>
@@ -101,7 +103,7 @@
    	   	  	 	  	consequat.
    	   	  	 	  </p>
    	   	  	 	  <a href="" class="btn btn-default">
-   	   	  	 	  	Join Now
+   	   	  	 	  	I would prefer this!
    	   	  	 	  </a>
    	   	  	 	</div>
 
@@ -119,13 +121,30 @@
    	   	  	 	  	consequat.
    	   	  	 	  </p>
    	   	  	 	  <a href="" class="btn btn-default">
-   	   	  	 	  	Join Now
+   	   	  	 	  	Looks much better!
    	   	  	 	  </a>
    	   	  	 	</div>
 
    	   	  	 </div>
    	   	  </div>
    	   </section>
+
+      
+         <section id="trial-button">
+
+             <div class="container text-center">
+               <h2>Not Sure About This?</h2>
+               <br>
+
+                    <a class="btn btn-border-theme">
+                    <i class="fa fa-user"></i> Sign Up For a 14-day Trial   
+               </a>
+               <p class="small">
+                   ** NO BILLING DETAILS REQUIRED
+               </p>
+             </div>
+         </section>
+
      
       <div class="container">
    	   <hr/>
@@ -158,6 +177,7 @@
    	   	   	  </div>
    	   	   </div>
    	   </section>
+
 
 
 

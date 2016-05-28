@@ -19,18 +19,19 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/home') }}">Features</a></li>
-                    <li><a href="{{ url('/home') }}">About</a></li>
-                    <li><a href="{{ url('/home') }}">Pricing</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('#features') }}">Features</a></li>
+                    <li><a href="{{ url('#vision') }}">About</a></li>
+                    <li><a href="{{ url('#pricing') }}">Pricing</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                     <li class="box"><a href="{{ url('/register') }}">Create Account</a></li>
+                        <li><a href="{{ url('/login') }}">Log In</a></li>
+                       
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
