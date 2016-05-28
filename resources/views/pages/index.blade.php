@@ -6,82 +6,164 @@
    	
 
    	   @include('pages/banner')
+         
+         <section id="partners">
+            <div class="container">
+                <div class="row">
+                   <div class="col-md-3">
+                      <img src="/images/partners/trumpets.png">
+                   </div>
+                   <div class="col-md-3">
+                      <img src="/images/partners/webbins.png">
+                   </div>
+                    <div class="col-md-3">
+                      <img src="/images/partners/trumpets.png">
+                   </div>
+                   <div class="col-md-3">
+                      <img src="/images/partners/webbins.png">
+                   </div>
+                </div>
+            </div>
+            
+         </section> 
 
-         <section id="stats"> 
-             <div class="container text-center">
-               <h2>Something to be here</h2>
-             </div>
-         </section>
 
    	   <section id="features">
-   	   	    <div class="container">
-   	   	    	<div class="row">
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>Courses</h3>
-   	   	    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   	   	    			
-   	   	    			 </p>
-   	   	    		</div>
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>Articles</h3>
-   	   	    			<p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-   	   	    		</div>
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>Player Profiles</h3>
-   	   	    			<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   	   	    			consequat.</p>
-   	   	    		</div>
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>Daily Challenges</h3>
-   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur </p>
-   	   	    		</div>
-   	   	    		<div class="col-md-3 item">
-   	   	    		   <h3>Cash Prizes</h3>
-   	   	    			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   	   	    			
-   	   	    			 </p>
-   	   	    		</div>
-   	   	    		<div class="col-md-3 item">
-   	   	    		   <h3>SuperIdols</h3>
-   	   	    			<p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-   	   	    		</div>
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>Forum</h3>
-   	   	    			<p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   	   	    			consequat.</p>
-   	   	    		</div>
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>News Feed</h3>
-   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .</p>
-   	   	    		</div>
 
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>Resources</h3>
-   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur .</p>
-   	   	    		</div>
+                <div class="container">
+                <h1 class="text-center">Seamless Features</h1>
+                <br/><br/><br/><br/>
+                  <div class="row">
+                     <div class="col-md-4 item">
+                       <div class="col-md-3">
+                          <img src="/images/graphics/play.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>Courses</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
+                     <div class="col-md-4 item">
+                         <div class="col-md-3">
+                          <img src="/images/graphics/article.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>Articles</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
+                     <div class="col-md-4 item">
+                         <div class="col-md-3">
+                          <img src="/images/graphics/boy.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>Player Profiles</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
+                     <div class="col-md-4 item">
+                         <div class="col-md-3">
+                          <img src="/images/graphics/calendar.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>Daily Challenges</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
+                     <div class="col-md-4 item">
+                        <div class="col-md-3">
+                          <img src="/images/graphics/notes.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>Cash Prizes</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
+                     <div class="col-md-4 item">
+                         <div class="col-md-3">
+                          <img src="/images/graphics/judge.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>SuperIdols</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
+                     <div class="col-md-4 item">
+                         <div class="col-md-3">
+                          <img src="/images/graphics/chat.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>Forum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
+                     <div class="col-md-4 item">
+                          <div class="col-md-3">
+                          <img src="/images/graphics/news.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>News Feed</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
 
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>Play Chess with friends</h3>
-   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .</p>
-   	   	    		</div>
-   	   	    		<div class="col-md-3 item">
-   	   	    		    <h3>And More...</h3>
-   	   	    			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-   	   	    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat .</p>
-   	   	    		</div>
+                     <div class="col-md-4 item">
+                         <div class="col-md-3">
+                          <img src="/images/graphics/list.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>Resources</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
 
-   	   	    		
+                     <div class="col-md-4 item">
+                         <div class="col-md-3">
+                          <img src="/images/graphics/horse.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>Play Chess</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
+                     <div class="col-md-4 item">
+                        <div class="col-md-3">
+                          <img src="/images/graphics/pointer.svg">
+                       </div>
+                       <div class="col-md-9">
+                         <h3>And More..</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                         </p>
+                        </div> 
+                     </div>
 
-   	   	    	</div> 
-   	   	    </div>
-   	   </section>
+                     
 
-   	  
-       
+                  </div> 
+                </div>
+         </section>
+
        <div class="container">
    	   <hr/>
       </div>

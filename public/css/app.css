@@ -79,7 +79,7 @@ p {
 }
 
 .jumbotron {
-	margin-bottom: 25px;
+	margin-bottom: 0px;
 	padding-top: 5px;
 	height: 500px;
 	background: url('../images/banner.jpeg');
@@ -97,7 +97,7 @@ p {
 }
 
 .jumbotron .hero {
-	margin-top: 85px;
+	margin-top: 95px;
 	background-color: transparent;
     color: #fff;
     border-bottom: none;
@@ -137,12 +137,19 @@ p {
 
 /* STATS  */
 
-#stats {
-	height: 120px;
-	background-color: #fff;
-
+#partners {
+	height: 180px;
+	background-color: #f3f3f4;
+	padding: 25px;
+	padding-top: 45px;
 
 }
+
+#partners img {
+	width: 250px;
+}
+
+
 
 
 /* FEATURES */
@@ -152,7 +159,17 @@ p {
 }
 
 #features .item {
-	margin-bottom: 25px;
+	margin-bottom: 55px;
+}
+
+#features .item img {
+	width: 70px;
+	margin-top: 15px;
+}
+
+#features h3 {
+	margin-top: 2px;
+	font-weight: normal;
 }
 
 #features p {
