@@ -169,8 +169,11 @@
       </div>
 
    	 <section id="pricePlans">
-
+      
       <ul id="plans">
+         <div>
+            <h2 class="text-center visible-xs">Pricing</h2>
+         </div>
          <li class="plan">
             <ul class="planContainer">
                <li class="title"><h2>Free Trial</h2></li>

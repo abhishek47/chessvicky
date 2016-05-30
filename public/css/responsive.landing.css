@@ -13,6 +13,10 @@
 	#vision img {
 		height: 70px;
 	}
+
+	#vision .item {
+		margin-top: 25px;
+	}
     
 	.jumbotron .hero h2 {
 		font-size: 24px;
@@ -48,4 +52,6 @@
     #partners img {
 	   width: 150px;
     }
+
+
 }
