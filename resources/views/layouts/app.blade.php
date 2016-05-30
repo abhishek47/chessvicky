@@ -9,6 +9,9 @@
 
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <script src="https://use.fontawesome.com/ef3b39e542.js"></script>
+    
+    <!-- Sweet Alert -->
+    <link href="/css/sweetalert.css" rel="stylesheet" type="text/css">
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/swipebox.min.css">
@@ -29,7 +32,7 @@
           @yield('content')
 
     
-<!-- 
+ 
         <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/detect.js"></script>
@@ -42,7 +45,9 @@
         <script src="/js/jquery.scrollTo.min.js"></script>
 
         <script src="/js/jquery.core.js"></script>
-        <script src="/js/jquery.app.js"></script> -->
+        <script src="/js/jquery.app.js"></script> 
+
+        <script src="/js/sweetalert.min.js"></script>
 
 
     <!-- JavaScripts -->
@@ -53,6 +58,8 @@
 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+@yield('scripts')
 
 <script type="text/javascript">
 (function($){
