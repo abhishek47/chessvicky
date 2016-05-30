@@ -9,7 +9,14 @@ body {
   padding-top: 150px;
 }
 
+#test-questions {
+	padding: 0;
+	margin: 0; 
+}
+
 #test-questions li {
+	padding: 0;
+	margin: 0;
 	list-style: none;
 
 }

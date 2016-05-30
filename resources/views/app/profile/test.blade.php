@@ -5,7 +5,7 @@
   <div class="container">
   
 <form action="/grade" method="post" id="quiz">
-             {{ csrf_field() }}
+              {{ csrf_field() }}  
             <ul id="test-questions">
                 <li>
                     <div class="panel panel-border panel-purple">
