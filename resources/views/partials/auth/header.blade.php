@@ -12,13 +12,13 @@
                     <div class="menu-extras">
 
                         <ul class="nav navbar-nav navbar-right pull-right">
-                            <li>
+                            <li class="hidden-xs">
                                 
                                      <a href="/login">Login</a>
                                 
                             </li>
 
-                             <li>
+                             <li class="hidden-xs">
                                 
                                      <a href="/register">Create New Account</a>
                                 
