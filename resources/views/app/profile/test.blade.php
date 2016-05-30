@@ -5,7 +5,7 @@
   <div class="container">
   
 <form action="/grade" method="post" id="quiz">
-              {{ csrf_field() }}  
+             {{ csrf_field() }}
             <ul id="test-questions">
                 <li>
                     <div class="panel panel-border panel-purple">
@@ -25,7 +25,7 @@
                             </div>
                             <div class="panel-body">
                                 <p>
-                                    <div class="options col-xs-7">
+                                    <div class="options col-md-7 col-sm-12">
                     <div class="mtm answer" >
                        <div class="radio radio-info col-xs-6">
                              <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A">
@@ -69,7 +69,7 @@
                             </div>
                             <div class="panel-body">
                                 <p>
-                                    <div class="options col-xs-7">
+                                    <div class="options col-md-7 col-sm-12">
                     <div class="mtm answer" >
                        <div class="radio radio-info col-xs-6">
                              <input type="radio" name="question-2-answers" id="question-2-answers-A" value="A">
@@ -113,7 +113,7 @@
                             </div>
                             <div class="panel-body">
                                 <p>
-                                    <div class="options col-xs-7">
+                                    <div class="options col-md-7 col-sm-12">
                     <div class="mtm answer" >
                        <div class="radio radio-info col-xs-6">
                              <input type="radio" name="question-3-answers" id="question-3-answers-A" value="A">
@@ -157,7 +157,7 @@
                             </div>
                             <div class="panel-body">
                                 <p>
-                                    <div class="options col-xs-7">
+                                    <div class="options col-md-7 col-sm-12">
                     <div class="mtm answer" >
                        <div class="radio radio-info col-xs-6">
                              <input type="radio" name="question-4-answers" id="question-4-answers-A" value="A">
@@ -201,7 +201,7 @@
                             </div>
                             <div class="panel-body">
                                 <p>
-                                    <div class="options col-xs-7">
+                                    <div class="options col-md-7 col-sm-12">
                     <div class="mtm answer" >
                        <div class="radio radio-info col-xs-6">
                              <input type="radio" name="question-5-answers" id="question-5-answers-A" value="A">
