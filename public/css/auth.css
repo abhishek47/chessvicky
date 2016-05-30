@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+
+
+/* RESETS */
+
+body {
+	font-family: 'Roboto', serif;
+	background-color: #f3f3f4;
+}
+
+p {
+	font-size: 16px;
+}
+
+.navbar-default {
+	height: 70px;
+	padding-top: 10px;
+	background-color: #fff;
+}
+
+.navbar-default .navbar-collapse {
+	padding-top: 3px;
+}
+
+
+
+.navbar-default .navbar-nav>li>a {
+	color: #000;
+	font-size: 14px;
+
+}
+
+.navbar-default .navbar-brand {
+	color: #000;
+	font-size: 24px;
+}
+
+
+/* PANEL */
+
+.birthday select {
+	margin-top: 5px; 
+	height: 30px;
+
+}
+
+.gender input {
+	margin-top: 10px;
+}

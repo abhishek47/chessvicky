@@ -10,18 +10,18 @@
          <section id="partners">
             <div class="container">
                 <div class="row">
-                   <div class="col-md-3">
+                   <a href="http://www.trumpetstechnologies.com" class="col-md-3">
                       <img src="/images/partners/trumpets.png">
-                   </div>
-                   <div class="col-md-3">
+                   </a>
+                   <a href="http://www.trumpetstechnologies.com/webbins" class="col-md-3">
                       <img src="/images/partners/webbins.png">
-                   </div>
-                    <div class="col-md-3">
+                   </a>
+                    <a href="http://www.trumpetstechnologies.com" class="col-md-3">
                       <img src="/images/partners/trumpets.png">
-                   </div>
-                   <div class="col-md-3">
+                   </a>
+                   <a href="http://www.trumpetstechnologies.com/webbins" class="col-md-3">
                       <img src="/images/partners/webbins.png">
-                   </div>
+                   </a>
                 </div>
             </div>
             
@@ -184,7 +184,7 @@
                     <li>And <span>more</span></li>
                   </ul>
                </li>
-               <li class="button"><a href="#">START TRIAL</a></li>
+               <li class="button"><a href="/register?trial=true">START TRIAL</a></li>
             </ul>
          </li>
 
@@ -201,7 +201,7 @@
                     <li>And <span>more</span></li>
                   </ul>
                </li>
-               <li class="button"><a class="bestPlanButton" href="#">JOIN NOW</a></li>
+               <li class="button"><a class="bestPlanButton" href="/register?plan=1">JOIN NOW</a></li>
             </ul>
          </li>
 
@@ -218,7 +218,7 @@
                      <li>And <span>more</span></li>
                   </ul>
                </li>
-               <li class="button"><a href="#">JOIN NOW</a></li>
+               <li class="button"><a href="/register?plan=2">JOIN NOW</a></li>
             </ul>
          </li>
 
@@ -235,7 +235,7 @@
                      <li>And <span>more</span></li>
                   </ul>
                </li>
-               <li class="button"><a href="#">JOIN NOW</a></li>
+               <li class="button"><a href="/register?plan=3">JOIN NOW</a></li>
             </ul>
          </li>
       </ul> <!-- End ul#plans -->

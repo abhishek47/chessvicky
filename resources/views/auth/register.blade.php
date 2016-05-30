@@ -1,47 +1,26 @@
-@extends('layouts.pages')
+
+
+@extends('layouts.auth')
 
 @section('content')
 
-@include('pages.header')
 
-<div class="container wrapper" id="login">
+<div class="container">
+ <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+
     <div class="row">
-        <div class="col-md-7" id="left">
-           <h2><i class="fa fa-bolt" aria-hidden="true"></i> Embrace Yourself!!</h2>
-           <ul>
-              <li>Start with a 14-day free trial.</li>
-              <li>No Billing Details required for trial.</li>
-              <li>Solve Puzzles to make your skill card better!</li>
-              <li>Learn chess from our 1000's of videos.</li>
-              <li>Read our premium articles and tutorials.</li>
-              <li>Chat with your friends.</li>
-              <li>A fully loaded chess community!</li>
-            </ul>
-            <div class=" divider"></div>
-       </div>
-      
-        <div class="col-md-5" id="right">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Account Credentials</div>
+
+                <div class="panel-body">
                         {{ csrf_field() }}
+                        
+                       
+                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label for="username" class="col-md-4 control-label">Username</label>
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="control-label">Name : </label>
-
-                            <div class="">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                          <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="control-label">Username : </label>
-
-                            <div class="">
+                            <div class="col-md-6">
                                 <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}">
 
                                 @if ($errors->has('username'))
@@ -52,11 +31,11 @@
                             </div>
                         </div>
 
-
+                       
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="control-label">E-Mail Address : </label>
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="">
+                            <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
@@ -68,9 +47,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="control-label">Password : </label>
+                            <label for="password" class="col-md-4 control-label">Password</label>
 
-                            <div class="">
+                            <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
@@ -82,9 +61,8 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="control-label">Confirm Password :</label>
-
-                            <div class="">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
 
                                 @if ($errors->has('password_confirmation'))
@@ -95,16 +73,204 @@
                             </div>
                         </div>
 
+                      
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Basic Account Information</div>
+
+                <div class="panel-body">
+                
+                       
+                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="fname" class="col-md-4 control-label">First Name</label>
+
+                            <div class="col-md-6">
+                                <input id="fname" type="text" class="form-control" name="fname" value="{{ old('fname') }}">
+
+                                @if ($errors->has('fname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('fname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="lname" class="col-md-4 control-label">Last Name</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="lname" value="{{ old('lname') }}">
+
+                                @if ($errors->has('lname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('day') ? ' has-error' : '' }}">
+                            <label for="birthday" class="col-md-4 control-label">Birthday</label>
+
+                            <div class="col-md-6 birthday" >
+                               
+                               <select id="days" name="day">
+                               </select>
+                                
+                                <select id="months" name="month">
+                                    <option>Month</option>
+                                </select>
+                               
+                                <select id="years" name="year">
+                                    <option>Year</option>
+                                </select>
+
+                                @if ($errors->has('day'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('day') }}</strong>
+                                    </span>
+                                @endif
+                                 @if ($errors->has('month'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('month') }}</strong>
+                                    </span>
+                                @endif
+                                 @if ($errors->has('year'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('year') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                         
+                         <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
+                            <label for="gender" class="col-md-4 control-label">Gender</label>
+
+                            <div class="col-md-6 gender">
+                               <input type="radio" value="1" name="gender"> Male &nbsp;
+                               <input type="radio" value= "0" name="gender"> Female
+
+                                @if ($errors->has('gender'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+     
+
+                         
+
                         <div class="form-group">
-                            <div class="">
+                            <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-user"></i> Create Account
+                                    <i class="fa fa-btn fa-refresh"></i> Create Account
                                 </button>
                             </div>
                         </div>
-                    </form>
-              
+                    
+                </div>
+            </div>
+        </div>
     </div>
+   
+    @if(!$trial) 
+     <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Billing Details</div>
+
+                <div class="panel-body">
+                        
+                         <div class="form-group{{ $errors->has('nadme') ? ' has-error' : '' }}">
+                            <label for="nsdame" class="col-md-4 control-label">First Name</label>
+
+                            <div class="col-md-6">
+                                <input id="namdse" type="text" class="form-control" name="nsdame" value="{{ old('nasdme') }}">
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nadsme') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Last Name</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Your Age</label>
+
+                            <div class="col-md-6">
+                                <select id="age" name="age" class="form-control">
+                                    <option>14 yrs</option>
+                                    <option>14 yrs</option>
+                                    <option>14 yrs</option>
+                                    <option>14 yrs</option>
+                                    <option>14 yrs</option>
+                                </select>
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                         
+                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Gender</label>
+
+                            <div class="col-md-6">
+                               <input type="radio" name="gender"> Male &nbsp;
+                               <input type="radio" name="gender"> Female
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+     
+
+                         
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-refresh"></i> Create Account
+                                </button>
+                            </div>
+                        </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+   @endif 
+    </form>
 </div>
-</div>
+
 @endsection
+
+

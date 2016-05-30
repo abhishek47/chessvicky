@@ -16,3 +16,6 @@ Route::get('/', 'PagesController@index');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/test', 'ProfileController@create');
+Route::post('/grade', 'ProfileController@grade');
