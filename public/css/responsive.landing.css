@@ -17,37 +17,53 @@
 	#vision .item {
 		margin-top: 25px;
 	}
-    
-	.jumbotron .hero h2 {
-		font-size: 24px;
+
+	.jumbotron {
+		height: 450px;
+	}
+    .jumbotron .hero {
+	margin-top: 55px;
+	background-color: transparent;
+    color: #fff;
+    border-bottom: none;
+
+}
+
+.jumbotron .hero h2 {
+		font-size: 28px;
 		font-weight: bold;
-		color: #fff;
-		line-height: 22px;
-	}
+	color: #fff;
+	line-height: 34px;
+}
 
-	.jumbotron .hero h3 {
-		font-size: 20px;
-		font-weight: 400;
-	}
+.jumbotron .hero h3 {
+	font-size: 24px;
+	font-weight: 400;
+}
 
-	.jumbotron .hero .btn-default{
+.jumbotron .hero .btn-default{
 
-		margin: 25px;
-		margin-top: 15px;
-	    padding: 10px;
-		background-color: transparent;
-		border : 2px solid #fff;
-		color: #fff;
-		font-size: 20px;
-		text-transform: uppercase;
-		width: 250px;
+	margin: 15px;
+	margin-top: 15px;
+    padding: 5px;
+	background-color: transparent;
+	border : 2px solid #fff;
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	width: 250px;
 
-	}
+}
 
-	.jumbotron .hero .btn-default.green {
-		background-color: #2ECC71;
-		border : 2px solid #2ECC71;
-	}
+.jumbotron .hero .btn-default.green {
+	background-color: #2ECC71;
+	border : 2px solid #2ECC71;
+}
+
+.navbar-default .navbar-collapse {
+	background-color: #000;
+}
+	
     
     #partners img {
 	   width: 150px;
