@@ -124,7 +124,7 @@
                             </li>
 
                             <li class="dropdown">
-                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="http://coderthemes.com/ubold_1.5/menu_2/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ url('/profile') }}"><i class="ti-user m-r-5"></i> Profile</a></li>
                                     <li><a href="{{ url('/settings') }}"><i class="ti-settings m-r-5"></i> Settings</a></li>
@@ -158,7 +158,7 @@
                 <div id="navigation">
                     <!-- Navigation Menu-->
                     <ul class="navigation-menu">
-                        <li class="has-submenu">
+                        <li class="has-submenu active">
                             <a href="#"></i>Dashboard</a>
                             <ul class="submenu">
                                 <li>
@@ -191,7 +191,7 @@
                         </li>
 
 
-                        <li class="has-submenu active">
+                        <li class="has-submenu ">
                             <a href="#"></i>Articles</a>
                             <ul class="submenu megamenu">
                                 <li>

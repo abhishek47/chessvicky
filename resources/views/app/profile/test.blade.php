@@ -8,126 +8,227 @@
              {{ csrf_field() }}
             <ul id="test-questions">
                 <li>
-                    <div class="quiz-overlay"></div>
-                    <h3>What country is chess thought to have originated in?</h3>
-                     <p class="quiz-progress">1 of 5</p>
-                    <div class="options">
+                     <div class="panel panel-border panel-custom">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">1. What country is chess thought to have originated in?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <div class="options col-xs-7">
                     <div class="mtm answer" >
-                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
-                        <label for="question-1-answers-A" class="fwrd labela"><span>a</span> Russia</label>
+                       <div class="radio radio-info col-xs-6">
+                             <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A">
+                            <label for="question-1-answers-A" class="fwrd labela">
+                               <span>A.</span> Russia
+                            </label>
+                        </div>
+                      
                     </div>
                     <div class="answer">
+                      <div class="radio radio-info col-xs-6">
                         <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
-                        <label for="question-1-answers-B" class="fwrd labelb"><span>b</span> United States</label>
+                        <label for="question-1-answers-B" class="fwrd labelb"><span>B.</span> United States</label>
+                       </div> 
                     </div>
                     <div class="answer">
+                      <div class="radio radio-info col-xs-6">
                         <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
-                        <label for="question-1-answers-C" class="fwrd labelc"><span>c</span> China</label>
+                        <label for="question-1-answers-C" class="fwrd labelc"><span>C.</span> China</label>
+                      </div>  
                     </div>
                     <div class="answer">
+                      <div class="radio radio-info col-xs-6">
                         <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
-                        <label for="question-1-answers-D" class="fwrd labeld"><span>d</span> India</label>
+                        <label for="question-1-answers-D" class="fwrd labeld"><span>D.</span> India</label>
+                      </div>  
                     </div>
                     </div>
+                                </p>
+                            </div>
+                        </div>
+                    
+                    
                    
                 </li>
+
                 <li>
-                    <div class="quiz-overlay"></div>
-                    <h3>Which piece holds the most power on the chess board?</h3>
-                    <p class="quiz-progress">2 of 5</p>
-                    <div class="options">
-                    <div class="mtm answer">
-                        <input type="radio" name="question-2-answers" id="question-2-answers-A" value="A" />
-                        <label for="question-2-answers-A" class="fwrd labela"><span>a</span> King</label>
+                     <div class="panel panel-border panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">2. What country is chess thought to have originated in?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <div class="options col-xs-7">
+                    <div class="mtm answer" >
+                       <div class="radio radio-info col-xs-6">
+                             <input type="radio" name="question-1-answers" id="gender-malequestion-1-answers-A" value="A">
+                            <label for="question-1-answers-A" class="fwrd labela">
+                               <span>A.</span> Male
+                            </label>
+                        </div>
+                      
                     </div>
                     <div class="answer">
-                        <input type="radio" name="question-2-answers" id="question-2-answers-B" value="B" />
-                        <label for="question-2-answers-B" class="fwrd labelb"><span>b</span> Knight</label>
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+                        <label for="question-1-answers-B" class="fwrd labelb"><span>B.</span> United States</label>
+                       </div> 
                     </div>
                     <div class="answer">
-                        <input type="radio" name="question-2-answers" id="question-2-answers-C" value="C" />
-                        <label for="question-2-answers-C" class="fwrd labelc"><span>c</span> Pawn</label>
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+                        <label for="question-1-answers-C" class="fwrd labelc"><span>C.</span> China</label>
+                      </div>  
                     </div>
                     <div class="answer">
-                        <input type="radio" name="question-2-answers" id="question-2-answers-D" value="D" />
-                        <label for="question-2-answers-D" class="fwrd labeld"><span>d</span> Queen</label>
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+                        <label for="question-1-answers-D" class="fwrd labeld"><span>D.</span> India</label>
+                      </div>  
                     </div>
                     </div>
+                                </p>
+                            </div>
+                        </div>
                     
+                    
+                   
                 </li>
+
                 <li>
-                    <div class="quiz-overlay"></div>
-                    <h3>How many possible moves are there at the beginning of the game?</h3>
-                    <p class="quiz-progress">3 of 5</p>
-                    <div class="options">
-                    <div class="mtm answer">
-                        <input type="radio" name="question-3-answers" id="question-3-answers-A" value="A" />
-                        <label for="question-3-answers-A" class="fwrd labela"><span>a</span> 10</label>
+                     <div class="panel panel-border panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">3. What country is chess thought to have originated in?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <div class="options col-xs-7">
+                    <div class="mtm answer" >
+                       <div class="radio radio-info col-xs-6">
+                             <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A">
+                            <label for="question-1-answers-A" class="fwrd labela">
+                               <span>A.</span> Male
+                            </label>
+                        </div>
+                      
                     </div>
                     <div class="answer">
-                        <input type="radio" name="question-3-answers" id="question-3-answers-B" value="B" />
-                        <label for="question-3-answers-B" class="fwrd labelb"><span>b</span> 16</label>
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+                        <label for="question-1-answers-B" class="fwrd labelb"><span>B.</span> United States</label>
+                       </div> 
                     </div>
                     <div class="answer">
-                        <input type="radio" name="question-3-answers" id="question-3-answers-C" value="C" />
-                        <label for="question-3-answers-C" class="fwrd labelc"><span>c</span> 20</label>
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+                        <label for="question-1-answers-C" class="fwrd labelc"><span>C.</span> China</label>
+                      </div>  
                     </div>
                     <div class="answer">
-                        <input type="radio" name="question-3-answers" id="question-3-answers-D" value="D" />
-                        <label for="question-3-answers-D" class="fwrd labeld"><span>d</span> 18</label>
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+                        <label for="question-1-answers-D" class="fwrd labeld"><span>D.</span> India</label>
+                      </div>  
                     </div>
                     </div>
+                                </p>
+                            </div>
+                        </div>
                     
+                    
+                   
                 </li>
+
                 <li>
-                    <div class="quiz-overlay"></div>
-                    <h3>In what U.S. city was former world champion, Bobby Fischer, born in?</h3>
+                     <div class="panel panel-border panel-warning">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">4. What country is chess thought to have originated in?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <div class="options col-xs-7">
+                    <div class="mtm answer" >
+                       <div class="radio radio-info col-xs-6">
+                             <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A">
+                            <label for="question-1-answers-A" class="fwrd labela">
+                               <span>A.</span> Male
+                            </label>
+                        </div>
+                      
+                    </div>
+                    <div class="answer">
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+                        <label for="question-1-answers-B" class="fwrd labelb"><span>B.</span> United States</label>
+                       </div> 
+                    </div>
+                    <div class="answer">
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+                        <label for="question-1-answers-C" class="fwrd labelc"><span>C.</span> China</label>
+                      </div>  
+                    </div>
+                    <div class="answer">
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+                        <label for="question-1-answers-D" class="fwrd labeld"><span>D.</span> India</label>
+                      </div>  
+                    </div>
+                    </div>
+                                </p>
+                            </div>
+                        </div>
                     
-                    <p class="quiz-progress">4 of 5</p>
-                    <div class="options">
-                    <div class="mtm answer">
-                        <input type="radio" name="question-4-answers" id="question-4-answers-A" value="A" />
-                        <label for="question-4-answers-A" class="fwrd labela"><span>a</span> Chicago</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question-4-answers" id="question-4-answers-B" value="B" />
-                        <label for="question-4-answers-B" class="fwrd labelb"><span>b</span> New York
-</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question-4-answers" id="question-4-answers-C" value="C" />
-                        <label for="question-4-answers-C" class="fwrd labelc"><span>c</span> Los Angeles</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question-4-answers" id="question-4-answers-D" value="D" />
-                        <label for="question-4-answers-D" class="fwrd labeld"><span>d</span> St. Louis</label>
-                    </div>
-                    </div>
+                    
+                   
                 </li>
+
                 <li>
-                    <div class="quiz-overlay"></div>
-                    <h3>Which is the only piece that is not allowed to capture the king?</h3>
+                     <div class="panel panel-border panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">5. What country is chess thought to have originated in?</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <div class="options col-xs-7">
+                    <div class="mtm answer" >
+                       <div class="radio radio-info col-xs-6">
+                             <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A">
+                            <label for="question-1-answers-A" class="fwrd labela">
+                               <span>A.</span> Male
+                            </label>
+                        </div>
+                      
+                    </div>
+                    <div class="answer">
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+                        <label for="question-1-answers-B" class="fwrd labelb"><span>B.</span> United States</label>
+                       </div> 
+                    </div>
+                    <div class="answer">
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+                        <label for="question-1-answers-C" class="fwrd labelc"><span>C.</span> China</label>
+                      </div>  
+                    </div>
+                    <div class="answer">
+                      <div class="radio radio-info col-xs-6">
+                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+                        <label for="question-1-answers-D" class="fwrd labeld"><span>D.</span> India</label>
+                      </div>  
+                    </div>
+                    </div>
+                                </p>
+                            </div>
+                        </div>
                     
-                    <p class="quiz-progress">5 of 5</p>
-                    <div class="options">
-                    <div class="mtm answer">
-                        <input type="radio" name="question-5-answers" id="question-5-answers-A" value="A" />
-                        <label for="question-5-answers-A" class="fwrd labela"><span>a</span> King</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question-5-answers" id="question-5-answers-B" value="B" />
-                        <label for="question-5-answers-B" class="fwrd labelb"><span>b</span> Queen</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question-5-answers" id="question-5-answers-C" value="C" />
-                        <label for="question-5-answers-C" class="fwrd labelc"><span>c</span> Knight</label>
-                    </div>
-                    <div class="answer">
-                        <input type="radio" name="question-5-answers" id="question-5-answers-D" value="D" />
-                        <label for="question-5-answers-D" class="fwrd labeld"><span>d</span> Pawn</label>
-                    </div class="answer">
-                    </div>
+                    
+                   
                 </li>
+
+
+               
                 <li>
                     <div class="quiz-overlay"></div>
                     <h3 class="anticipate">Now it’s time to see your results...</h3>
