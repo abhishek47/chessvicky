@@ -44,7 +44,7 @@
         <script src="/js/jquery.core.js"></script>
         <script src="/js/jquery.app.js"></script> -->
 
-        
+
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -53,5 +53,38 @@
 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script type="text/javascript">
+(function($){
+
+  'use strict';
+
+  function initNavbar () {
+
+    $('.navbar-toggle').on('click', function(event) {
+      $(this).toggleClass('open');
+      $('#navigation').slideToggle(400);
+      $('.cart, .search').removeClass('open');
+    });
+
+    $('.navigation-menu>li').slice(-1).addClass('last-elements');
+
+    $('.navigation-menu li.has-submenu a[href="#"]').on('click', function(e) {
+      if ($(window).width() < 992) {
+        e.preventDefault();
+        $(this).parent('li').toggleClass('open').find('.submenu:first').toggleClass('open');
+      }
+    });
+  }
+
+  function init () {
+    initNavbar();
+  }
+
+  init();
+
+})(jQuery)
+
+</script>
 </body>
 </html>

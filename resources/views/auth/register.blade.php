@@ -71,7 +71,7 @@
 
                           <div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" name="birthday" required="" placeholder="Birthday" data-mask="99/99/9999" value="{{ old('birthday') }}">
+                                <input class="form-control" type="text" autocomplete="off" name="birthday" required="" placeholder="Birthday" data-mask="99/99/9999" value="{{ old('birthday') }}" >
                                  <span class="font-13 text-muted">(dd/mm/yyyy)</span>
                             </div>
                         </div>
@@ -112,23 +112,16 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <p>
-                        Already have account?<a href="page-login.html" class="text-primary m-l-5"><b>Sign In</b></a>
+                        Already have account?<a href="/login" class="text-primary m-l-5"><b>Sign In</b></a>
                     </p>
                 </div>
             </div>
 
         </div>
 
-<script src="/js/bootstrap-inputmask.min.js" type="text/javascript"></script>
 
- <!-- Auto numeric -->
-        <script src="/js/autoNumeric.js" type="text/javascript"></script>
 
-        <script type="text/javascript">
-          jQuery(function($) {
-              $('.autonumber').autoNumeric('init');
-          });
-        </script>
+
 @endsection
 
 

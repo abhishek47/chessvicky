@@ -28,15 +28,28 @@
 
     @yield('content')
 
-  
+    
+    <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/detect.js"></script>
+        <script src="/js/fastclick.js"></script>
+        <script src="/js/jquery.slimscroll.js"></script>
+        <script src="/js/jquery.blockUI.js"></script>
+        <script src="/js/waves.js"></script>
+        <script src="/js/wow.min.js"></script>
+        <script src="/js/jquery.nicescroll.js"></script>
+        <script src="/js/jquery.scrollTo.min.js"></script>
+
+        <script src="/js/jquery.core.js"></script>
+        <script src="/js/jquery.app.js"></script>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="/js/bootstrap.min.js"></script>
     <script src="/js/auth.js"></script> 
 
 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="/js/bootstrap-inputmask.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 (function($){
