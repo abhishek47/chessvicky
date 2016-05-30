@@ -5,198 +5,119 @@
 @section('content')
 
 
-<div class="container">
- <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
 
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Account Credentials</div>
-
-                <div class="panel-body">
-                        {{ csrf_field() }}
-                        
-                       
-                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="col-md-4 control-label">Username</label>
-
-                            <div class="col-md-6">
-                                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}">
-
-                                @if ($errors->has('username'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('username') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                       
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                      
-                   
-                </div>
-            </div>
+        <div class="animationload">
+            <div class="loader"></div>
         </div>
-    </div>
 
-     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Basic Account Information</div>
+        <div class="account-pages"></div>
+        <div class="clearfix"></div>
+        <div class="wrapper-page">
+            <div class=" card-box">
+                <div class="panel-heading">
+                    <h3 class="text-center"> Sign Up to <strong class="text-custom">ChessVicky</strong> </h3>
+                   @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+                    <p></p>
+                </div>
 
                 <div class="panel-body">
-                
-                       
-                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="fname" class="col-md-4 control-label">First Name</label>
+                    <form class="form-horizontal m-t-20" method="POST" action="/register">
+                          {{ csrf_field() }}   
+                        <div class="form-group ">
+                            <div class="col-xs-6">
+                                <input class="form-control" type="text" name="fname" required="" placeholder="First name" value="{{ old('fname') }}">
+                            </div>
+                            <div class="col-xs-6">
+                                <input class="form-control" type="text" name="lname" required="" placeholder="Last name" value="{{ old('lname') }}">
+                            </div>
+                        </div> 
 
-                            <div class="col-md-6">
-                                <input id="fname" type="text" class="form-control" name="fname" value="{{ old('fname') }}">
-
-                                @if ($errors->has('fname'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('fname') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="email" name="email" required="" placeholder="Email" value="{{ old('email') }}">
                             </div>
                         </div>
 
-                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="lname" class="col-md-4 control-label">Last Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="lname" value="{{ old('lname') }}">
-
-                                @if ($errors->has('lname'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('lname') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="username" required="" placeholder="Username" value="{{ old('username') }}">
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('day') ? ' has-error' : '' }}">
-                            <label for="birthday" class="col-md-4 control-label">Birthday</label>
-
-                            <div class="col-md-6 birthday" >
-                               
-                               <select id="days" name="day">
-                               </select>
-                                
-                                <select id="months" name="month">
-                                    <option>Month</option>
-                                </select>
-                               
-                                <select id="years" name="year">
-                                    <option>Year</option>
-                                </select>
-
-                                @if ($errors->has('day'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('day') }}</strong>
-                                    </span>
-                                @endif
-                                 @if ($errors->has('month'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('month') }}</strong>
-                                    </span>
-                                @endif
-                                 @if ($errors->has('year'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('year') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                         
-                         <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
-                            <label for="gender" class="col-md-4 control-label">Gender</label>
-
-                            <div class="col-md-6 gender">
-                               <input type="radio" value="1" name="gender"> Male &nbsp;
-                               <input type="radio" value= "0" name="gender"> Female
-
-                                @if ($errors->has('gender'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('gender') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-     
-
-                         
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-refresh"></i> Create Account
+                         <div class="col-xs-12">
+                          <div class="radio radio-info col-xs-4">
+                             <input type="radio" name="gender" id="gender-male" value="1" checked="">
+                            <label for="radio15">
+                               Male
+                            </label>
+                        </div>
+                          <div class="radio radio-info col-xs-4">
+                            <input type="radio" name="gender" id="gender-female" value="1" >
+                            <label for="radio15">
+                               Female
+                            </label>
+                        </div>
+                            </div>
+                        </div>
+
+                          <div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="birthday" required="" placeholder="Birthday(dd/mm/yyyy)" data-mask="99/99/9999" value="{{ old('birthday') }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" name="password" type="password" required="" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" name="password_confirmation" type="password" required="" placeholder="Confirm Password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <div class="checkbox checkbox-primary">
+                                    <input id="checkbox-signup" type="checkbox" checked="checked">
+                                    <label for="checkbox-signup">I accept <a href="#">Terms and Conditions</a></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group text-center m-t-40">
+                            <div class="col-xs-12">
+                                <button class="btn btn-purple btn-block  waves-effect waves-light" type="submit">
+                                    Create Account
                                 </button>
                             </div>
                         </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-   
-   
-     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Billing Details</div>
 
-                <div class="panel-body">
-                        
-                   
+                    </form>
+
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p>
+                        Already have account?<a href="page-login.html" class="text-primary m-l-5"><b>Sign In</b></a>
+                    </p>
+                </div>
+            </div>
+
         </div>
-    </div>
-  
-    </form>
-</div>
+
 
 @endsection
 

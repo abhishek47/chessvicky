@@ -11,11 +11,28 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+/* LANDING PAGE */
+
+Route::get('/', 'LandingController@index');
+
+
+/* AUTHENTICATION */
 
 Route::auth();
 
+
+/* MAIN APPLICATION */
+
+// Dashboard
 Route::get('/home', 'HomeController@index');
 
+
+// Profile
+Route::get('/profile', 'ProfileController@show');
 Route::get('/test', 'ProfileController@create');
 Route::post('/grade', 'ProfileController@grade');
+
+
+
+/* ADMIN PANEL */
+

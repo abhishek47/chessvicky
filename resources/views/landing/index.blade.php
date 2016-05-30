@@ -1,11 +1,11 @@
-@extends ('layouts/pages')
+@extends ('layouts.landing')
 
 @section('content')
    <div >
    	   
    	
 
-   	   @include('pages/banner')
+   	   @include('landing.banner')
          
          <section id="partners">
             <div class="container">

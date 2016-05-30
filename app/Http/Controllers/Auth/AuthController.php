@@ -51,9 +51,7 @@ class AuthController extends Controller
         return Validator::make($data, [
             'fname' => 'required|max:255',
             'lname' => 'required|max:255',
-            'day' => 'required',
-            'month' => 'required',
-            'year' => 'required',
+            'birthday' => 'required',
             'gender' => 'required',
             'username' => 'required|max:55|unique:users',
             'email' => 'required|email|max:255|unique:users',
@@ -69,7 +67,6 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-       $data['birthday'] = $data['day'] . '/' . $data['month'] . '/' . $data['year'];
        $data['password'] = \Hash::make($data['password']);
         return User::create(
            $data

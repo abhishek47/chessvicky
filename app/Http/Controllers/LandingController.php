@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class PagesController extends Controller
+class LandingController extends Controller
 {
     public function index()
     {
-    	return view('pages.index');
+    	return view('landing.index');
     }
 }

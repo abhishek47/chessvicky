@@ -12,7 +12,7 @@
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/swipebox.min.css">
-    <link href="/css/pages.css" rel="stylesheet">
+    <link href="/css/landing.css" rel="stylesheet">
 
 
    

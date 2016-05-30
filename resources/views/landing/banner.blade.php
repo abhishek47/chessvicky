@@ -1,7 +1,7 @@
 <div class="jumbotron">
    
 	<div class="container">
-		   @include('pages/header')
+		   @include('landing.header')
 
 		   <div class="hero text-center">
 		   	   <h2>Embrace Yourself By Learning Chess With Us!!</h2>
