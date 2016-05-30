@@ -1,0 +1,51 @@
+@media (max-width: 767px) {
+ 
+    body 
+    {
+	   font-family: 'Roboto', serif;
+	}
+
+	p 
+	{
+		font-size: 14px;
+	}
+
+	#vision img {
+		height: 70px;
+	}
+    
+	.jumbotron .hero h2 {
+		font-size: 24px;
+		font-weight: bold;
+		color: #fff;
+		line-height: 22px;
+	}
+
+	.jumbotron .hero h3 {
+		font-size: 20px;
+		font-weight: 400;
+	}
+
+	.jumbotron .hero .btn-default{
+
+		margin: 25px;
+		margin-top: 15px;
+	    padding: 10px;
+		background-color: transparent;
+		border : 2px solid #fff;
+		color: #fff;
+		font-size: 20px;
+		text-transform: uppercase;
+		width: 250px;
+
+	}
+
+	.jumbotron .hero .btn-default.green {
+		background-color: #2ECC71;
+		border : 2px solid #2ECC71;
+	}
+    
+    #partners img {
+	   width: 150px;
+    }
+}

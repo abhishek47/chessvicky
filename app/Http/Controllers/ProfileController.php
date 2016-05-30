@@ -32,31 +32,31 @@ class ProfileController extends Controller
             $result = 0;
             $correct = 0;
 
-            if ($answer1 == "A") 
+            if ($answer1 == "D") 
             {
             	$result += 10;
             	$correct++;
             }
 
-            if ($answer2 == "A") 
+            if ($answer2 == "B") 
             {
             	$result += 10;
             	$correct++;
             }
 
-            if ($answer3 == "A") 
+            if ($answer3 == "C") 
             {
             	$result += 10;
             	$correct++;
             }
 
-            if ($answer4 == "A") 
+            if ($answer4 == "D") 
             {
             	$result += 10;
             	$correct++;
             }
 
-            if ($answer4 == "A") 
+            if ($answer5 == "B") 
             {
             	$result += 10;
             	$correct++;

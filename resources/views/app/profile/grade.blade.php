@@ -52,6 +52,8 @@
                                             </div>
                                             <div class="panel-body">
                                                 <p>Voila! you gave your first chess quiz!There's a lot more to come.</p>
+                                                 <br/>
+                                                <button type="button" data-dismiss="modal" class="btn btn-purple waves-effect waves-light" id="submit-quiz" >Continue</button>
                                             </div>
                                         </div>
                                     </div><!-- /.modal-content -->
