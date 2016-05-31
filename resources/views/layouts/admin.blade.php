@@ -7,10 +7,14 @@
 
     <title>ChessVicky | Chess Courses, articles, tutorials, forum and more...</title>
 
-     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <script src="https://use.fontawesome.com/ef3b39e542.js"></script>
+    
+    <!-- Sweet Alert -->
+    <link href="/css/sweetalert.css" rel="stylesheet" type="text/css">
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/swipebox.min.css">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/core.css" rel="stylesheet" type="text/css" />
     <link href="/css/components.css" rel="stylesheet" type="text/css" />
@@ -19,17 +23,17 @@
     <link href="/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="/css/responsive.css" rel="stylesheet" type="text/css" />
 
+
 </head>
 <body id="app-layout">
     
-    @include('partials.auth.header')
-    
-    
+         @include('partials.admin.header')
 
-    @yield('content')
+          @yield('content')
 
     
-    <script src="/js/jquery.min.js"></script>
+ 
+        <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/detect.js"></script>
         <script src="/js/fastclick.js"></script>
@@ -41,15 +45,21 @@
         <script src="/js/jquery.scrollTo.min.js"></script>
 
         <script src="/js/jquery.core.js"></script>
-        <script src="/js/jquery.app.js"></script>
+        <script src="/js/jquery.app.js"></script> 
+
+        <script src="/js/sweetalert.min.js"></script>
+
+
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="/js/auth.js"></script> 
 
 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script src="/js/bootstrap-inputmask.min.js" type="text/javascript"></script>
+
+@yield('scripts')
 
 <script type="text/javascript">
 (function($){
@@ -83,8 +93,5 @@
 })(jQuery)
 
 </script>
-
-    
-
 </body>
 </html>

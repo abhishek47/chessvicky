@@ -35,4 +35,5 @@ Route::post('/grade', 'ProfileController@grade');
 
 
 /* ADMIN PANEL */
+Route::get('/admin', 'AdminController@index');
 

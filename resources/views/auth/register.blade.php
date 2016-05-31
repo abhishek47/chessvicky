@@ -16,15 +16,7 @@
             <div class=" card-box">
                 <div class="panel-heading">
                     <h3 class="text-center"> Sign Up to <strong class="text-custom">ChessVicky</strong> </h3>
-                   @if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+                    @include('partials.errors')
                     <p></p>
                 </div>
 
