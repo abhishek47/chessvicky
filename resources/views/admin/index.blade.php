@@ -82,6 +82,56 @@
                             </div>
                         </div>
                     </div>
+
+            <div class="col-lg-6">
+                        <div class="panel panel-border panel-custom">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Push Notification</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <form class="form-horizontal" role="form" method="post" action="/notify">
+                                        <div class="form-group">
+                                            <label for="pushtitle" class="col-sm-3 control-label">Title</label>
+                                            <div class="col-sm-9">
+                                              <input type="text" class="form-control" id="notifytitle" name="notifytitle" placeholder="Title">
+                                            </div>
+                                        </div>
+
+                                         <div class="form-group">
+                                            <label for="pushdesc" class="col-sm-3 control-label">Message</label>
+                                            <div class="col-sm-9">
+                                               <textarea name="notifydesc" class="form-control" rows="5">
+                                               	   
+                                               </textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pushtype" class="col-sm-3 control-label">Type</label>
+                                            <div class="col-sm-9">
+                                                <select name="pushtype" class="form-control">
+                                                	<option value="success">Success</option>
+                                                	<option value="warning">Warning</option>
+                                                	<option value="info">Info</option>
+                                                	<option value="danger">Danger</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                         
+                                        
+                                        
+                                        <div class="form-group m-b-0">
+                                            <div class="col-sm-offset-3 col-sm-9">
+                                              <button type="submit" class="btn btn-info waves-effect waves-light">Send Notification!</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>        
+
+
  	</div>
  </div>
 
