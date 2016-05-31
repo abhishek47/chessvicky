@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -17,6 +18,10 @@ class AdminController extends Controller
 
      public function index()
      {
-     	return view('admin.index');
+        $data['userscount'] = User::count();
+
+        $data['onlineusers'] = count(User::where('online', 1)->get());
+
+      	return view('admin.index', $data);
      }
 }

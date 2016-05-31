@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -68,8 +69,36 @@ class AuthController extends Controller
     protected function create(array $data)
     {
        $data['password'] = \Hash::make($data['password']);
-        return User::create(
+        $user = User::create(
            $data
         );
+
+        $user->online = 1;
+
+        $user->save();
+
+        return $user;
+    }
+
+    protected function authenticated(Request $request, User $user)
+    {
+        $user->online = 1;
+        $user->save();
+        return redirect($this->redirectTo);
+    }
+
+     /**
+     * Log the user out of the application.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logout()
+    {   
+        \Auth::user()->online = 0;
+        \Auth::user()->save();
+
+        \Auth::guard($this->getGuard())->logout();
+
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 }

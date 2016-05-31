@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('birthday');
             $table->integer('profile_id')->default(null);
             $table->string('profile_pic');
+            $table->integer('online')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
