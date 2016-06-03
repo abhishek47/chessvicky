@@ -46,7 +46,7 @@
    	  	    	</div>
 
    	  	    	<div class="col-md-5">
-   	  	    		 <ul class="nav nav-pills">
+   	  	    		 <ul class="nav nav-pills hidden-xs">
 					  <li role="presentation" class="{{ active('newest', $sby) }}" ><a href="/courses?s=newest"><b>Newest</b></a></li>
 					  <li role="presentation" class="{{ active('alpha', $sby) }}"><a href="/courses?s=alpha"><b>Aplhabetical</b></a></li>
 					 <li role="presentation" class="dropdown">
