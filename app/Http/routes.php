@@ -27,6 +27,10 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 
+// SUPER IDOLS :
+Route::get('/superidols', 'IdolsController@show');
+
+
 // Profile
 Route::get('/profile', 'ProfileController@show');
 Route::get('/test', 'ProfileController@create');
@@ -46,23 +50,30 @@ Route::get('/users', 'UsersController@index');
 Route::get('/admin/courses', 'AdminController@courses' );
 Route::get('/admin/courses/new', 'CoursesController@create');
 Route::post('/admin/courses', 'CoursesController@store');
+Route::get('/admin/courses/{slug}', 'CoursesController@showadmin');
 Route::get('/admin/courses/{slug}/edit', 'CoursesController@edit');
 Route::post('/admin/courses/{slug}', 'CoursesController@update');
-Route::post('/admin/courses/categories', 'CoursesController@storecategories');
-Route::post('/admin/courses/categories/{id}', 'CoursesController@updatecategories');
+Route::get('/admin/courses/{slug}/delete', 'CoursesController@delete');
+
+Route::get('/admin/categories', 'AdminController@categories');
+Route::post('/admin/categories', 'CategoriesController@store');
+Route::post('/admin/categories/{id}', 'CategoriesController@update');
 
 Route::get('/admin/videos', 'AdminController@videos' );
 Route::get('/admin/videos/new', 'VideosController@create');
 Route::post('/admin/videos', 'VideosController@store');
+Route::get('/admin/videos/{slug}', 'VideosController@showadmin');
 Route::get('/admin/videos/{slug}/edit', 'VideosController@edit');
-Route::post('/admin/videos/{slug}', 'CoursesController@update');
+Route::post('/admin/videos/{slug}', 'VideosController@update');
+Route::get('/admin/videos/{slug}/delete', 'VideosController@delete');
 
 Route::get('/admin/books', 'AdminController@books' );
+Route::get('/admin/books/new','BooksController@create');
 Route::post('/admin/books', 'BooksController@store');
+Route::get('/admin/books/{slug}', 'BooksController@showadmin');
 Route::get('/admin/books/{slug}/edit', 'BooksController@edit');
 Route::post('/admin/books/{slug}', 'BooksController@update');
-Route::post('/admin/books/categories', 'BooksController@storecategories');
-Route::post('/admin/books/categories/{id}', 'BooksController@updatecategories');
+Route::get('/admin/books/{slug}/delete', 'BooksController@delete');
 
 Route::get('/admin/tutorials', 'AdminController@tutorials' );
 Route::get('/admin/tutorials/new', 'TutorialsController@create');
@@ -75,15 +86,19 @@ Route::post('/admin/tutorials/{slug}', 'TutorialsController@update');
 Route::get('/admin/articles', 'AdminController@articles' );
 Route::get('/admin/articles/new', 'ArticlesController@create');
 Route::post('/admin/articles', 'ArticlesController@store');
+Route::get('/admin/articles/{slug}', 'ArticlesController@showadmin');
 Route::get('/admin/articles/{slug}/edit', 'ArticlesController@edit');
 Route::post('/admin/articles/{slug}', 'ArticlesController@update');
-Route::post('/admin/articles/categories', 'ArticlesController@storecategories');
-Route::post('/admin/articles/categories/{id}', 'ArticlesController@updatecategories');
+Route::get('/admin/articles/{slug}/delete', 'ArticlesController@delete');
 
 
 // Super Idols :
 Route::get('/admin/superidols/conversations', 'IdolsController@conversations');
 Route::get('/admin/superidols', 'IdolsController@idols');
+Route::post('/admin/superidols/store', 'IdolsController@store');
+Route::get('/admin/superidols/{id}/edit', 'IdolsController@edit');
+Route::post('/admin/superidols/{id}/update', 'IdolsController@update');
+Route::get('/admin/superidols/{id}/delete', 'IdolsController@delete');
 
 // Forum :
 Route::get('/admin/forum', 'AdminController@forum');
@@ -107,7 +122,16 @@ Route::get('/admin/challenges/weekly', 'AdminController@weeklychallenges');
 Route::get('/admin/challenges/new', 'ChallengesController@create');
 Route::post('/admin/challenges/', 'ChallengesController@store');
 
+
+
+
 /************ ADMIN ROUTES END HERE **********/
+
+
+
+
+
+
 
 /* PAYMENTS */
 

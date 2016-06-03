@@ -5,7 +5,7 @@
 
                     <!-- Logo container-->
                     <div class="logo">
-                        <a href="/" class="logo"><span>CHESSV<i class="fa fa-hand-o-up"></i>CKY</span></a>
+                        <a href="/" class="logo"><span>CHESSV<i class="glyphicon glyphicon-bishop"></i>CKY</span></a>
                     </div>
                     <!-- End Logo container-->
 

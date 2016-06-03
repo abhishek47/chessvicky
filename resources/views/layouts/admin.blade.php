@@ -12,7 +12,8 @@
     
     <!-- Sweet Alert -->
     <link href="/css/sweetalert.css" rel="stylesheet" type="text/css">
-
+    
+      <link href="http://vjs.zencdn.net/5.9.2/video-js.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/swipebox.min.css">
     <link href="/css/app.css" rel="stylesheet">
@@ -22,7 +23,12 @@
     <link href="/css/pages.css" rel="stylesheet" type="text/css" />
     <link href="/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="/css/responsive.css" rel="stylesheet" type="text/css" />
+     <link href="/css/switchery.min.css" rel="stylesheet" />
+   
+   
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
+  
 
 </head>
 <body id="app-layout">
@@ -33,8 +39,18 @@
 
     
  
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
+      
+
+
+    <!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/auth.js"></script> 
+   
+
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+       
         <script src="/js/detect.js"></script>
         <script src="/js/fastclick.js"></script>
         <script src="/js/jquery.slimscroll.js"></script>
@@ -48,16 +64,13 @@
         <script src="/js/jquery.app.js"></script> 
 
         <script src="/js/sweetalert.min.js"></script>
+            <!-- Bootstrap-tagsinput  -->
 
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/auth.js"></script> 
 
+        <script src="/js/bootstrap-tagsinput.min.js"></script>
+         <script src="http://vjs.zencdn.net/5.9.2/video.js"></script>
 
- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 @yield('scripts')
 
@@ -92,6 +105,11 @@
 
 })(jQuery)
 
+
+
 </script>
+
+
+
 </body>
 </html>
