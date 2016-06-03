@@ -17,6 +17,7 @@ File: Responsive
 @media (max-width: 767px) {
   body {
     overflow-x: hidden;
+    padding-top: 75px;
   }
   .mobile-sidebar {
     left: 0px;

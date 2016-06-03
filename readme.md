@@ -25,3 +25,17 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+
+Your Laravel Forge server has been provisioned!
+
+Remember, before you can access your server, you will need to add a public key via the Laravel Forge server management page. For added security, password authentication over SSH is disabled by default on all Laravel Forge servers.
+
+Server Details:
+
+Name:	chessvicky
+IP Address:	104.131.2.218
+Username:	forge
+Sudo Password:	TuqrEgHR9WuAqLLHuvEo
+Database Username:	forge
+Database Password:	7sbFFsSsedqKrEEc9k9b
