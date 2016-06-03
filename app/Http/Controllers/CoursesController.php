@@ -10,6 +10,51 @@ use App\Models\Course;
 
 class CoursesController extends Controller
 {
+
+
+   public function show(Request $request)
+   {
+        $s = $request->get('s');
+        
+        if($s)
+        {
+            if($s == 'newest')
+            {
+              $courses = Course::latest()->paginate(20);
+              $sby = 'newest';
+            } else if($s == 'alpha')
+            {
+              $courses = Course::orderBy('title')->paginate(20);
+              $sby = 'alpha';
+            } else if ($s == 'starred') {
+              $ids = array();
+              $favs = \Auth::user()->favourites;
+              foreach ($favs as $key => $fav) {
+                if($fav->type == 0)
+                {
+                   $ids[] = $fav->item_id;  
+                }
+               }
+               $courses = Course::whereIn('id', $ids)->latest()->paginate(20); 
+                $sby = 'starred';
+             }
+
+            else {
+
+              $courses = Course::where('category_id', $s)->latest()->paginate(20);
+              $c = Category::find($s);
+              $sby = 'topic';
+            }
+        } else 
+        {
+          $courses = Course::latest()->paginate(20);
+          $sby = 'newest';
+        }
+      
+      $categories = Category::orderBy('name')->get();
+      return view('app.courses.index', compact('courses', 'sby', 'categories', 'c')); 
+
+   }
     
 
     public function create()

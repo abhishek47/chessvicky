@@ -20,6 +20,11 @@ class IdolsController extends Controller
     	return view('app.idols.index', compact('idols', 'count', 'page'));
 	}
     
+    public function conversations($id)
+    {
+    	$idol = Idol::findOrFail($id);
+    	return view('app.idols.conversations', compact('idol'));
+    }
 
     public function idols()
     {

@@ -29,6 +29,10 @@ Route::get('/home', 'HomeController@index');
 
 // SUPER IDOLS :
 Route::get('/superidols', 'IdolsController@show');
+Route::get('/superidols/{id}', 'IdolsController@conversations');
+
+// COURSES :
+Route::get('/courses', 'CoursesController@show');
 
 
 // Profile
