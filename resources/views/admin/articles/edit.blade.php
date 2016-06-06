@@ -10,7 +10,7 @@
                     
                 </div>
                 <div class="panel-body">
-                     <form class="form-horizontal m-t-20" method="POST" action="{{ url('/admin/articles') }}">
+                     <form class="form-horizontal m-t-20" method="POST" action="{{ url('/admin/articles/' . $article->slug ) }}">
                 {{ csrf_field() }}
                 @include('partials.errors')
                 <div class="form-group ">

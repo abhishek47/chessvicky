@@ -63,9 +63,16 @@
                             <label for="course_id" class="">Select Course : </label>
                             <div class="">
                                 <select name="course_id" class="form-control">
+                                       <option value="0" {{ $video->course_id == 0 ? 'selected' : '' }} >None</option>
                                 	  @foreach($courses as $course)
-                                        <option value="{{ $course->id }}" {{ isSelected($course->id, $video->course->id) }}>{{ $course->title }}</option>
+                                      
+                                       @if($video->course_id != 0)
+                                          <option value="{{ $course->id }}" {{ isSelected($course->id, $video->course->id) }}>{{ $course->title }}</option>
+                                       @else 
+                                          <option value="{{ $course->id }}">{{ $course->title }}</option>
+                                       @endif   
                                     @endforeach   
+                                    
                                 </select>
                             </div>
                         </div>

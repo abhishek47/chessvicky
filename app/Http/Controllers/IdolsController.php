@@ -6,10 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Idol;
+use App\Models\Message;
 use App\User;
 
 class IdolsController extends Controller
 { 
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
 	public function show()
@@ -23,7 +34,33 @@ class IdolsController extends Controller
     public function conversations($id)
     {
     	$idol = Idol::findOrFail($id);
-    	return view('app.idols.conversations', compact('idol'));
+      $messages = Message::where(function ($query) use ($idol) {
+                $query->where('sender_id', \Auth::user()->id)
+                      ->where('reciever_id',$idol->user_id);
+            })
+            ->orWhere(function ($query) use ($idol) {
+                    $query->where('sender_id',$idol->user_id)
+                      ->where('reciever_id', \Auth::user()->id);
+            })->latest()->get();
+
+      $page = 'idols';
+    	return view('app.idols.conversations', compact('idol', 'messages', 'page'));
+    }
+
+    public function idolConversations()
+    {
+       if(!(\Auth::user()->isIdol()))
+       {
+          return back();
+       }
+       
+       $messages = Message::where('reciever_id', \Auth::user()->id )
+                           ->orWhere('sender_id', \Auth::user()->id)->get();
+
+       $page = 'idols';
+       
+       return view('app.idols.idolconversations', compact('messages', 'page'));                    
+
     }
 
     public function idols()

@@ -10,6 +10,16 @@ use App\Models\Category;
 
 class BooksController extends Controller
 {
+      /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
      public function create()
     {
     	$categories = Category::all();
@@ -17,7 +27,63 @@ class BooksController extends Controller
     	return view('admin.books.new' , compact('categories', 'page'));
     }
 
+    public function list(Request $request)
+   {
+        $s = $request->get('s');
+        $q = $request->get('q');
+        if($s)
+        {
+            if($s == 'newest')
+            {
+              $books = Book::latest()->paginate(20);
+              $sby = 'newest';
+            } else if($s == 'alpha')
+            {
+              $books = Book::orderBy('title')->paginate(20);
+              $sby = 'alpha';
+            } else if ($s == 'starred') {
+              $ids = array();
+              $favs = \Auth::user()->favourites;
+              foreach ($favs as $key => $fav) {
+                if($fav->type == 0)
+                {
+                   $ids[] = $fav->item_id;  
+                }
+               }
+               $books = Book::whereIn('id', $ids)->latest()->paginate(20); 
+                $sby = 'starred';
+             }
 
+            else {
+
+              $books = Book::where('category_id', $s)->latest()->paginate(20);
+              $c = Category::find($s);
+              $sby = 'topic';
+            }
+        } else if($q)
+        {
+           $books = Book::where('title', 'LIKE', '%'. $q . '%')->latest()->paginate(20);
+           $sby = 'newest';
+
+        } else 
+        {
+          $books = Book::latest()->paginate(20);
+          $sby = 'newest';
+        }
+      
+      $categories = Category::orderBy('name')->get();
+      return view('app.books.index', compact('books', 'sby', 'categories', 'c', 'q')); 
+
+   }
+
+    public function show($slug)
+   {
+       $book = Book::where('slug', $slug)->first();
+      
+       $page = 'books';
+        return view('app.books.show', compact('book', 'page')); 
+   }
+    
 
 
     public function showadmin($slug)

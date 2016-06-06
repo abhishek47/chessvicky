@@ -9,7 +9,41 @@ use App\Models\Video;
 use App\Models\Course;
 
 class VideosController extends Controller
-{
+{ 
+
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+   
+    public function list()
+    {
+        $videos = Video::where('course_id', 0)->latest()->paginate(20);
+        $page = 'videos';
+        return view('app.videos.index' , compact('videos', 'page'));
+
+    }
+
+    public function show($cslug, $vslug)
+    {
+           $video = Video::where('slug', $vslug)->first();
+           $course = $video->course;
+           $page = 'video';
+           return view('app.videos.show' , compact('video', 'course', 'page'));
+    }
+
+     public function showsingle($slug)
+    {
+           $video = Video::where('slug', $slug)->first();
+           $page = 'video';
+           return view('app.videos.showsingle' , compact('video', 'page'));
+    }
+
       public function create()
     {
     	$courses = Course::all();

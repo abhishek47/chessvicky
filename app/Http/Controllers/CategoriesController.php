@@ -24,7 +24,7 @@ class CategoriesController extends Controller
    {
    	  $this->validate($request, [
           'name' => 'required',
-          
+          'color' => 'required',
    	  	]);
 
    	   Category::create($request->all());

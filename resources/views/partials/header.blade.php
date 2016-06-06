@@ -167,16 +167,16 @@
                             <a href="#"></i>Articles</a>
                               <ul class="submenu">
                                 <li>
-                                    <a href="{{ url('/courses') }}">All Articles</a>
+                                    <a href="{{ url('/articles/') }}">All Articles</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/videos') }}">Premium</a>
+                                    <a href="{{ url('/articles/type:premium') }}">Premium</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/books') }}">Starred</a>
+                                    <a href="{{ url('/articles/type:starred') }}">Starred</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/tutorials') }}">Trending</a>
+                                    <a href="{{ url('/articles/type:trending') }}">Trending</a>
                                 </li>
                             </ul>
                         </li>
@@ -200,8 +200,11 @@
                         </li>
 
                          <li class="">
-                            <a href="{{ url('/superidols') }}"></i>Super Idols</a>
-                              
+                           @if(Auth::user()->isIdol())
+                            <a href="{{ url('/conversations') }}"></i>Conversations</a>
+                          @else
+                            <a href="{{ url('/superidols') }}"></i>Super Idols</a>  
+                          @endif    
                         </li>
 
 

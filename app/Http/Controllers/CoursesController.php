@@ -9,13 +9,23 @@ use App\Models\Category;
 use App\Models\Course;
 
 class CoursesController extends Controller
-{
+{  
+
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
-   public function show(Request $request)
+   public function list(Request $request)
    {
         $s = $request->get('s');
-        
+        $q = $request->get('q');
         if($s)
         {
             if($s == 'newest')
@@ -45,6 +55,11 @@ class CoursesController extends Controller
               $c = Category::find($s);
               $sby = 'topic';
             }
+        } else if($q)
+        {
+           $courses = Course::where('title', 'LIKE', '%'. $q . '%')->latest()->paginate(20);
+           $sby = 'newest';
+
         } else 
         {
           $courses = Course::latest()->paginate(20);
@@ -52,8 +67,21 @@ class CoursesController extends Controller
         }
       
       $categories = Category::orderBy('name')->get();
-      return view('app.courses.index', compact('courses', 'sby', 'categories', 'c')); 
+      return view('app.courses.index', compact('courses', 'sby', 'categories', 'c', 'q')); 
 
+   }
+
+   public function show($slug)
+   {
+       $course = Course::where('slug', $slug)->first();
+       $videos = $course->videos;
+       if(count($videos) > 0){
+        $firstvideo = $videos[0];
+       } else {
+        $firstvideo = null;
+     }
+       $page = 'courses';
+        return view('app.courses.show', compact('course', 'page', 'videos', 'firstvideo')); 
    }
     
 

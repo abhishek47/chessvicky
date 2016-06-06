@@ -56,6 +56,7 @@
                             <label for="course_id" class="">Select Course : </label>
                             <div class="">
                                 <select name="course_id" class="form-control">
+                                   <option value="0">None</option>
                                 	  @foreach($courses as $course)
                                        <option value="{{ $course->id }}">{{ $course->title }}</option>
                                     @endforeach   

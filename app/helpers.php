@@ -65,3 +65,44 @@ function favItem($type)
      }
 
 }
+
+
+function color($code)
+{
+     switch ($code) {
+          case 0:
+               return 'default';
+               break;
+          case 1:
+               return 'custom';
+               break;
+          case 2:
+               return 'primary';
+               break;
+          case 3:
+               return 'info';
+               break;
+          case 4:
+               return 'success';
+               break;
+          case 5:
+               return 'warning';
+               break;
+          case 6:
+               return 'danger';
+               break;
+          case 7:
+               return 'purple';
+               break;
+          case 8:
+               return 'pink';
+               break;
+          case 9:
+               return 'inverse';
+               break;                                             
+          
+          default:
+              return 'info';
+               break;
+     }
+}

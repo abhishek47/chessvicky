@@ -32,13 +32,33 @@ Route::get('/superidols', 'IdolsController@show');
 Route::get('/superidols/{id}', 'IdolsController@conversations');
 
 // COURSES :
-Route::get('/courses', 'CoursesController@show');
+Route::get('/courses', 'CoursesController@list');
+Route::get('/courses/{slug}', 'CoursesController@show');
+Route::get('/courses/{cslug}/{vslug}', 'VideosController@show');
 
+Route::get('/books', 'BooksController@list');
+Route::get('/books/{slug}', 'BooksController@show');
+
+Route::get('/articles', 'ArticlesController@list');
+Route::get('/articles/type:{type}', 'ArticlesController@listbytype');
+Route::get('/articles/premium', 'ArticlesController@listpremium');
+Route::get('/articles/trending', 'ArticlesController@listtrending');
+Route::get('/articles/{slug}', 'ArticlesController@show');
+
+Route::get('/videos', 'VideosController@list');
+Route::get('/videos/{slug}', 'VideosController@showsingle');
+
+
+Route::get('/favourites', 'FavouritesController@index');
+Route::get('/favourites/{type}/{id}', 'FavouritesController@store');
 
 // Profile
 Route::get('/profile', 'ProfileController@show');
 Route::get('/test', 'ProfileController@create');
 Route::post('/grade', 'ProfileController@grade');
+
+Route::post('/idols/messages', 'MessagesController@store');
+Route::get('/conversations', 'IdolsController@idolConversations');
 
 /************* MAIN APP ROUTES END HERE *************/
 
@@ -62,6 +82,7 @@ Route::get('/admin/courses/{slug}/delete', 'CoursesController@delete');
 Route::get('/admin/categories', 'AdminController@categories');
 Route::post('/admin/categories', 'CategoriesController@store');
 Route::post('/admin/categories/{id}', 'CategoriesController@update');
+Route::get('/admin/categories/{id}/delete', 'CategoriesController@delete');
 
 Route::get('/admin/videos', 'AdminController@videos' );
 Route::get('/admin/videos/new', 'VideosController@create');
