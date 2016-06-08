@@ -40,7 +40,7 @@
 			                
 			                   <p></p>
 			                   <div class="col-lg-5">
-			                      <img src="{{ $challenge->chessboard }}"> 
+			                      <img class="img-responsive" src="{{ $challenge->chessboard }}"> 
 			                   	
 			                   </div>
 			                   <div class="col-lg-7">
