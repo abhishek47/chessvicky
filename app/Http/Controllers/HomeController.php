@@ -5,6 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\User;
+use App\Models\Course;
+use App\Models\Book;
+use App\Models\Category;
+use App\Models\Conversation;
+use App\Models\Idol;
+use App\Models\Payment;
+use App\Models\Profile;
+use App\Models\Reply;
+use App\Models\Tutorial;
+use App\Models\Video;
+use App\Models\Article;
 
 class HomeController extends Controller
 {
@@ -26,7 +37,7 @@ class HomeController extends Controller
     public function index()
     {
         $data['user'] = \Auth::user();
-
+        $data['courses'] = Course::latest()->limit(4)->get();
         return view('app.home', $data);
     }
 }

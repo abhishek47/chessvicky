@@ -11,13 +11,13 @@
  		<div class="panel-body">
  		  <div class="row">
  		  	 <div class="col-lg-8">
- 		  	 	<div id="board" style="width: 500px"></div>
+ 		  	 	<<iframe src ="http://www.chessvideos.tv/minipuzzle-12644-GettheblackQueen.php" width = "200" height = "270" scrolling="no" frameborder="0">
+</iframe>
+
  		  	 </div>
  		  </div>
  			 
-			<p>Status: <span id="status"></span></p>
-			<p>FEN: <span id="fen"></span></p>
-			<p>PGN: <span id="pgn"></span></p>
+		
  		</div>
  	</div>
 
@@ -31,8 +31,5 @@
 
 @section('scripts')
  
-   <script type="text/javascript" src="js/chessboard-0.3.0.js"></script>
-    <script src="js/chess.js"></script> 
-     <script src="js/game.js"></script>
-  
+   
 @stop

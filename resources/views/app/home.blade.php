@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-              <div class="col-lg-12">
+              <div class="">
                         <div class="card-box p-0">
                             <div class="profile-widget text-center">
                                 <div class="bg-inverse bg-profile"></div>
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                      <div class="col-lg-12">
+                      <div class="">
                    <div class="panel panel-border panel-inverse">
                        <div class="panel-heading">
                            <h3 class="panel-title">Skillometer</h3>
@@ -35,7 +35,7 @@
                        </div>
                    </div>
                </div>
-               <div class="col-lg-12">
+               <div class="">
                    <div class="card-box">
                             <h4 class="m-t-0 m-b-20 header-title"><b>Achivements <span class="text-muted">(154)</span></b></h4>
 
@@ -76,14 +76,50 @@
                </div>
             </div>
                <div class="col-lg-9">
-                    <div class="panel panel-color panel-inverse">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Featured</h3>
-                        </div>
-                        <div class="panel-body">
-                            
-                        </div>
+                    <div id="search-box">
+      <div class="panel panel-default">
+         <div class="panel-body">
+            <div class="row">
+              <div class="col-md-8">
+                 <h3 style="text-transform: capitalize;"><strong>Featured Courses</strong></h3>
+              </div>
+              <div class="col-md-4">
+      
+              </div>
+
+        
+            </div>
+           
+         </div>
+      </div>
+   </div>
+
+                    @foreach($courses as $course)
+            <div class="col-lg-6" >
+
+                <div class="panel panel-color panel-inverse" >
+                    <div class="panel-heading">
+                      <a href="{{ 
+                               '/courses/' . $course->slug
+                           }}"><h3 class="panel-title"> 
+                       {{ str_limit($course->title, 40) }}
+                    </h3></a>
                     </div>
+                    <div class="panel-body">
+                        <p >{{ str_limit($course->desc, 100) }}</p>
+                        <p><strong>Topic : </strong>{{ $course->category->name }}</p>
+                       
+                        <p><a class="btn btn-default" href="{{ 
+                               '/courses/' . $course->slug
+                           }}">View Course</a></p> 
+                    </div>
+                    <div class="panel-footer">
+                               {{ $course->tags }}
+                            </div>
+                </div> 
+            </div>
+          @endforeach 
+                     
                </div>     
              
     </div>

@@ -185,10 +185,10 @@
                             <a href="#"></i>Challenges</a>
                               <ul class="submenu">
                                 <li>
-                                    <a href="{{ url('/courses') }}">Daily Challenges</a>
+                                    <a href="{{ url('/challenges') }}">Daily Challenges</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/videos') }}">Premium Challenges</a>
+                                    <a href="{{ url('/challenges/type:premium') }}">Premium Challenges</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('/books') }}">My Scorecard</a>

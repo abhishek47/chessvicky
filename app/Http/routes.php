@@ -70,6 +70,9 @@ Route::get('/questions/{slug}' , 'QuestionsController@show');
 Route::get('/questions/{id}/unmark', 'QuestionsController@unmark');
 Route::post('/questions/{id}/answers', 'AnswersController@store');
 
+Route::get('/challenges', 'ChallengesController@list');
+Route::post('/challenges/{slug}', 'ChallengesController@check');
+
 
 
 Route::get('/game', 'GamesController@index');
@@ -156,11 +159,12 @@ Route::post('/admin/quiz/categories', 'QuizController@storecategories');
 Route::post('/admin/quiz/categories/{id}', 'QuizController@updatecategories');
 
 // Challenges :
-Route::get('/admin/challenges/daily', 'AdminController@dailychallenges');
-Route::get('/admin/challenges/weekly', 'AdminController@weeklychallenges');
+Route::get('/admin/challenges', 'AdminController@challenges');
 Route::get('/admin/challenges/new', 'ChallengesController@create');
-Route::post('/admin/challenges/', 'ChallengesController@store');
-
+Route::get('/admin/challenges/{slug}/edit', 'ChallengesController@edit');
+Route::post('/admin/challenges/{slug}', 'ChallengesController@update');
+Route::post('/admin/challenges', 'ChallengesController@store');
+Route::get('/admin/challenges/{slug}/delete', 'ChallengesController@delete');
 
 
 

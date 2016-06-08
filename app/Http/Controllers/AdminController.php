@@ -17,7 +17,7 @@ use App\Models\Reply;
 use App\Models\Tutorial;
 use App\Models\Video;
 use App\Models\Article;
-
+use App\Models\Challenge;
 
 class AdminController extends Controller
 {
@@ -107,6 +107,15 @@ class AdminController extends Controller
         $count = count($books);
         $page = 'books';
         return view('admin.books.index', compact('books', 'count', 'page', 'categories'));
+    }
+
+     public function challenges()
+    { 
+
+        $challenges = Challenge::paginate(10);
+        $count = Challenge::count();
+        $page  = 'challenges';
+        return view('admin.challenges.index', compact('challenges', 'page', 'count'));
     }
 
     
