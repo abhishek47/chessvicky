@@ -98,7 +98,13 @@
                                     <i class="fa fa-check"></i>   
                                   @endif  
                                 </a> 
-                                @endif  | &nbsp;
+                                @else
+                                   @if($question->answered && $question->canswer_id == $answer->id)
+                                      <i class="fa fa-check"> Answer</i>
+                                   @endif
+                                @endif 
+                                 
+                                  | &nbsp;
                                        {{ $answer->created_at->diffForHumans() }} | Tags : </strong> {{ $answer->tags }} 
                                          
                                         
