@@ -60,6 +60,20 @@ Route::post('/grade', 'ProfileController@grade');
 Route::post('/idols/messages', 'MessagesController@store');
 Route::get('/conversations', 'IdolsController@idolConversations');
 
+Route::get('/forum', 'ForumController@index');
+Route::get('/forum/{username}', 'ForumController@listByUser');
+Route::post('forum/answer/like', 'AnswersController@like');
+
+Route::post('/questions', 'QuestionsController@store');
+Route::get('/questions/{id}/answered/{ansid}', 'QuestionsController@answered');
+Route::get('/questions/{slug}' , 'QuestionsController@show');
+Route::get('/questions/{id}/unmark', 'QuestionsController@unmark');
+Route::post('/questions/{id}/answers', 'AnswersController@store');
+
+
+
+Route::get('/game', 'GamesController@index');
+
 /************* MAIN APP ROUTES END HERE *************/
 
 

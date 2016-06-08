@@ -10,7 +10,7 @@
                         <div class="card-box">
                           @foreach($messages as $message)
                             <div class="comment">
-                                <img src="assets/images/users/avatar-1.jpg" alt="" class="comment-avatar">
+                                <img src="http://coderthemes.com/ubold_1.5/menu_2/assets/images/users/avatar-1.jpg" alt="" class="comment-avatar">
                                 <div class="comment-body">
                                     <div class="comment-text">
                                         <div class="comment-header">
@@ -20,13 +20,13 @@
 
                                         <div class="m-t-15">
                                             <a href="">
-                                                <img src="assets/images/small/img1.jpg" class="thumb-md">
+                                                <img src="http://coderthemes.com/ubold_1.5/menu_2/assets/images/users/avatar-1.jpg" class="thumb-md">
                                             </a>
                                             <a href="">
-                                                <img src="assets/images/small/img2.jpg" class="thumb-md">
+                                                <img src="http://coderthemes.com/ubold_1.5/menu_2/assets/images/users/avatar-1.jpg" class="thumb-md">
                                             </a>
                                             <a href="">
-                                                <img src="assets/images/small/img3.jpg" class="thumb-md">
+                                                <img src="http://coderthemes.com/ubold_1.5/menu_2/assets/images/users/avatar-1.jpg" class="thumb-md">
                                             </a>
                                         </div>
                                     </div>
@@ -41,12 +41,11 @@
                             </div>
                             @endforeach
 
-                            <div class="m-t-30 text-center">
-                                <a href="" class="btn btn-default waves-effect waves-light btn-sm">Load More...</a>
-                            </div>
+                          
                         </div>
                     </div>
     	</div>
+        {!! $messages->render() !!}
     </div>
 
 @stop

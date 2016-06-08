@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use App\Models\Idol;
 
+use App\Models\Like;
+
 class User extends Authenticatable
 {
     /**
@@ -25,6 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+
+    public function fullname()
+    {
+       return $this->fname . ' ' . $this->lname;
+    }
 
     public function subscription()
     {
@@ -52,6 +60,16 @@ class User extends Authenticatable
     public function isIdol()
     {
         if(Idol::where('user_id', $this->id)->first())
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function likes($ansId)
+    {
+        if(Like::where('user_id', $this->id)->where('answer_id', $ansId)->first())
         {
             return true;
         }

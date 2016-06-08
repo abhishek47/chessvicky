@@ -55,7 +55,7 @@ class IdolsController extends Controller
        }
        
        $messages = Message::where('reciever_id', \Auth::user()->id )
-                           ->orWhere('sender_id', \Auth::user()->id)->get();
+                           ->orWhere('sender_id', \Auth::user()->id)->paginate(20);
 
        $page = 'idols';
        

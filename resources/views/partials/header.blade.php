@@ -212,16 +212,13 @@
                             <a href="#"></i>Forum</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="{{ url('/courses') }}">List All Conversations</a>
+                                    <a href="{{ url('/forum') }}">List All Conversations</a>
+                                </li>
+                               <li>
+                                    <a href="{{ url('/forum/' . Auth::user()->username ) }}">My Conversations</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/videos') }}">Start New Conversation</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('/books') }}">My Conversations</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('/tutorials') }}">Trending Conversations</a>
+                                    <a href="{{ url('/forum/trending') }}">Trending Conversations</a>
                                 </li>
                             </ul>
                         </li>

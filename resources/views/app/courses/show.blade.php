@@ -12,6 +12,7 @@
                                 <h3 class="panel-title">Course : {{ $course->title }}</h3>
                             </div>
                             <div class="panel-body">
+                              <p>{{ $course->desc }}</p>
                                <p>
                                   @if($firstvideo)
                                    <a href="{{ url('courses/' . $course->slug . '/' . $firstvideo->slug ) }}" class="btn btn-sm  btn-success">Start Course</a>
@@ -29,7 +30,7 @@
                                 
                             </div>
                         </div>	
-                          <div class="col-lg-12">
+                         <!--  <div class="col-lg-12">
                         <div class="tabs-vertical-env">
                             <ul class="nav tabs-vertical">
                                 <li class="active">
@@ -95,6 +96,31 @@
                             </div>
                         </div>
                     </div>
+ -->
+          
+          <div class="page-header">
+              <h2>Videos</h2>
+          </div>
+
+          <?php  $key = 0; ?>
+           <div class="row">
+         @foreach($course->videos as  $video)
+              <?php  $key += 1; ?>
+             <div class="col-sm-6 col-lg-3 col-md-4 webdesign illustrator">
+                            <div class="gal-detail thumb">
+                                <a href="{{ url('/courses/' . $course->slug . '/' . $video->slug ) }}" class="image-popup" title="Screenshot-1">
+                                    <img src="{{ $video->poster_url }}" style="height:230px;" class="thumb-img" alt="work-thumbnail">
+                                </a>
+                                <p></p>
+                                <p><strong>{{ $video->position . '. ' . str_limit($video->title, 40) }}</strong></p>
+                                <p><b>Tags : </b> {{ $video->tags }}</p>
+                            </div>
+                        </div>
+                   @if($key % 4 === 0)
+                      </div>
+                      <div class="row">
+                   @endif   
+          @endforeach 
 
   </div>
 
