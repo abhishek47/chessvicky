@@ -1,79 +1,85 @@
 var board,
-  game = new Chess(),
-  statusEl = $('#status'),
-  fenEl = $('#fen'),
-  pgnEl = $('#pgn');
+  chess;
 
-// do not pick up pieces if the game is over
-// only pick up pieces for the side to move
-var onDragStart = function(source, piece, position, orientation) {
-  if (game.game_over() === true ||
-      (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-      (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
-    return false;
-  }
-};
 
-var onDrop = function(source, target) {
-  // see if the move is legal
-  var move = game.move({
-    from: source,
-    to: target,
-    promotion: 'q' // NOTE: always promote to a queen for example simplicity
-  });
-
-  // illegal move
-  if (move === null) return 'snapback';
-
-  updateStatus();
-};
-
-// update the board position after the piece snap 
-// for castling, en passant, pawn promotion
 var onSnapEnd = function() {
-  board.position(game.fen());
-};
-
-var updateStatus = function() {
-  var status = '';
-
-  var moveColor = 'White';
-  if (game.turn() === 'b') {
-    moveColor = 'Black';
-  }
-
-  // checkmate?
-  if (game.in_checkmate() === true) {
-    status = 'Game over, ' + moveColor + ' is in checkmate.';
-  }
-
-  // draw?
-  else if (game.in_draw() === true) {
-    status = 'Game over, drawn position';
-  }
-
-  // game still on
-  else {
-    status = moveColor + ' to move';
-
-    // check?
-    if (game.in_check() === true) {
-      status += ', ' + moveColor + ' is in check';
-    }
-  }
-
-  statusEl.html(status);
-  fenEl.html(game.fen());
-  pgnEl.html(game.pgn());
+  board.position(chess.fen());
 };
 
 var cfg = {
-  draggable: true,
+  draggable: false,
   position: 'start',
-  onDragStart: onDragStart,
-  onDrop: onDrop,
-  onSnapEnd: onSnapEnd
+ onSnapEnd: onSnapEnd
 };
-board = ChessBoard('board', cfg);
 
-updateStatus();
+board = ChessBoard('board', cfg);
+chess = new Chess();
+
+var makeRandomMove = function() {
+  var possibleMoves = chess.moves();
+
+  // game over
+  if (possibleMoves.length === 0) return;
+
+  var randomIndex = Math.floor(Math.random() * possibleMoves.length);
+  chess.move(possibleMoves[randomIndex]);
+  board.position(chess.fen());
+};
+
+
+function clickOnSquare(evt) {
+  
+ 
+
+  var square = $(this).data("square");
+   var squareEl = $('#board .square-' + square);
+
+     $('#board .square-55d63').css('background', '');
+       // highlight the square they clicked over
+  var background = '#a9a9a9';
+  if (squareEl.hasClass('black-3c85d') === true) {
+    background = '#696969';
+  }
+
+    squareEl.css('background', background);
+  
+    
+    var source = $('#source').data('val');
+    
+    if(source == 0)
+    {
+      $('#source').data('val', square);
+     
+    } else {
+        
+        
+        var destination = square;
+
+     console.log(source+destination);
+
+   
+  var move = chess.move({
+    from: source.toString(),
+    to: destination.toString(),
+    promotion: 'q' // NOTE: always promote to a queen for example simplicity
+  });
+   
+
+  // illegal move
+  if (move != null) {
+     board.position(chess.fen());
+      window.setTimeout(makeRandomMove, 250);
+  }
+      
+       $('#source').data('val', 0);
+        $('#board .square-55d63').css('background', '');
+    }
+
+  
+  
+  
+   
+  console.log("You clicked on square: " + square);
+}
+
+$("#board").on("click", ".square-55d63", clickOnSquare);
