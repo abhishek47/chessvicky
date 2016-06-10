@@ -101,7 +101,7 @@
               var p2 = $('#p2-'+cid).val();
               var slug = $(this).attr("data-slug");
              
-              var ans = p1 + ' ' + p2;
+              var ans = p1.toLowerCase() + ' ' + p2.toLowerCase();
               var htmldata= '<h4 class="text-success"><b>Congratulations!You have solved the puzzle!</b></h4>';
               var htmldata2 = '<h4 class="text-danger"><b>Sorry!!This is an Incorrect move!</b></h4>' ;
               var dataString = 'cid='+ cid +'&solution='+ans;
