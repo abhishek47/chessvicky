@@ -227,7 +227,7 @@
                             <a href="#"></i>Online Chess</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="{{ url('/courses') }}">New Game</a>
+                                    <a href="{{ url('/game') }}">New Game</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('/videos') }}">Challenge Friend</a>
