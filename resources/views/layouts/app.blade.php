@@ -25,7 +25,7 @@
     <link href="/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="/css/responsive.css" rel="stylesheet" type="text/css" />
     
-    <link rel="stylesheet" type="text/css" href="css/chessboard-0.3.0.css">
+    <link rel="stylesheet" type="text/css" href="/css/chessboard-0.3.0.css">
 
   <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 

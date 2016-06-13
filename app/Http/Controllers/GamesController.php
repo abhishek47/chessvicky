@@ -29,4 +29,9 @@ class GamesController extends Controller
         return view('app.game.new');
     }
 
+     public function live()
+    {
+        return view('app.game.live');
+    }
+
 }

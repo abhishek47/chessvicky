@@ -230,7 +230,7 @@
                                     <a href="{{ url('/game') }}">Play With Computer</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/game/live/') }}">Challenge Friend</a>
+                                    <a href="{{ url('/live?gameid=') }}">Challenge Friend</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('/game/tournaments') }}">Tournaments</a>

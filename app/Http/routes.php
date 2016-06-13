@@ -76,6 +76,7 @@ Route::post('/challenges/{slug}', 'ChallengesController@check');
 
 
 Route::get('/game', 'GamesController@index');
+Route::get('/live', 'GamesController@live');
 Route::get('/enginegame', 'GamesController@engine');
 
 /************* MAIN APP ROUTES END HERE *************/
