@@ -14,7 +14,7 @@
     	@media (max-width: 762px)
     	{
 	    	#board {
-	    		width: 90%;
+	    		width: 100%;
 	    	}	
     	}
     </style>
