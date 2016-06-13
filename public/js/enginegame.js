@@ -218,7 +218,9 @@ var playAudio = function() {
 
 function clickOnSquare(evt) {
   
- 
+   if (game.game_over()) {
+                return false;
+            }
 
   var square = $(this).data("square");
    var squareEl = $('#board .square-' + square);

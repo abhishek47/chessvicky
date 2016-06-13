@@ -2,9 +2,7 @@
 
 @section('content')
 
-
- 	
- 	<div class="panel panel-border panel-inverse"> 
+	<div class="panel panel-border panel-inverse"> 
  		<div class="panel-heading">
  			
  		</div>
@@ -44,7 +42,7 @@
             <div class="col-xs-4 col-sm-6 col-md-4">
               <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-primary active" id="color-white"><input type="radio" name="color">White</label>
-                <label class="btn btn-primary" id="color-black"><input type="radio" name="color">Black</label>
+                <label class="btn btn-inverse" id="color-black"><input type="radio" name="color">Black</label>
               </div>
             </div>
           </div>
