@@ -1,6 +1,6 @@
   $(document).ready(function() {
        
-    var socket = io.connect('https://chessvicky.com:3000');
+    var socket = io.connect('http://localhost:3000');
                                         //initiated socket client
     socket.emit('join', getParameterByName('gameid'));  //join room as defined by query parameter in URL bar
 
