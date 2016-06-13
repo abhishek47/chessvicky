@@ -259,13 +259,14 @@ function clickOnSquare(evt) {
   // illegal move
   if (move != null) {
      board.position(game.fen());
+      playAudio();
      squareEl.css('background', background);
         var background = '#a9a9a9';
           if ($('#board .square-' + source).hasClass('black-3c85d') === true) {
             background = '#696969';
           }
            $('#board .square-' + source).css('background', background);
-      playAudio();
+     
       prepareMove();
       
       var html = $('#moves').html();

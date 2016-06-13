@@ -8,7 +8,14 @@
     	}
 
     	#board {
-    		width: 80%;
+    		width: 70%;
+    	}
+
+    	@media (max-width: 762px)
+    	{
+	    	#board {
+	    		width: 90%;
+	    	}	
     	}
     </style>
  	
