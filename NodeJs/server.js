@@ -4,6 +4,9 @@ var io = require('socket.io')(server);
 var redis = require('redis');
  
 server.listen(8080, '104.131.2.218');
+
+console.log ("Node Server Started");
+
 io.on('connection', function (socket) {
  
   console.log("new client connected");
