@@ -268,19 +268,16 @@ function clickOnSquare(evt) {
            $('#board .square-' + source).css('background', background);
      
       prepareMove();
-      
-      var html = $('#moves').html();
-      
-      rowCount++;
-      $('#moves').append(newline+rowCount+'. '+element1+move.san+elementEnd);
+     
       
   } else {
       
       
         $('#board .square-55d63').css('background', '');
        } 
+
         $('#source').data('val', 0);
-        updateStatus();
+        
     }
 
   
