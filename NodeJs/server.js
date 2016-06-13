@@ -3,7 +3,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var redis = require('redis');
  
-server.listen(8080, '104.131.2.218');
+server.listen();
 
 console.log ("Node Server Started");
 
