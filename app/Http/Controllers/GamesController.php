@@ -22,4 +22,11 @@ class GamesController extends Controller
     {
     	return view('app.game.index');
     }
+   
+
+   public function engine()
+    {
+        return view('app.game.new');
+    }
+
 }

@@ -227,16 +227,16 @@
                             <a href="#"></i>Online Chess</a>
                             <ul class="submenu">
                                 <li>
-                                    <a href="{{ url('/game') }}">New Game</a>
+                                    <a href="{{ url('/game') }}">Play With Computer</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/videos') }}">Challenge Friend</a>
+                                    <a href="{{ url('/game/live/') }}">Challenge Friend</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/books') }}">Tournaments</a>
+                                    <a href="{{ url('/game/tournaments') }}">Tournaments</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/tutorials') }}">Leaderboard</a>
+                                    <a href="{{ url('/game/leaderboard') }}">Leaderboard</a>
                                 </li>
                             </ul>
                         </li>
