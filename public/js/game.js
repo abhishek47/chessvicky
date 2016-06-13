@@ -1,6 +1,6 @@
   $(document).ready(function() {
        
-    var socket = io.connect('https://waniabhishek.com:3000');
+    var socket = io.connect('https://chessvicky.com:3000');
                                         //initiated socket client
     socket.emit('join', getParameterByName('gameid'));  //join room as defined by query parameter in URL bar
 
@@ -144,6 +144,20 @@
         }
         updateStatus();
         board.position(game.fen());
+         $('#board .square-55d63').css('background', '');
+
+                var background = '#a9a9a9';
+              if ($('#board .square-' + move.to).hasClass('black-3c85d') === true) {
+                background = '#696969';
+              }
+               $('#board .square-' + move.to).css('background', background);
+
+               var background = '#a9a9a9';
+              if ($('#board .square-' + move.from).hasClass('black-3c85d') === true) {
+                background = '#696969';
+              }
+               $('#board .square-' + move.from).css('background', background);
+                playAudio();
       });
 
  //the example code goes here
