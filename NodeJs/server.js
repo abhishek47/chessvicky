@@ -3,7 +3,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var redis = require('redis');
  
-server.listen(9000);
+server.listen(80);
 io.on('connection', function (socket) {
  
   console.log("new client connected");
