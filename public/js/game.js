@@ -1,6 +1,6 @@
   $(document).ready(function() {
        
-    var socket = io.connect('http://localhost:8890');
+    var socket = io.connect('https://localhost:8890');
                                         //initiated socket client
     socket.emit('join', getParameterByName('gameid'));  //join room as defined by query parameter in URL bar
 
