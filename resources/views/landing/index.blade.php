@@ -178,16 +178,6 @@
       </div>
    	   <section id="vision">
    	   	   <div class="container"> 
-               <div class="row">
-                  <div class="col-md-12 col-xs-12 item">
-                  
-                  <div class="col-xs-12">
-                      <h2>Vision 2020</h2>
-                    <p>Vinayak Wadile,The Core Founder of ChessVicky,aims to make a grandmaster through our courses and other resources.
-                    </p>
-                  </div>
-                 </div>
-              </div>
    	   	   	  <div class="row">
    	   	   	  	 <div class="col-md-6 col-xs-12 item">
    	   	   	  	 	<div class="col-xs-3">
@@ -213,7 +203,16 @@
               <br><br>
               <hr>
               <br>
-             
+              <div class="row">
+                  <div class="col-md-12 col-xs-12 item">
+                  
+                  <div class="col-xs-12">
+                      <h2>Vision 2020</h2>
+                    <p>Vinayak Wadile,The Core Founder of ChessVicky,aims to make a grandmaster through our courses and other resources.
+                    </p>
+                  </div>
+                 </div>
+              </div>
    	   	   </div>
    	   </section>
 
