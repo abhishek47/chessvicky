@@ -12,7 +12,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    ChessVicky
+                    ChessV<i class="glyphicon glyphicon-bishop"></i>cky
                 </a>
             </div>
 
