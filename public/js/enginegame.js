@@ -190,7 +190,9 @@ var playAudio = function() {
 
     var cfg = {
         draggable: false,
+        /*boardTheme: "symbol_board_theme,*/
         position: 'start',
+
        
     };
 

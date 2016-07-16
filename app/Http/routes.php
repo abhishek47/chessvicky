@@ -14,6 +14,7 @@
 /* LANDING PAGE */
 
 Route::get('/', 'LandingController@index');
+Route::get('/subscribe', 'LandingController@subscribe');
 
 
 /* AUTHENTICATION */
@@ -72,6 +73,13 @@ Route::post('/questions/{id}/answers', 'AnswersController@store');
 
 Route::get('/challenges', 'ChallengesController@list');
 Route::post('/challenges/{slug}', 'ChallengesController@check');
+
+
+Route::get('/quiz', 'QuizController@list');
+Route::get('/quiz/level:{level}/cat:{cat}', 'QuizController@list');
+Route::get('/quiz/{slug}', 'QuizController@show');
+Route::post('/quiz/{slug}', 'QuizController@check');
+
 
 
 
@@ -156,9 +164,14 @@ Route::get('/admin/leaderboards', 'AdminController@leaderboards');
 // Quiz : 
 Route::get('/admin/quiz', 'AdminController@quiz');
 Route::get('/admin/quiz/new', 'QuizController@create');
-Route::get('/admin/quiz/categories', 'QuizController@categories');
-Route::post('/admin/quiz/categories', 'QuizController@storecategories');
-Route::post('/admin/quiz/categories/{id}', 'QuizController@updatecategories');
+Route::post('/admin/quiz', 'QuizController@store');
+Route::post('/admin/quiz/{slug}/questions', 'QuizController@storeQuestion');
+Route::post('/admin/quiz/{slug}/{id}', 'QuizController@updateQuestion');
+Route::get('/admin/quiz/{slug}/{id}/delete', 'QuizController@deleteQuestion');
+Route::get('/admin/quiz/{slug}', 'QuizController@showadmin');
+Route::get('/admin/quiz/{slug}/edit', 'QuizController@edit');
+Route::post('/admin/quiz/{slug}/update', 'QuizController@update');
+Route::get('/admin/quiz/{slug}/delete', 'QuizController@edit');
 
 // Challenges :
 Route::get('/admin/challenges', 'AdminController@challenges');

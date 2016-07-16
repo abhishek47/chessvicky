@@ -8,7 +8,7 @@
          <div class="panel-body">
             <div class="row">
               <div class="col-md-8">
-              	 <h3 style="text-transform: capitalize;"><strong>Daily Challenges</strong></h3>
+              	 <h3 style="text-transform: capitalize;"><strong>Checkmate in One Move</strong></h3>
               </div>
               <div class="col-md-4">
        

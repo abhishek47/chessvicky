@@ -14,7 +14,7 @@
     <link href="/css/sweetalert.css" rel="stylesheet" type="text/css">
     
       
-      <link href="http://vjs.zencdn.net/5.9.2/video-js.css" rel="stylesheet">
+      <link href="https://vjs.zencdn.net/5.9.2/video-js.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/swipebox.min.css">
     <link href="/css/app.css" rel="stylesheet">
@@ -27,7 +27,7 @@
     
     <link rel="stylesheet" type="text/css" href="/css/chessboard-0.3.0.css">
 
-  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
 
   <script>
@@ -63,7 +63,7 @@
 
     
 
- <script src="http://vjs.zencdn.net/5.9.2/video.js"></script>
+ <script src="https://vjs.zencdn.net/5.9.2/video.js"></script>
 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

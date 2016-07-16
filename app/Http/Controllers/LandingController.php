@@ -18,4 +18,9 @@ class LandingController extends Controller
     {
     	return view('landing.index');
     }
+
+    public function subscribe()
+    {
+    	return view('landing.subscribe');
+    }
 }

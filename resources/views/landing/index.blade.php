@@ -11,17 +11,12 @@
             <div class="container">
                 <div class="row">
                    <a href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
-                      <img src="/images/partners/trumpets.png">
+                      <img  src="/images/partners/trumpets.png">
                    </a>
-                   <a href="http://www.trumpetstechnologies.com/webbins" class="col-md-3 col-xs-6">
-                      <img src="/images/partners/webbins.png">
+                   <a href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
+                      <img  src="/images/partners/akash.png">
                    </a>
-                    <a href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
-                      <img src="/images/partners/trumpets.png">
-                   </a>
-                   <a href="http://www.trumpetstechnologies.com/webbins" class="col-md-3 col-xs-6">
-                      <img src="/images/partners/webbins.png">
-                   </a>
+                 
                 </div>
             </div>
             
@@ -40,7 +35,7 @@
                        </div>
                        <div class="col-xs-9">
                          <h3>Courses</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Design to develop your data. 
                         
                          </p>
                         </div> 
@@ -51,7 +46,7 @@
                        </div>
                        <div class="col-xs-9">
                          <h3>Articles</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Knowledge through literature. 
                         
                          </p>
                         </div> 
@@ -62,18 +57,20 @@
                        </div>
                        <div class="col-xs-9">
                          <h3>Player Profiles</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Project yourself and gain the Fans. 
                         
                          </p>
                         </div> 
                      </div>
+                     </div>
+                     <div class="row">
                      <div class="col-md-4 col-xs-12 item">
                          <div class="col-xs-3">
                           <img src="/images/graphics/calendar.svg">
                        </div>
                        <div class="col-xs-9">
                          <h3>Daily Challenges</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Accept the challenge to move Ahead ! 
                         
                          </p>
                         </div> 
@@ -84,7 +81,7 @@
                        </div>
                        <div class="col-xs-9">
                          <h3>Cash Prizes</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Use your brain to grab the cash. 
                         
                          </p>
                         </div> 
@@ -95,18 +92,20 @@
                        </div>
                        <div class="col-xs-9">
                          <h3>SuperIdols</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Mastery From Masters. 
                         
                          </p>
                         </div> 
                      </div>
+                     </div>
+                     <div class="row">
                      <div class="col-md-4 col-xs-12 item">
                          <div class="col-xs-3">
                           <img src="/images/graphics/chat.svg">
                        </div>
                        <div class="col-xs-9">
                          <h3>Forum</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Come, Discuss, Share and Upgrade.
                         
                          </p>
                         </div> 
@@ -117,7 +116,7 @@
                        </div>
                        <div class="col-xs-9">
                          <h3>News Feed</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>News ; Views ; Reviews. 
                         
                          </p>
                         </div> 
@@ -129,19 +128,20 @@
                        </div>
                        <div class="col-xs-9">
                          <h3>Resources</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Pitch the info from the father. 
                         
                          </p>
                         </div> 
                      </div>
-
+                     </div>
+                     <div class="row"> 
                      <div class="col-md-4 col-xs-12 item">
                          <div class="col-xs-3">
                           <img src="/images/graphics/horse.svg">
                        </div>
                        <div class="col-xs-9">
                          <h3>Play Chess</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Wanna beat me ? 
                         
                          </p>
                         </div> 
@@ -152,13 +152,13 @@
                        </div>
                        <div class="col-xs-9">
                          <h3>And More..</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <p>Explore the world of chess.
                         
                          </p>
                         </div> 
                      </div>
 
-                     
+                     </div>
 
                   </div> 
                 </div>
@@ -168,88 +168,13 @@
    	   <hr/>
       </div>
 
-   	 <section id="pricePlans">
-      
-      <ul id="plans">
-         <div>
-            <h2 class="text-center visible-xs">Pricing</h2>
-         </div>
-         <li class="plan">
-            <ul class="planContainer">
-               <li class="title"><h2>Free Trial</h2></li>
-               <li class="price"><p>&#8377;0/<span>month</span></p></li>
-               <li>
-                  <ul class="options">
-                     <li>Free For <span>14 days</span></li>
-                     <li>No <span>Billing Details</span></li>
-                    <li>Watch Unlimited <span>Courses</span></li>
-                     <li>Premium <span>articles</span></li>
-                    <li>And <span>more</span></li>
-                  </ul>
-               </li>
-               <li class="button"><a href="/register?trial=true">START TRIAL</a></li>
-            </ul>
-         </li>
-
-         <li class="plan">
-            <ul class="planContainer">
-               <li class="title"><h2 class="bestPlanTitle">Monthly</h2></li>
-               <li class="price"><p class="bestPlanPrice">&#8377;700/month</p></li>
-               <li>
-                  <ul class="options">
-                     <li>2x <span>option 1</span></li>
-                     <li>Win <span>Cash Prizes</span></li>
-                     <li>Watch Unlimited <span>Courses</span></li>
-                     <li>Premium <span>articles</span></li>
-                    <li>And <span>more</span></li>
-                  </ul>
-               </li>
-               <li class="button"><a class="bestPlanButton" href="/register?plan=1">JOIN NOW</a></li>
-            </ul>
-         </li>
-
-         <li class="plan">
-            <ul class="planContainer">
-               <li class="title"><h2>Quaterly</h2></li>
-               <li class="price"><p>&#8377;3900/<span>6 months</span></p></li>
-               <li>
-                  <ul class="options">
-                     <li>Get 15 Days <span>Free</span></li>
-                     <li>Win <span>Cash Prizes</span></li>
-                    <li>Watch Unlimited <span>Courses</span></li>
-                     <li>Premium <span>articles</span></li>
-                     <li>And <span>more</span></li>
-                  </ul>
-               </li>
-               <li class="button"><a href="/register?plan=2">JOIN NOW</a></li>
-            </ul>
-         </li>
-
-         <li class="plan">
-            <ul class="planContainer">
-               <li class="title"><h2>Annualy</h2></li>
-               <li class="price"><p>&#8377;7000/<span>year</span></p></li>
-               <li>
-                  <ul class="options">
-                      <li>Get 1 Month <span>Free</span></li>
-                     <li>Win <span>Cash Prizes</span></li>
-                     <li>Watch Unlimited <span>Courses</span></li>
-                     <li>Premium <span>articles</span></li>
-                     <li>And <span>more</span></li>
-                  </ul>
-               </li>
-               <li class="button"><a href="/register?plan=3">JOIN NOW</a></li>
-            </ul>
-         </li>
-      </ul> <!-- End ul#plans -->
-      
-   </section>
+  
       
          
 
      
       <div class="container">
-   	   <hr/>
+   	   
       </div>
    	   <section id="vision">
    	   	   <div class="container"> 
@@ -260,8 +185,7 @@
    	   	   	  	 	</div>
    	   	   	  	 	<div class="col-xs-9">
    	   	   	  	 	    <h3>Vinayak Wadile</h3>
-   	   	   	  	 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   	   	   	  	 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+   	   	   	  	 		<p>Chairman and Co-Founder at ChessVicky.Being a great chess player I am here to write and create usefull resources for all our members at ChessVicky.
    	   	   	  	 		</p>
    	   	   	  	 	</div>
    	   	   	  	 </div>
@@ -271,12 +195,24 @@
    	   	   	  	 	</div>
    	   	   	  	 	<div class="col-xs-9">
    	   	   	  	 	    <h3>Abhishek Wani</h3>
-   	   	   	  	 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   	   	   	  	 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+   	   	   	  	 		<p>Director and Co-Founder at ChessVicky.Being a Computer Engineer I am here to manage the technical consent of ChessVicky.
    	   	   	  	 		</p>
    	   	   	  	 	</div>
    	   	   	  	 </div>
    	   	   	  </div>
+              <br><br>
+              <hr>
+              <br>
+              <div class="row">
+                  <div class="col-md-12 col-xs-12 item">
+                  
+                  <div class="col-xs-12">
+                      <h2>Vision 2020</h2>
+                    <p>Vinayak Wadile,The Core Founder of ChessVicky,aims to make a grandmaster through our courses and other resources.
+                    </p>
+                  </div>
+                 </div>
+              </div>
    	   	   </div>
    	   </section>
 

@@ -18,6 +18,7 @@ use App\Models\Tutorial;
 use App\Models\Video;
 use App\Models\Article;
 use App\Models\Challenge;
+use App\Models\Quiz;
 
 class AdminController extends Controller
 {
@@ -117,7 +118,16 @@ class AdminController extends Controller
         $page  = 'challenges';
         return view('admin.challenges.index', compact('challenges', 'page', 'count'));
     }
+   
 
+    public function quiz()
+    {
+        $data['quizzes'] = Quiz::latest()->paginate(20);
+        $data['page'] = 'quiz';
+        $data['count'] = Quiz::count();
+
+        return view('admin.quiz.index', $data);
+    }
     
 
 

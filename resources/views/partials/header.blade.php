@@ -190,11 +190,9 @@
                                 <li>
                                     <a href="{{ url('/challenges/type:premium') }}">Premium Challenges</a>
                                 </li>
+                              
                                 <li>
-                                    <a href="{{ url('/books') }}">My Scorecard</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('/tutorials') }}">Leaderboard</a>
+                                    <a href="{{ url('/leaderboard') }}">Leaderboard</a>
                                 </li>
                             </ul>
                         </li>
@@ -236,16 +234,20 @@
                                     <a href="{{ url('/game/tournaments') }}">Tournaments</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/game/leaderboard') }}">Leaderboard</a>
+                                    <a href="{{ url('/leaderboard') }}">Leaderboard</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="has-submenu">
                             <a href="#"></i>More</a>
                             <ul class="submenu">
-                                <li><a href="ecommerce-dashboard.html"> Quizzes</a></li>
-                                <li><a href="ecommerce-products.html"> References</a></li>
-                                <li><a href="ecommerce-product-detail.html"> Analysis Tools</a></li>
+                                <li><a href="{{ url('/quiz') }}"> Quizzes</a></li>
+                                <li>
+                                    <a href="{{ url('/leaderboard') }}">Leaderboard</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/tools') }}">Analysis Tools</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

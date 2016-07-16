@@ -92,6 +92,7 @@
    
     <script src="/js/chess.js"></script>
     <script src="/js/chessboard-0.3.0.js"></script>
+    <script src="/js/chessboardjs-themes.js"></script>
     <script src="/js/enginegame.js"></script>
     <script src="/js/smartgame.js"></script>
   

@@ -22,7 +22,7 @@
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('#features') }}">Features</a></li>
                     <li><a href="{{ url('#vision') }}">About</a></li>
-                    <li><a href="{{ url('#pricePlans') }}">Pricing</a></li>
+                    <li><a href="{{ url('/subscribe') }}">Subscribe</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

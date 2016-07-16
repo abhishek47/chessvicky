@@ -106,3 +106,39 @@ function color($code)
                break;
      }
 }
+
+
+
+function quizCategory($code)
+{
+     switch ($code) {
+          case 0:
+               return 'Basic';
+               break;
+          case 1:
+               return 'Intermidiate';
+               break;
+          case 2:
+               return 'Advanced';
+               break;
+          case 3:
+               return 'Professional';
+               break;
+          
+          default:
+              return 'Basic';
+               break;
+     }
+}
+
+function getQuizPoints($quiz) {
+   
+   $points = 0;
+   
+   foreach ($quiz->questions as $key => $question) 
+   {
+      $points += $question->points;
+   }  
+
+   return $points;
+}

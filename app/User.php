@@ -57,6 +57,11 @@ class User extends Authenticatable
         return $this->hasMany(Models\Favourite::class);
     }
 
+      public function profile()
+    {
+        return $this->hasOne(Models\Profile::class);
+    }
+
     public function isIdol()
     {
         if(Idol::where('user_id', $this->id)->first())
