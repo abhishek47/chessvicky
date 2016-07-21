@@ -67,7 +67,12 @@
     
     #partners img {
 	   width: 150px;
-	   margin-top: 15px; 
+
+    }
+
+    #partners:nth-child(3)
+    {
+    	margin-top: 15px; 
     }
 
 
