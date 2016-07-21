@@ -10,13 +10,13 @@
          <section id="partners">
             <div class="container">
                 <div class="row">
-                   <a href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
+                   <a target="_blank" href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
                       <img  src="/images/partners/trumpets.png">
                    </a>
-                   <a href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
+                   <a href="#" data-toggle="modal" data-target="#akashModal" class="col-md-3 col-xs-6">
                       <img  src="/images/partners/akash.png">
                    </a>
-                   <a href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
+                   <a href="#" data-toggle="modal" data-target="#botvinnikModal" class="col-md-3 col-xs-6">
                       <img  src="/images/partners/botvinnik.png">
                    </a>
                  
