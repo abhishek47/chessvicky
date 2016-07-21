@@ -43,7 +43,7 @@
                          </p>
                         </div> 
                      </div>
-                     <div class="col-md-4 col-xs-12 item">
+                     <div class="col-md-4 col-xs-12 item hidden-sm hidden-xs">
                          <div class="col-xs-3">
                           <img src="/images/graphics/article.svg">
                        </div>
@@ -54,7 +54,7 @@
                          </p>
                         </div> 
                      </div>
-                     <div class="col-md-4 col-xs-12 item">
+                     <div class="col-md-4 col-xs-12 item hidden-sm hidden-xs">
                          <div class="col-xs-3">
                           <img src="/images/graphics/boy.svg">
                        </div>
@@ -102,7 +102,7 @@
                      </div>
                      </div>
                      <div class="row">
-                     <div class="col-md-4 col-xs-12 item">
+                     <div class="col-md-4 col-xs-12 item hidden-sm hidden-xs">
                          <div class="col-xs-3">
                           <img src="/images/graphics/chat.svg">
                        </div>
@@ -113,7 +113,7 @@
                          </p>
                         </div> 
                      </div>
-                     <div class="col-md-4 col-xs-12 item">
+                     <div class="col-md-4 col-xs-12 item hidden-sm hidden-xs">
                           <div class="col-xs-3">
                           <img src="/images/graphics/news.svg">
                        </div>
@@ -125,7 +125,7 @@
                         </div> 
                      </div>
 
-                     <div class="col-md-4 col-xs-12 item">
+                     <div class="col-md-4 col-xs-12 item hidden-sm hidden-xs">
                          <div class="col-xs-3">
                           <img src="/images/graphics/list.svg">
                        </div>
