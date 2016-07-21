@@ -181,6 +181,7 @@ Route::post('/admin/challenges/{slug}', 'ChallengesController@update');
 Route::post('/admin/challenges', 'ChallengesController@store');
 Route::get('/admin/challenges/{slug}/delete', 'ChallengesController@delete');
 
+Route::post('admin/notify/', 'AdminController@sendNotification');
 
 
 /************ ADMIN ROUTES END HERE **********/

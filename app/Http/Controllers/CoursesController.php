@@ -116,6 +116,16 @@ class CoursesController extends Controller
        $data['slug'] = str_slug($request->get('title'));
 
    	   Course::create($data);
+
+       
+       $notification['type'] = "NewCourseAdded";
+       $notification['subject'] = "New Course Added";
+       $notification['body'] = "A new course is added on topic : " . Category::findOrFail($data['category_id'])->name . "!!"; 
+       $notification['link'] = url('/' . 'courses' . '/' . $data['slug']); 
+
+       notifyUser($notification); 
+
+
    	   return redirect('admin/courses');
    }
 

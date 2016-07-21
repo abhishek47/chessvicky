@@ -129,7 +129,18 @@ class AdminController extends Controller
         return view('admin.quiz.index', $data);
     }
     
+    public function sendNotification(Request $request)
+    {
+        $user = \Auth::user();
+         $user->newNotification()
+        ->withType('CourseAdded')
+        ->withSubject('New Course Added.')
+        ->withBody('New Course has been added on topic \'Attacks\'!')
+        ->regarding(null)
+        ->deliver();
 
+        return back();
+    }
 
    
 

@@ -18,29 +18,32 @@
                                      <a href=""><i class="fa fa-search"></i></a>
                                 </form>
                             </li>
-                            <li class="dropdown hidden-xs">
+                            <!-- <li class="dropdown hidden-xs">
                                 <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
-                                    <i class="fa fa-bell-o" style="font-size:18px;"></i> <span class="badge badge-xs badge-danger">3</span>
+                                    <i class="fa fa-bell-o" style="font-size:18px;"></i> <span class="badge badge-xs badge-danger">{{ count(\Auth::user()->notifications) }}</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-lg">
-                                    <li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>
+                                    <li class="notifi-title"><span class="label label-default pull-right">New {{ count(\Auth::user()->notifications) }}</span>Notification</li>
                                     <li class="list-group nicescroll notification-list">
-                                       <!-- list item-->
-                                       <a href="javascript:void(0);" class="list-group-item">
-                                          <div class="media">
-                                             <div class="pull-left p-r-10">
-                                                <em class="fa fa-diamond fa-2x text-primary"></em>
-                                             </div>
-                                             <div class="media-body">
-                                                <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                <p class="m-0">
-                                                    <small>There are new settings available</small>
-                                                </p>
-                                             </div>
-                                          </div>
-                                       </a>
+                                       @foreach(\Auth::user()->notifications as $notification)
+                                           
+                                           <a href="{{ $notification->link }}" class="list-group-item">
+                                              <div class="media">
+                                                 <div class="pull-left p-r-10">
+                                                    <em class="fa fa-diamond fa-2x text-primary"></em>
+                                                 </div>
+                                                 <div class="media-body">
+                                                    <h5 class="media-heading">{{ $notification->subject }}</h5>
+                                                    <p class="m-0">
+                                                        <small>{{ $notification->body }}</small>
+                                                    </p>
+                                                 </div>
+                                              </div>
+                                           </a>
 
-                                       <!-- list item-->
+                                       @endforeach
+
+                                       
                                        <a href="javascript:void(0);" class="list-group-item">
                                           <div class="media">
                                              <div class="pull-left p-r-10">
@@ -55,7 +58,7 @@
                                           </div>
                                        </a>
 
-                                       <!-- list item-->
+                                      
                                        <a href="javascript:void(0);" class="list-group-item">
                                           <div class="media">
                                              <div class="pull-left p-r-10">
@@ -70,7 +73,7 @@
                                           </div>
                                        </a>
 
-                                       <!-- list item-->
+                                       
                                        <a href="javascript:void(0);" class="list-group-item">
                                           <div class="media">
                                              <div class="pull-left p-r-10">
@@ -93,7 +96,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> -->
 
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="http://coderthemes.com/ubold_1.5/menu_2/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
@@ -198,11 +201,9 @@
                         </li>
 
                          <li class="">
-                           @if(Auth::user()->isIdol())
-                            <a href="{{ url('/conversations') }}"></i>Conversations</a>
-                          @else
+                          
                             <a href="{{ url('/superidols') }}"></i>Super Idols</a>  
-                          @endif    
+                             
                         </li>
 
 

@@ -142,3 +142,18 @@ function getQuizPoints($quiz) {
 
    return $points;
 }
+
+
+function notifyUser($data)
+{
+   
+    $user = \Auth::user();
+
+    $user->newNotification()
+    ->withType($data['type'])
+    ->withSubject($data['subject'])
+    ->withBody($data['body'])
+    ->regarding($data['link'])
+    ->deliver();
+
+}

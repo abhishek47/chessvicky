@@ -8,6 +8,8 @@ use App\Models\Idol;
 
 use App\Models\Like;
 
+use App\Models\Notification;
+
 class User extends Authenticatable
 {
     /**
@@ -81,4 +83,22 @@ class User extends Authenticatable
 
         return false;
     }
+
+    // In your User model - 1 User has Many Notifications
+    public function notifications()
+    {
+        return $this->hasMany(Models\Notification::class)->unread()->latest();
+    }
+
+
+
+    public function newNotification()
+    {
+        $notification = new Notification;
+        $notification->user()->associate($this);
+
+        return $notification;
+    }
+
+
 }

@@ -25,7 +25,8 @@ class VideosController extends Controller
     {
         $videos = Video::where('course_id', 0)->latest()->paginate(20);
         $page = 'videos';
-        return view('app.videos.index' , compact('videos', 'page'));
+        $notifications = \Auth::user()->notifications()->unread()->latest()->get();
+        return view('app.videos.index' , compact('videos', 'page', 'notifications'));
 
     }
 
@@ -34,14 +35,16 @@ class VideosController extends Controller
            $video = Video::where('slug', $vslug)->first();
            $course = $video->course;
            $page = 'video';
-           return view('app.videos.show' , compact('video', 'course', 'page'));
+           $notifications = \Auth::user()->notifications()->unread()->latest()->get();
+           return view('app.videos.show' , compact('video', 'course', 'page', 'notifications'));
     }
 
      public function showsingle($slug)
     {
            $video = Video::where('slug', $slug)->first();
            $page = 'video';
-           return view('app.videos.showsingle' , compact('video', 'page'));
+           $notifications = \Auth::user()->notifications()->unread()->latest()->get();
+           return view('app.videos.showsingle' , compact('video', 'page', 'notifications'));
     }
 
       public function create()
@@ -75,6 +78,26 @@ class VideosController extends Controller
        $data['slug'] = str_slug($request->get('title'));
 
    	   Video::create($data);
+      
+       $notification['type'] = "NewVideoAdded";
+
+       if($data['course_id'] != 0)
+       {
+         $course = Course::findOrFail($data['course_id']);
+        $notification['body'] = "A new video added to course :" . $course->title . "!"; 
+         $notification['link'] = url('/' . 'courses' . '/' . $course->slug . '/' . $data['slug']); 
+       } else {
+         $notification['body'] = "A new video added!"; 
+         $notification['link'] = url('/' . 'videos' . '/'  . $data['slug']); 
+       }
+       
+       
+       $notification['subject'] = "Video : " . $data['title'] . 'added.';
+      
+
+       notifyUser($notification); 
+
+
    	   return redirect('admin/videos');
    }
 

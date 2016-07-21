@@ -16,6 +16,7 @@ use App\Models\Reply;
 use App\Models\Tutorial;
 use App\Models\Video;
 use App\Models\Article;
+use App\Models\Notification;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,7 @@ class HomeController extends Controller
     {
         $data['user'] = \Auth::user();
         $data['courses'] = Course::latest()->limit(4)->get();
+        $data['notifications'] = \Auth::user()->notifications()->unread()->latest()->get();
         return view('app.home', $data);
     }
 }

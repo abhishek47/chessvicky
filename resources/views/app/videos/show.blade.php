@@ -72,8 +72,8 @@
                  <td>{{ $cvideo->duration }}</td>
                   @if($cvideo->id != $video->id)  
                    <td>
-                    <a href="{{ url('/courses/' . $course->slug . '/' . $cvideo->slug) }}" class="btn  btn-success btn-xs" >Watch</a>
-                  <a href="{{ url('/courses/' . $course->slug . '/' . $cvideo->slug) }}" class="btn  btn-warning btn-xs" >Star</a>&nbsp;
+                    <a href="{{ url('/courses/' . $course->slug . '/' . $cvideo->slug) }}" class="btn  btn-success btn-xs" >Watch Now</a>
+                 <!--  <a href="{{ url('/courses/' . $course->slug . '/' . $cvideo->slug) }}" class="btn  btn-warning btn-xs" >Watch Later</a>&nbsp; -->
                    </td>
                   @else 
                     <td>

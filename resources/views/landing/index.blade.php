@@ -16,6 +16,9 @@
                    <a href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
                       <img  src="/images/partners/akash.png">
                    </a>
+                   <a href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
+                      <img  src="/images/partners/botvinnik.png">
+                   </a>
                  
                 </div>
             </div>
