@@ -67,7 +67,8 @@ class CoursesController extends Controller
         }
       
       $categories = Category::orderBy('name')->get();
-      return view('app.courses.index', compact('courses', 'sby', 'categories', 'c', 'q')); 
+      $page = 'library';
+      return view('app.courses.index', compact('courses', 'sby', 'categories', 'c', 'q', 'page')); 
 
    }
 
@@ -88,7 +89,7 @@ class CoursesController extends Controller
     public function create()
     {
     	$categories = Category::all();
-   	    $page = "courses";
+   	  $page = "library";
     	return view('admin.courses.new' , compact('categories', 'page'));
     }
 

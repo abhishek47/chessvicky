@@ -20,17 +20,21 @@ class GamesController extends Controller
 
     public function index()
     {
-    	return view('app.game.index');
+        $page = 'game';
+    	return view('app.game.index', compact('page'));
     }
    
 
-   public function engine()
+    public function engine()
     {
-        return view('app.game.new');
+        $page = 'game';
+        return view('app.game.new', compact('page'));
     }
+    
 
-     public function live()
+    public function live()
     {
+        $page = 'game';
         return view('app.game.live');
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Profile;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -18,7 +19,78 @@ class ProfileController extends Controller
 
    public function create()
    {
-   	  return view('app.profile.test');
+     $page = 'more';
+   	  return view('app.profile.test', compact('page'));
+   }
+
+   public function show($username)
+   { 
+      $data['user'] = User::where('username', $username)->first();
+      if($data['user']) {
+          if($data['user']->username == \Auth::user()->username){
+           
+           $data['page'] = 'home';
+          return view('app.profile.index', $data);
+            } else {
+           $data['page'] = 'home';
+           return view('app.profile.other', $data);
+            }
+       } else {
+           return view('errors.404');
+       } 
+
+
+    
+   }
+
+
+   public function update(Request $request)
+   {
+       $user = \Auth::user();
+       $this->validate($request, [
+            'fname' => 'required|max:255',
+            'lname' => 'required|max:255',
+            'birthday' => 'required',
+            'gender' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+            'country' => 'required',
+            'bio' => 'required',
+        ]);
+
+       if($request->get('username') == $user->username)
+       {
+          $userData = $request->only(['fname', 'lname', 'birthday', 'gender']);
+          $user->update($userData);
+
+          $profileData = $request->only(['bio', 'country']);
+          $user->profile->update($profileData);
+
+          return back();
+
+       } else {
+          return 'Error!!';
+       }
+
+
+   }
+
+   public function updatePassword(Request $request)
+   {
+      if(\Hash::check($request->get('oldpass'), \Auth::user()->password))
+      {
+          $this->validate($request, [
+              'password' => 'required|confirmed|min:6',
+            ]);
+
+           \Auth::user()->forceFill([
+            'password' => \Hash::make($request->get('password')),
+           ])->save();
+
+           return back();
+      } else {
+          return view('errors.404');
+      }
    }
 
    public function grade(Request $request)
@@ -75,8 +147,9 @@ class ProfileController extends Controller
             \Auth::user()->profile_id = $profile->id;
 
             \Auth::user()->save();
+         
+            $page = 'more';
 
-
-   	       return view('app.profile.grade', compact('result', 'correct', 'skillometer'));
+   	       return view('app.profile.grade', compact('result', 'correct', 'skillometer', 'page'));
    }
 }

@@ -33,8 +33,8 @@ class FavouritesController extends Controller
 
     	$favs = $user->favourites;
       
-
-    	return view('app.favs.index', compact('favs') );
+        $page = 'home';
+    	return view('app.favs.index', compact('favs', 'page') );
     }
 
     public function store($type, $id)

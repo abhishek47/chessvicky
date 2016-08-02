@@ -22,7 +22,6 @@ use App\Models\Quiz;
 
 class AdminController extends Controller
 {
-   
 
       /**
      * Create a new controller instance.
@@ -44,7 +43,7 @@ class AdminController extends Controller
 
         $data['userscount'] = User::count(); // tmp
         $data['visitors'] = User::count();
-       $data['onlineusers'] = count(User::where('online', 1)->get());
+        $data['onlineusers'] = count(User::where('online', 1)->get());
         $data['revenue'] = 10000;
         $data['courses'] = Course::count();
         $data['videos'] = Video::count();
@@ -68,9 +67,9 @@ class AdminController extends Controller
         $page  = 'courses';
         return view('admin.courses.index', compact('courses', 'page', 'categories', 'count'));
     }
-   
+
     public function videos()
-    { 
+    {
 
         $courses = Course::all();
         $videos = Video::paginate(10);
@@ -80,7 +79,7 @@ class AdminController extends Controller
     }
 
     public function categories()
-     { 
+     {
 
         $categories = Category::paginate(10);
         $count = Category::count();
@@ -90,7 +89,7 @@ class AdminController extends Controller
 
 
     public function articles()
-    { 
+    {
 
         $articles = Article::paginate(10);
         $count = Article::count();
@@ -98,9 +97,6 @@ class AdminController extends Controller
         return view('admin.articles.index', compact('articles', 'page', 'count'));
     }
 
-    
-
-   
     public function books()
     {
         $books = Book::paginate(10);
@@ -111,14 +107,14 @@ class AdminController extends Controller
     }
 
      public function challenges()
-    { 
+    {
 
         $challenges = Challenge::paginate(10);
         $count = Challenge::count();
         $page  = 'challenges';
         return view('admin.challenges.index', compact('challenges', 'page', 'count'));
     }
-   
+
 
     public function quiz()
     {
@@ -128,9 +124,10 @@ class AdminController extends Controller
 
         return view('admin.quiz.index', $data);
     }
-    
+
     public function sendNotification(Request $request)
     {
+
         $user = \Auth::user();
          $user->newNotification()
         ->withType('CourseAdded')
@@ -142,8 +139,8 @@ class AdminController extends Controller
         return back();
     }
 
-   
 
-  
-   
+
+
+
 }

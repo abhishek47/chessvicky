@@ -13,6 +13,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/swipebox.min.css">
     <link href="/css/landing.css" rel="stylesheet">
+    <link href="/css/clock.css" rel="stylesheet">
     <link href="/css/responsive.landing.css" rel="stylesheet">
 
 
@@ -107,6 +108,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/jquery.swipebox.min.js"></script>
     <script src="/js/pages.js"></script> 
+    <script src="/js/clock.js"></script> 
     
     <script type="text/javascript">
 ;( function( $ ) {

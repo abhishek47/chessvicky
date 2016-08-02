@@ -17,4 +17,15 @@ class UsersController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function getAllUsers(Request $request)
+    { 
+         $q = $request->get('q')  
+
+    	 $users = User::where('fname', 'LIKE', '%'. $q . '%')->get();
+ 
+    	 return Response::json($users);
+
+
+    }
 }

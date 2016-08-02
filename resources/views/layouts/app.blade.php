@@ -58,7 +58,14 @@
      
         <script src="/js/sweetalert.min.js"></script>
 
+
       
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
 
 
     

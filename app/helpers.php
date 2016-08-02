@@ -33,6 +33,27 @@ function isSelected($id, $current)
      }
 }
 
+function checked($val, $current)
+{
+     if($val == $current)
+     {
+          return 'checked=""';
+     } else 
+     {
+          return '';
+     }
+}
+
+function loggedInUser($user)
+{
+   if($user->id == \Auth::user()->id)
+   {
+     return true;
+   } else {
+     return false;
+   }
+}
+
 function isStarred($type, $id)
 {
      $fav = App\Models\Favourite::where('user_id', \Auth::user()->id)

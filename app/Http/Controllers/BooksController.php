@@ -23,7 +23,7 @@ class BooksController extends Controller
      public function create()
     {
     	$categories = Category::all();
-   	    $page = "books";
+   	    $page = "library";
     	return view('admin.books.new' , compact('categories', 'page'));
     }
 
@@ -70,9 +70,10 @@ class BooksController extends Controller
           $books = Book::latest()->paginate(20);
           $sby = 'newest';
         }
+        $page = "library";
       
       $categories = Category::orderBy('name')->get();
-      return view('app.books.index', compact('books', 'sby', 'categories', 'c', 'q')); 
+      return view('app.books.index', compact('books', 'sby', 'categories', 'c', 'q', 'page')); 
 
    }
 
@@ -80,7 +81,7 @@ class BooksController extends Controller
    {
        $book = Book::where('slug', $slug)->first();
       
-       $page = 'books';
+       $page = 'library';
         return view('app.books.show', compact('book', 'page')); 
    }
     

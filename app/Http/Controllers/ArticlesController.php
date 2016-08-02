@@ -26,7 +26,8 @@ class ArticlesController extends Controller
    {
         $articles = Article::latest()->paginate(20);
         $type = 'all';
-        return view('app.articles.index', compact('articles', 'type')); 
+        $page = 'articles';
+        return view('app.articles.index', compact('articles', 'type', 'page')); 
    }
    
    public function listbytype($type)
@@ -46,8 +47,8 @@ class ArticlesController extends Controller
     else {
                  
     }
-        
-      return view('app.articles.index', compact('articles', 'type'));
+       $page = 'articles';  
+      return view('app.articles.index', compact('articles', 'type', 'page'));
    } 
 
  
@@ -55,7 +56,7 @@ class ArticlesController extends Controller
     
     public function create()
     {
-        $page = "articles";
+      $page = "articles";
     	return view('admin.articles.new' , compact('page'));
     }
    
@@ -69,8 +70,8 @@ class ArticlesController extends Controller
     public function show($slug)
     {
         $article = Article::where('slug', $slug)->first();
-
-        return view('app.articles.show', compact('article'));
+        $page = 'articles';
+        return view('app.articles.show', compact('article', 'page'));
     }
 
 

@@ -8,10 +8,11 @@
          <div class="panel-body">
             <div class="row">
               <div class="col-md-8">
-              	 <h3 style="text-transform: capitalize;"><strong>Checkmate in One Move</strong></h3>
+                 <h3 style="text-transform: capitalize;"><strong>Checkmate in one move</strong></h3>
+                 <p>These are conditions in which one move can check mate the opponent.Think of the move and win the game.The faster you crack the challenge the more points you get in your skillometer!</p>
               </div>
               <div class="col-md-4">
-       
+      
               </div>
 
         

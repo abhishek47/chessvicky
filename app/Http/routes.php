@@ -16,6 +16,8 @@
 Route::get('/', 'LandingController@index');
 Route::get('/subscribe', 'LandingController@subscribe');
 
+Route::get('/soon', 'HomeController@soon');
+
 
 /* AUTHENTICATION */
 
@@ -26,6 +28,7 @@ Route::auth();
 
 // Dashboard
 Route::get('/home', 'HomeController@index');
+Route::post('/users/all' , 'UsersController@getAllUsers');
 
 
 // SUPER IDOLS :
@@ -183,6 +186,9 @@ Route::get('/admin/challenges/{slug}/delete', 'ChallengesController@delete');
 
 Route::post('admin/notify/', 'AdminController@sendNotification');
 
+Route::get('/profile/{username}', 'ProfileController@show');
+Route::post('/profile/update', 'ProfileController@update');
+Route::post('/profile/update/password', 'ProfileController@updatePassword');
 
 /************ ADMIN ROUTES END HERE **********/
 

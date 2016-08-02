@@ -43,7 +43,8 @@ class QuizController extends Controller
     		$quizzes = Quiz::latest()->paginate(20);
     	}
     	
-    	return view('app.quiz.index', compact('quizzes', 'level', 'cat'));
+      $page = 'more';
+    	return view('app.quiz.index', compact('quizzes', 'level', 'cat', 'page'));
     }
 
     public function show($slug)
@@ -54,8 +55,8 @@ class QuizController extends Controller
         foreach ($questions as $key => $question) {
           	 $points += $question->points;
           }  
-
-         return view('app.quiz.show', compact('quiz', 'questions', 'points')); 
+        $page = 'more';
+         return view('app.quiz.show', compact('quiz', 'questions', 'points', 'page')); 
     }
 
 
@@ -81,7 +82,7 @@ class QuizController extends Controller
 
             $profile =\Auth::user()->profile; 
 
-            $newSkillometer = ($result/10);
+            $newSkillometer = $result;
 
              $profile->skillometer += $newSkillometer;  
               
@@ -90,8 +91,8 @@ class QuizController extends Controller
             $profile->save();
 
             $count = count($questions);
-
-           return view('app.quiz.grade', compact('result', 'correct', 'skillometer', 'count', 'newSkillometer'));  
+             $page = 'more';
+           return view('app.quiz.grade', compact('result', 'correct', 'skillometer', 'count', 'newSkillometer', 'page'));  
 
     }
 

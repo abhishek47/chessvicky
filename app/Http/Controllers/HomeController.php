@@ -28,6 +28,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware(['auth', 'profile']);
+
     }
 
     /**
@@ -40,6 +41,14 @@ class HomeController extends Controller
         $data['user'] = \Auth::user();
         $data['courses'] = Course::latest()->limit(4)->get();
         $data['notifications'] = \Auth::user()->notifications()->unread()->latest()->get();
+        $data['skillometer'] = \Auth::user()->profile->skillometer;
+        $data['page'] = 'home';
         return view('app.home', $data);
+    }
+
+
+    public function soon()
+    {
+        return view('commingsoon');
     }
 }

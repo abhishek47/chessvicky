@@ -23,7 +23,8 @@ class ChallengesController extends Controller
    {
         $challenges = Challenge::latest()->paginate(20);
         $type = 'all';
-        return view('app.challenges.index', compact('challenges', 'type')); 
+        $page = 'challenges';
+        return view('app.challenges.index', compact('challenges', 'type', 'page')); 
    }
    
 
@@ -47,8 +48,8 @@ class ChallengesController extends Controller
     public function show($slug)
     {
         $challenge = challenge::where('slug', $slug)->first();
-
-        return view('app.challenges.show', compact('challenge'));
+        $page = "challenges";
+        return view('app.challenges.show', compact('challenge', 'page'));
     }
 
     
@@ -102,7 +103,7 @@ class ChallengesController extends Controller
     public function edit($slug)
     {
         $challenge = Challenge::where('slug', $slug)->first();
-         $page = 'challenges';
+        $page = 'challenges';
         return view('admin.challenges.edit', compact('challenge', 'page'));
     }
 

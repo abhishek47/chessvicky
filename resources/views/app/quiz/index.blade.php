@@ -84,7 +84,7 @@
                        
                         <p><a class="btn btn-default" href="{{ 
                                '/quiz/' . $quiz->slug
-                           }}">Give Test</a></p> 
+                           }}">Take Quiz</a></p> 
                     </div>
                     <div class="panel-footer">
                             <b>  Points : {{ getQuizPoints($quiz) }} </b>

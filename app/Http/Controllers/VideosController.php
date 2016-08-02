@@ -24,7 +24,7 @@ class VideosController extends Controller
     public function list()
     {
         $videos = Video::where('course_id', 0)->latest()->paginate(20);
-        $page = 'videos';
+        $page = 'library';
         $notifications = \Auth::user()->notifications()->unread()->latest()->get();
         return view('app.videos.index' , compact('videos', 'page', 'notifications'));
 
@@ -34,7 +34,7 @@ class VideosController extends Controller
     {
            $video = Video::where('slug', $vslug)->first();
            $course = $video->course;
-           $page = 'video';
+           $page = 'library';
            $notifications = \Auth::user()->notifications()->unread()->latest()->get();
            return view('app.videos.show' , compact('video', 'course', 'page', 'notifications'));
     }
@@ -42,7 +42,7 @@ class VideosController extends Controller
      public function showsingle($slug)
     {
            $video = Video::where('slug', $slug)->first();
-           $page = 'video';
+           $page = 'library';
            $notifications = \Auth::user()->notifications()->unread()->latest()->get();
            return view('app.videos.showsingle' , compact('video', 'page', 'notifications'));
     }
@@ -50,7 +50,7 @@ class VideosController extends Controller
       public function create()
     {
     	$courses = Course::all();
-   	    $page = "videos";
+   	    $page = "library";
     	return view('admin.videos.new' , compact('courses', 'page'));
     }
    

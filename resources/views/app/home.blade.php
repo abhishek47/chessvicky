@@ -9,12 +9,12 @@
                         <div class="card-box p-0">
                             <div class="profile-widget text-center">
                                 <div class="bg-inverse bg-profile"></div>
-                                <img src="http://coderthemes.com/ubold_1.5/menu_2/assets/images/users/avatar-1.jpg" class="thumb-lg img-circle img-thumbnail" alt="img">
+                                <img src="{{ Gravatar::get($user->email) }}" class="thumb-lg img-circle img-thumbnail" alt="img">
                                 <h4>{{ $user->fullname() }}</h4>
                                 <p class="text-muted"><i class="fa fa-user"></i> {{ $user->username }}</p>
                               
 
-                                <a href="/users/{{ $user->username }}" class="btn btn-sm btn-inverse m-t-20">View Profile</a>
+                                <a href="{{ url('/profile/' . $user->username) }}" class="btn btn-sm btn-inverse m-t-20">View Profile</a>
                                 <p class="m-t-10 text-muted p-20"></p>
                                 
                             </div>
@@ -23,20 +23,27 @@
                       <div class="">
                    <div class="panel panel-border panel-inverse">
                        <div class="panel-heading">
-                           <h3 class="panel-title">Skillometer</h3>
+                           <h3 class="panel-title">Skillometer <i class="fa fa-info" style="cursor: pointer; cursor: hand;" data-toggle="tooltip" title="This is a value that define your skills on ChessVicky.This increases as you complete different courses and daily challenges and more.!"></i></h3>
                        </div>
                        <div class="panel-body">
-                             <p class="text-muted">{{ '89%' }}</p>
-                                <div class="progress progress-sm">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%;">
-                                            <span class="sr-only">89% Complete</span>
-                                        </div>
-                                    </div>
+                             <p class="text-muted" style="font-size: 24px;"><i class="fa fa-arrow-circle-right"></i> {{ $user->profile->skillometer }}</p>
+                                
                        </div>
                    </div>
                </div>
                <div class="">
-                   <div class="card-box">
+                   <div class="panel panel-border panel-inverse">
+                       <div class="panel-heading">
+                           <h3 class="panel-title">Leaderboard Rank <i class="fa fa-info" style="cursor: pointer; cursor: hand;" data-toggle="tooltip" title="This is where you lie around the globe!Leaderboards are according to the skillometers."></i></h3>
+                       </div>
+                       <div class="panel-body">
+                             <p class="text-muted" style="font-size: 24px;"><i class="fa fa-arrow-circle-right"></i> {{ $user->profile->xp }}</p>
+                                
+                       </div>
+                   </div>
+               </div>
+               <div class="">
+                   <!-- <div class="card-box">
                             <h4 class="m-t-0 m-b-20 header-title"><b>Achivements <span class="text-muted">(154)</span></b></h4>
 
                             <div class="friend-list">
@@ -72,7 +79,7 @@
                                     <span class="extra-number">+89</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                </div>
             </div>
                <div class="col-lg-9">
@@ -124,4 +131,5 @@
              
     </div>
 </div>
+
 @endsection

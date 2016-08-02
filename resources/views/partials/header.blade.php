@@ -14,7 +14,7 @@
                         <ul class="nav navbar-nav navbar-right pull-right">
                             <li>
                                 <form role="search" class="navbar-left app-search pull-left hidden-xs">
-                                     <input type="text" placeholder="Search..." class="form-control">
+                                     <input type="text" id="search-people" placeholder="Search People..." class="form-control">
                                      <a href=""><i class="fa fa-search"></i></a>
                                 </form>
                             </li>
@@ -99,12 +99,12 @@
                             </li> -->
 
                             <li class="dropdown">
-                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="http://coderthemes.com/ubold_1.5/menu_2/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ Gravatar::get(\Auth::user()->email) }}" alt="user-img" class="img-circle"> </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/profile') }}"><i class="ti-user m-r-5"></i> Profile</a></li>
-                                    <li><a href="{{ url('/settings') }}"><i class="ti-settings m-r-5"></i> Settings</a></li>
-                                    <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Subscribe</a></li>
-                                    <li><a href="{{ url('/logout') }}"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                    <li><a href="{{ url('/profile/' . \Auth::user()->username) }}"><i class="fa fa-user"></i> Profile</a></li>
+                                    <li><a href="{{ url('/settings') }}"><i class="fa fa-cog"></i> Settings</a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-credit-card"></i> Subscribe</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -133,7 +133,7 @@
                 <div id="navigation">
                     <!-- Navigation Menu-->
                     <ul class="navigation-menu">
-                        <li class="has-submenu active">
+                        <li class="has-submenu {{ active($page, 'home') }}">
                             <a href="#"></i>Dashboard</a>
                             <ul class="submenu">
                                 <li>
@@ -143,11 +143,11 @@
                                     <a href="{{ url('/favourites') }}">Favourites</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/explore') }}">Explore</a>
+                                    <a href="{{ url('/soon') }}">Explore</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="has-submenu">
+                        <li class="has-submenu {{ active($page, 'library') }}">
                             <a href="#"></i>Library</a>
                             <ul class="submenu">
                                 <li>
@@ -160,13 +160,13 @@
                                     <a href="{{ url('/books') }}">Books</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/tutorials') }}">Tutorials</a>
+                                    <a href="{{ url('/soon') }}">Tutorials</a>
                                 </li>
                             </ul>
                         </li>
 
 
-                        <li class="has-submenu ">
+                        <li class="has-submenu {{ active($page, 'articles') }}">
                             <a href="#"></i>Articles</a>
                               <ul class="submenu">
                                 <li>
@@ -178,13 +178,13 @@
                                 <li>
                                     <a href="{{ url('/articles/type:starred') }}">Starred</a>
                                 </li>
-                                <li>
+                               <!--  <li>
                                     <a href="{{ url('/articles/type:trending') }}">Trending</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
 
-                        <li class="has-submenu">
+                        <li class="has-submenu {{ active($page, 'challenges') }}">
                             <a href="#"></i>Challenges</a>
                               <ul class="submenu">
                                 <li>
@@ -194,9 +194,7 @@
                                     <a href="{{ url('/challenges/type:premium') }}">Premium Challenges</a>
                                 </li>
                               
-                                <li>
-                                    <a href="{{ url('/leaderboard') }}">Leaderboard</a>
-                                </li>
+                               
                             </ul>
                         </li>
 
@@ -207,7 +205,7 @@
                         </li>
 
 
-                        <li class="has-submenu">
+                        <li class="has-submenu {{ active($page, 'forum') }}">
                             <a href="#"></i>Forum</a>
                             <ul class="submenu">
                                 <li>
@@ -216,13 +214,13 @@
                                <li>
                                     <a href="{{ url('/forum/' . Auth::user()->username ) }}">My Conversations</a>
                                 </li>
-                                <li>
+                              <!--   <li>
                                     <a href="{{ url('/forum/trending') }}">Trending Conversations</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
 
-                        <li class="has-submenu">
+                        <li class="has-submenu {{ active($page, 'game') }}">
                             <a href="#"></i>Online Chess</a>
                             <ul class="submenu">
                                 <li>
@@ -234,12 +232,12 @@
                                 <li>
                                     <a href="{{ url('/game/tournaments') }}">Tournaments</a>
                                 </li>
-                                <li>
+                              <!--   <li>
                                     <a href="{{ url('/leaderboard') }}">Leaderboard</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
-                        <li class="has-submenu">
+                        <li class="has-submenu {{ active($page, 'more') }}">
                             <a href="#"></i>More</a>
                             <ul class="submenu">
                                 <li><a href="{{ url('/quiz') }}"> Quizzes</a></li>

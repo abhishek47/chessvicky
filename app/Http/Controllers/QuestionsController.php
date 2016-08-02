@@ -37,7 +37,7 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-       $page = "questions";
+       $page = "forum";
        return view('questions.create', compact('page'));
     }
 
@@ -78,7 +78,8 @@ class QuestionsController extends Controller
 
         if($question)
         {
-           return view('app.forum.show', compact('question'));
+            $page = 'forum';
+           return view('app.forum.show', compact('question', 'page'));
 
         } else {
            \App::abort(404);

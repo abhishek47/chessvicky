@@ -68,7 +68,9 @@ class ForumController extends Controller
         }
       
       $categories = Category::orderBy('name')->get();
-      return view('app.forum.index', compact('questions', 'sby', 'categories', 'c', 'q')); 
+      $page = 'forum';
+      return view('app.forum.index', compact('questions', 'sby', 'categories', 'c', 'q', 'page')); 
+    
     }
     
     public function listByUser(Request $request)
@@ -96,7 +98,8 @@ class ForumController extends Controller
         $user = true;
       
       $categories = Category::orderBy('name')->get();
-      return view('app.forum.index', compact('questions', 'sby', 'categories', 'c', 'q', 'user')); 
+      $page = 'forum';
+      return view('app.forum.index', compact('questions', 'sby', 'categories', 'c', 'q', 'user', 'page')); 
     }
 
 

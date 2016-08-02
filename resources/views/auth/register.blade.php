@@ -53,7 +53,7 @@
                             </label>
                         </div>
                           <div class="radio radio-info col-xs-4">
-                            <input type="radio" name="gender" id="gender-female" value="1" >
+                            <input type="radio" name="gender" id="gender-female" value="0" >
                             <label for="radio15">
                                Female
                             </label>
