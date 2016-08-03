@@ -8,7 +8,7 @@
     <title>ChessVicky | Chess Courses, articles, tutorials, forum and more...</title>
 
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-    <script src="https://use.fontawesome.com/ef3b39e542.js"></script>
+   
     
     <!-- Sweet Alert -->
     <link href="/css/sweetalert.css" rel="stylesheet" type="text/css">
@@ -24,6 +24,7 @@
     <link href="/css/pages.css" rel="stylesheet" type="text/css" />
     <link href="/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     
     <link rel="stylesheet" type="text/css" href="/css/chessboard-0.3.0.css">
 
