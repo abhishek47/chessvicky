@@ -9,9 +9,24 @@ use App\Models\Idol;
 use App\Models\Like;
 
 use App\Models\Notification;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class User extends Authenticatable
 {
+
+
+    use SearchableTrait;
+
+    protected $searchable = [
+        'columns' => [
+            'users.fname' => 1,
+            'users.lname' => 1,
+            'users.username' => 1,
+            'users.email' => 1,
+            
+        ]
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -99,6 +114,19 @@ class User extends Authenticatable
 
         return $notification;
     }
+    
 
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword!='') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("fname", "LIKE","%$keyword%")
+                    ->orWhere("lname", "LIKE","%$keyword%" )
+                    ->orWhere("email", "LIKE", "%$keyword%")
+                    ->orWhere("username", "LIKE", "%$keyword%");
+            });
+        }
+        return $query;
+    }
 
 }

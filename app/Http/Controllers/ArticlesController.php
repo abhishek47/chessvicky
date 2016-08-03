@@ -22,21 +22,36 @@ class ArticlesController extends Controller
         $this->middleware('auth');
     }
 
-   public function list()
+   public function list(Request $request)
    {
-        $articles = Article::latest()->paginate(20);
+       
         $type = 'all';
         $page = 'articles';
-        return view('app.articles.index', compact('articles', 'type', 'page')); 
+        $q = $request->get('q');
+
+        if($q) 
+        {
+            $articles = Article::where('title', 'LIKE', '%' . $q . '%')->latest()->paginate(20);
+        } else {
+           $articles = Article::latest()->paginate(20);
+        }
+
+        return view('app.articles.index', compact('articles', 'type', 'page', 'q')); 
    }
    
-   public function listbytype($type)
+   public function listbytype(Request $request, $type)
    {
     
     $articles = array();
-
+    $q = $request->get('q');
     if($type == 'premium') {
-      $articles = Article::where('is_premium', 1)->latest()->paginate(20);
+      if($q) 
+        {
+            $articles = Article::where('is_premium', 1)->where('title', 'LIKE', '%' . $q . '%')->latest()->paginate(20);
+        } else {
+           $articles = Article::where('is_premium', 1)->latest()->paginate(20);    
+        }
+      
     }
     elseif($type == 'starred') {
        $articles = Favourite::where('user_id', \Auth::user()->id)
@@ -48,7 +63,7 @@ class ArticlesController extends Controller
                  
     }
        $page = 'articles';  
-      return view('app.articles.index', compact('articles', 'type', 'page'));
+      return view('app.articles.index', compact('articles', 'type', 'page', 'q'));
    } 
 
  

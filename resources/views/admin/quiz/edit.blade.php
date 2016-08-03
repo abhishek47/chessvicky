@@ -37,13 +37,19 @@
                             <div class="col-xs-12">
                                 <label for="category">Category :</label>
 		                        <select name="category" id="category" class="form-control">
-		                        	 <option value="0" {{ isSelected(0, $quiz->category) }} >Basic</option>
+		                        	 <option value="0" {{ isSelected(0, $quiz->category) }}  >Basic</option>
 		                        	 <option value="1" {{ isSelected(1, $quiz->category) }}>Intermidiate</option>
 		                        	 <option value="2" {{ isSelected(2, $quiz->category) }}>Advanced</option>
 		                        	 <option value="3" {{ isSelected(3, $quiz->category) }}>Professional</option>
                                 </select>
 		                    </div>
               			  </div>
+
+                       <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input type="checkbox"  name="is_premium" id="is_premium" data-plugin="switchery" data-color="#f05050" data-size="small" {{ $quiz->is_premium ? 'checked' : '' }}/><label for="is_premium">Premium</label>
+                        </div>
+                    </div>
                             
 
                          

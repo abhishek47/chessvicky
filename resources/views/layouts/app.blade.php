@@ -59,6 +59,53 @@
         <script src="/js/sweetalert.min.js"></script>
 
 
+         <!-- Typeahead.js Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <!-- Typeahead Initialization -->
+    <script>
+        jQuery(document).ready(function($) {
+            // Set the Options for "Bloodhound" suggestion engine
+            var engine = new Bloodhound({
+                remote: {
+                    url: '/findusers?q=%QUERY%',
+                    wildcard: '%QUERY%'
+                },
+                datumTokenizer: Bloodhound.tokenizers.whitespace('q'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace
+            });
+
+            $("#user-search").typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            }, {
+                source: engine.ttAdapter(),
+
+                // This will be appended to "tt-dataset-" to form the class name of the suggestion menu.
+                name: 'usersList',
+
+                // the key from the array we want to display (name,id,email,etc...)
+                templates: {
+                    empty: [
+                        '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+                    ],
+                    header: [
+                        '<ul class="dropdown-menu dropdown-menu-lg"><li class="list-group nicescroll notification-list" tabindex="5000" style="overflow: hidden; outline: none;">'
+                    ],
+
+                    footer: [
+                         '</li></ul>'
+                    ],
+                    suggestion: function (data) {
+                        return '<a href="/profile/' + data.username + '" class="list-group-item">' + '<div class="media"><div class="pull-left p-r-10"></div><div class="media-body"><h5 class="media-heading">' + data.fname + ' ' + data.lname + ' @' + data.username + '</h5><p class="m-0"><small>' + data.email  + '</small></p></div></div>' + '</a>'
+
+              }
+                }
+            });
+        });
+    </script>
+
+
       
 
 <script>

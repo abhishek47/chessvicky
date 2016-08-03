@@ -28,12 +28,12 @@
             <div class="row">
               
               <div class="col-md-9">
-                 <form class="form-inline" style="display: block;">
+                 <form class="form-inline" method="GET" style="display: block;">
         <div class="form-group">
           <label class="sr-only" for="exampleInputAmount">Search...</label>
           <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-search"></i></div>
-            <input type="text" id="search-input" class="form-control"  id="exampleInputAmount" placeholder="Search our articles...">
+            <input type="text" id="search-input" name="q" class="form-control"  id="exampleInputAmount" placeholder="Search our books...">
             
           </div>
         </div>
@@ -78,7 +78,9 @@
         <h3>Search results for '{{ $q }}'.</h3><br/>
       @endif
        <div class="row">
+        <?php  $key = 0; ?>
          @foreach($books as $book)
+            <?php  $key += 1; ?>
              <div class="col-sm-6 col-lg-3 col-md-4 webdesign illustrator">
                             <div class="gal-detail thumb">
                                 <a href="{{ url('/books/' . $book->slug ) }}" class="image-popup" title="Screenshot-1">
@@ -88,6 +90,10 @@
                                 <p><strong>{{ str_limit($book->title, 55) }}</strong></p>
                             </div>
                         </div>
+                          @if($key % 4 === 0)
+                      </div>
+                      <div class="row">
+                   @endif   
           @endforeach 
        
         </div>

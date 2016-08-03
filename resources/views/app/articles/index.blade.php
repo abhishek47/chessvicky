@@ -14,17 +14,19 @@
               	 <h3 style="text-transform: capitalize;"><strong>{{ isset($type) ? $type . ' ' : ''  }}Articles</strong></h3>
               </div>
               <div class="col-md-4">
-                 <form class="form-inline" style="display: block;">
+               @if($type != 'starred')
+                 <form class="form-inline" method="GET" style="display: block;">
         <div class="form-group">
           <label class="sr-only" for="exampleInputAmount">Search...</label>
           <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-search"></i></div>
-            <input type="text" id="search-input" class="form-control"  id="exampleInputAmount" placeholder="Search our articles...">
+            <input type="text" id="search-input" name="q" class="form-control"  id="exampleInputAmount" placeholder="Search our articles...">
             
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Search</button>
       </form>
+      @endif
               </div>
 
         
@@ -34,7 +36,12 @@
       </div>
    </div>
    <div class="row">
+    @if($q)
+        <h3>Search results for '{{ $q }}'.</h3><br/>
+      @endif
+      <?php  $key = 0; ?>
     @foreach($articles as $article)
+    <?php  $key += 1; ?>
 		@if($type != 'starred')
 		  <div class="col-lg-4">
 			<div class="panel panel-color panel-inverse" >
@@ -74,6 +81,11 @@
 
                 
             @endif
+
+            @if($key % 3 === 0)
+                      </div>
+                      <div class="row">
+                   @endif 
            @endforeach 
         </div>
          {!! $articles->render() !!}

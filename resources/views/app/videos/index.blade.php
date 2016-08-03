@@ -30,12 +30,12 @@
                  <h3 style="text-transform: capitalize;"><strong>Videos</strong></h3>
               </div>
               <div class="col-md-4">
-                 <form class="form-inline" style="display: block;">
+                 <form class="form-inline" method="GET" style="display: block;">
         <div class="form-group">
           <label class="sr-only" for="exampleInputAmount">Search...</label>
           <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-search"></i></div>
-            <input type="text" id="search-input" class="form-control"  id="exampleInputAmount" placeholder="Search our articles...">
+            <input type="text" id="search-input" name="q" class="form-control"  id="exampleInputAmount" placeholder="Search our articles...">
             
           </div>
         </div>
@@ -65,7 +65,9 @@
                                     <img src="{{ $video->poster_url }}" style="height:230px;" class="thumb-img" alt="work-thumbnail">
                                 </a>
                                 <p></p>
-                                <p><strong>{{ str_limit($video->title, 40) }}</strong></p>
+                                <p><strong> @if($video->is_premium)
+                               <i class="fa fa-lock"></i>
+                              @endif  {{ str_limit($video->title, 40) }}</strong></p>
                                 <p><b>Tags : </b> {{ $video->tags }}</p>
                             </div>
                         </div>

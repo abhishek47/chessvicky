@@ -113,7 +113,13 @@ class CoursesController extends Controller
           'tags' => 'required'
    	  	]);
        
-       $data = $request->all();
+        $data = $request->all();
+       if($request->has('is_premium'))
+       {
+        $data['is_premium'] = 1;
+       } else {
+        $data['is_premium'] = 0;
+       }
        $data['slug'] = str_slug($request->get('title'));
 
    	   Course::create($data);
@@ -164,6 +170,12 @@ class CoursesController extends Controller
         $course =  Course::where('slug', $slug)->first();
         
         $data = $request->all();
+       if($request->has('is_premium'))
+       {
+        $data['is_premium'] = 1;
+       } else {
+        $data['is_premium'] = 0;
+       }
         $data['slug'] = str_slug($request->get('title'));
 
         $course->update($data);

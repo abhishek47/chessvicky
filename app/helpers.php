@@ -54,6 +54,42 @@ function loggedInUser($user)
    }
 }
 
+function getRankOfCurrentUser()
+{
+    $profiles =  App\Models\Profile::orderBy('skillometer', 'DESC')->get();
+    
+    $c = count($profiles);
+    $i = 0;
+
+    foreach ($profiles as $key => $p) {
+         if($p->user_id === \Auth::user()->id)
+         {
+            return $i+1;  
+         }
+         $i++;
+     } 
+
+     return 0;
+    
+
+}
+
+function updateRank($profile, $sk)
+{
+    $upProfiles = count(App\Models\Profile::where('skillometer', '>=', $sk)->get());
+    
+    $downProfiles =  App\Models\Profile::where('skillometer', '<', $sk)->get();
+
+    foreach ($downProfiles as $key => $p) {
+        $p->xp -= 1;
+        $p->save();
+    }
+
+    $profile->xp = $upProfiles + 1; 
+
+    $profile->save();
+}
+
 function isStarred($type, $id)
 {
      $fav = App\Models\Favourite::where('user_id', \Auth::user()->id)

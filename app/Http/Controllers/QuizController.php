@@ -117,6 +117,12 @@ class QuizController extends Controller
         ]);
        
        $data = $request->all();
+       if($request->has('is_premium'))
+       {
+        $data['is_premium'] = 1;
+       } else {
+        $data['is_premium'] = 0;
+       }
        $data['slug'] = str_slug($request->get('title'));
        Quiz::create($data);
        return redirect('/admin/quiz/' . $data['slug']);
@@ -152,6 +158,12 @@ class QuizController extends Controller
         ]);
          
        $data = $request->all();
+       if($request->has('is_premium'))
+       {
+        $data['is_premium'] = 1;
+       } else {
+        $data['is_premium'] = 0;
+       }
        $data['slug'] = str_slug($request->get('title'));
        
        $quiz = Quiz::where('slug', $slug)->first();

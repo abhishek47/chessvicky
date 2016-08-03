@@ -29,6 +29,16 @@ File: Responsive
   .wrapper-page {
     width: 90%;
   }
+
+    .tt-input {
+          width: 350px;
+       }
+
+   #clockdiv h1 {
+    font-size: 48px;
+  }
+
+
   .wizard > .steps > ul > li {
     width: 100%;
   }

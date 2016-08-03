@@ -21,7 +21,11 @@ body {
 
 }
 
+ .tt-input {
+          width: 650px;
+       }
 
+  
 
     /*
   Player Skin Designer for Video.js

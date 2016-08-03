@@ -14,7 +14,7 @@ class Quiz extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'slug', 'level', 'category'
+        'title', 'slug', 'level', 'category', 'is_premium',
     ];
 
 

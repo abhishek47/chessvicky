@@ -17,7 +17,7 @@
                                     </li>
 
                                     <li>
-                                        <h3 class="text-success m-b-5">{{ $user->profile->xp }}</h3>
+                                        <h3 class="text-success m-b-5">{{ getRankOfCurrentUser() }}</h3>
                                         <p class="text-muted">Leaderboard</p>
                                     </li>
                                 </ul>

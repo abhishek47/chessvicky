@@ -140,7 +140,9 @@ class ProfileController extends Controller
 
             $profile->user_id = \Auth::user()->id;
 
-            $profile->skillometer = $skillometer;  
+            $profile->skillometer = $skillometer; 
+
+            updateRank($profile, $skillometer);
 
             $profile->save();
 

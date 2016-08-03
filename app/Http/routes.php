@@ -90,6 +90,12 @@ Route::get('/game', 'GamesController@index');
 Route::get('/live', 'GamesController@live');
 Route::get('/enginegame', 'GamesController@engine');
 
+
+Route::get('/leaderboard', 'LeaderboardController@index');
+
+
+Route::get('/findusers', 'SearchController@findusers');
+
 /************* MAIN APP ROUTES END HERE *************/
 
 

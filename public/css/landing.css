@@ -17,6 +17,15 @@ p {
 	font-size: 16px;
 }
 
+#clockdiv h1 {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 400px;
+
+    margin: 0 auto;
+    margin-top: 15px; 
+    font-size: 68px;
+  }
+
 
 
 

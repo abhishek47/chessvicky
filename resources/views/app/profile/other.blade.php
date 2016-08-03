@@ -17,15 +17,16 @@
                                     </li>
 
                                     <li>
-                                        <h3 class="text-success m-b-5">{{ $user->profile->xp }}</h3>
+                                        <h3 class="text-success m-b-5">{{ getRankOfCurrentUser() }}</h3>
                                         <p class="text-muted">Leaderboard</p>
                                     </li>
                                 </ul>
 
-                                 @if(!loggedInUser($user)) 
+                                <!--  @if(!loggedInUser($user)) 
                                   <button type="button" class="btn btn-danger btn-custom btn-rounded waves-effect waves-light">Challenge</button>
-                                 @endif 
-                                <hr>
+                                 @endif  -->
+                                   <h3>{{ $user->fullname() }}</h3>
+                                  <hr>
                                 <h4 class="text-uppercase font-600">About Me</h4>
                                 <br>
 

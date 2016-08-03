@@ -9,7 +9,11 @@
 
      <div class="panel panel-color panel-inverse">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Course : {{ $course->title }}</h3>
+                                <h3 class="panel-title">
+                                @if($course->is_premium)
+                               <i class="fa fa-lock"></i>
+                              @endif  
+                                Course : {{ $course->title }}</h3>
                             </div>
                             <div class="panel-body">
                               <p>{{ $course->desc }}</p>
@@ -112,7 +116,11 @@
                                     <img src="{{ $video->poster_url }}" style="height:230px;" class="thumb-img" alt="work-thumbnail">
                                 </a>
                                 <p></p>
-                                <p><strong>{{ $video->position . '. ' . str_limit($video->title, 40) }}</strong></p>
+                                <p><strong>
+                                 @if($video->is_premium)
+                                    <i class="fa fa-lock"></i>
+                                 @endif
+                                {{ $video->position . '. ' . str_limit($video->title, 40) }}</strong></p>
                                 <p><b>Tags : </b> {{ $video->tags }}</p>
                             </div>
                         </div>

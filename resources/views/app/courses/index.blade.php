@@ -77,14 +77,19 @@
         <h3>Search results for '{{ $q }}'.</h3><br/>
       @endif
          <div class="row">
+         <?php  $key = 0; ?>
           @foreach($courses as $course)
+          <?php  $key += 1; ?>
             <div class="col-lg-4" >
 
                 <div class="panel panel-color panel-inverse" >
                     <div class="panel-heading">
                       <a href="{{ 
                                '/courses/' . $course->slug
-                           }}"><h3 class="panel-title"> 
+                           }}"><h3 class="panel-title">
+                           @if($course->is_premium)
+                               <i class="fa fa-lock"></i>
+                              @endif  
                        {{ str_limit($course->title, 40) }}
                     </h3></a>
                     </div>
@@ -101,6 +106,10 @@
                             </div>
                 </div> 
             </div>
+              @if($key % 3 === 0)
+                      </div>
+                      <div class="row">
+                   @endif   
           @endforeach 
         
         </div>

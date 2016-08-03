@@ -75,6 +75,9 @@
                       <a href="{{ 
                                '/quiz/' . $quiz->slug
                            }}"><h3 class="panel-title"> 
+                           @if($quiz->is_premium)
+                               <i class="fa fa-lock"></i>
+                              @endif 
                        {{ str_limit($quiz->title, 35) }}
                     </h3></a>
                     </div>

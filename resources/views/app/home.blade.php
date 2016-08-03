@@ -37,7 +37,7 @@
                            <h3 class="panel-title">Leaderboard Rank <i class="fa fa-info" style="cursor: pointer; cursor: hand;" data-toggle="tooltip" title="This is where you lie around the globe!Leaderboards are according to the skillometers."></i></h3>
                        </div>
                        <div class="panel-body">
-                             <p class="text-muted" style="font-size: 24px;"><i class="fa fa-arrow-circle-right"></i> {{ $user->profile->xp }}</p>
+                             <p class="text-muted" style="font-size: 24px;"><i class="fa fa-arrow-circle-right"></i> {{ getRankOfCurrentUser() }}</p>
                                 
                        </div>
                    </div>
@@ -101,7 +101,7 @@
       </div>
    </div>
 
-                    @foreach($courses as $course)
+          @foreach($courses as $course)
             <div class="col-lg-6" >
 
                 <div class="panel panel-color panel-inverse" >
@@ -109,6 +109,9 @@
                       <a href="{{ 
                                '/courses/' . $course->slug
                            }}"><h3 class="panel-title"> 
+                           @if($course->is_premium)
+                               <i class="fa fa-lock"></i>
+                              @endif  
                        {{ str_limit($course->title, 40) }}
                     </h3></a>
                     </div>

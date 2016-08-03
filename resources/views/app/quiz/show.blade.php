@@ -10,7 +10,11 @@
                 <li>
                     <div class="panel panel-border panel-inverse">
                          <div class="panel-heading">
-                                <h1 class="panel-title">Quiz Up - Level {{ $quiz->level }} [ {{ quizCategory($quiz->category) }} ]</h1>
+                                <h1 class="panel-title">
+                                @if($quiz->is_premium)
+                                 <i class="fa fa-lock"></i>
+                                @endif 
+                              Quiz Up - Level {{ $quiz->level }} [ {{ quizCategory($quiz->category) }} ]</h1>
                                 <h3>Questions : {{ count($questions) }}  | Points : {{ $points }}</h3>
                             </div>
                             <div class="panel-body">

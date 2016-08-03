@@ -21,12 +21,18 @@ class VideosController extends Controller
         $this->middleware('auth');
     }
    
-    public function list()
+    public function list(Request $request)
     {
-        $videos = Video::where('course_id', 0)->latest()->paginate(20);
         $page = 'library';
+        $q = $request->get('q');
+        if($q) {
+          $videos = Video::where('course_id', 0)->where('title','LIKE', '%' . $q . '%')->latest()->paginate(20);
+         } else {
+           $videos = Video::where('course_id', 0)->latest()->paginate(20);
+        
+         }
         $notifications = \Auth::user()->notifications()->unread()->latest()->get();
-        return view('app.videos.index' , compact('videos', 'page', 'notifications'));
+        return view('app.videos.index' , compact('videos', 'page', 'notifications', 'q'));
 
     }
 
@@ -74,7 +80,13 @@ class VideosController extends Controller
           'position' => 'required'
    	  	]);
        
-       $data = $request->all();
+        $data = $request->all();
+       if($request->has('is_premium'))
+       {
+        $data['is_premium'] = 1;
+       } else {
+        $data['is_premium'] = 0;
+       }
        $data['slug'] = str_slug($request->get('title'));
 
    	   Video::create($data);
@@ -138,6 +150,12 @@ class VideosController extends Controller
         $video = Video::where('slug', $slug)->first();
         
         $data = $request->all();
+       if($request->has('is_premium'))
+       {
+        $data['is_premium'] = 1;
+       } else {
+        $data['is_premium'] = 0;
+       }
         $data['slug'] = str_slug($request->get('title'));
 
         $video->update($data);

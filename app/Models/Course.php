@@ -12,7 +12,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'desc', 'category_id', 'tags', 'slug', 'banner_url', 'trailer_url',
+        'title', 'desc', 'category_id', 'tags', 'slug', 'banner_url', 'trailer_url', 'is_premium',
     ];
 
     public function videos()
