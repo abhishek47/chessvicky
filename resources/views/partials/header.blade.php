@@ -12,14 +12,14 @@
                     <div class="menu-extras">
 
                         <ul class="nav navbar-nav navbar-right pull-right">
-                            <li>
+                            <!-- <li>
                             <form class="typeahead navbar-left app-search pull-left hidden-xs" role="search">
                                 <input type="search" id="" name="q" class="form-control" placeholder="Search" autocomplete="off">
                                 <a href=""><i class="fa fa-search"></i></a>
                               
                             </form>
                                
-                            </li>
+                            </li> -->
                             <!-- <li class="dropdown hidden-xs">
                                 <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                                     <i class="fa fa-bell-o" style="font-size:18px;"></i> <span class="badge badge-xs badge-danger">{{ count(\Auth::user()->notifications) }}</span>
