@@ -9,7 +9,7 @@
                 <div id="clockdiv">
 				  <div>
 				   <h1> <span class="days"></span> DAYS </h1>
-				   <h1><span class="hours"></span> : <span class="minutes"></span> : <span class="seconds"></span></h1> 
+				   <h1 class="time"><span class="hours"></span> : <span class="minutes"></span> : <span class="seconds"></span></h1> 
 				   <h1>TO GO.</h1>
 				    
 				  </div>
@@ -20,7 +20,7 @@
 		   	   <h2>Embrace Yourself By Learning Chess With Us!!</h2>
 		   	   <h3>Be Always One Move Ahead</h3>
               
-		   	   <a href="/register?trial=true" class="btn btn-default green">Try It Free</a>
+		   	   <a href="/register" class="btn btn-default green">Join Us Now</a>
 		   	   <a rel="vimeo" href="http://vimeo.com/29193046" class="btn btn-default swipebox"><i class="fa fa-play-circle-o"></i> Watch Demo</a>
 
 		   	   </div>

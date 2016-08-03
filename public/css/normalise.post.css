@@ -1,0 +1,10 @@
+.blog-post h1,.blog-post h2,.blog-post h3,.blog-post h4,.blog-post h5,.blog-post h6,.blog-post p,.blog-post a {
+	font-size: 16px !important;
+	color: #000 !important;
+	margin: 0  !important;
+	padding: 0  !important;
+}
+
+.blog-post b, .blog-post strong{
+	font-weight: normal !important; 
+}

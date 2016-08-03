@@ -9,9 +9,12 @@
                     </h3></a>
                     </div>
                     <div class="panel-body">
-                        <p >{{ str_limit($article->body, 100) }}</p>
+                     <div class="blog-post">
+                        <p >{!! str_limit($article->body, 120) !!}</p>
+                        
+                     </div>  
+                        <p></p>
                         <p><strong>Author : </strong>{{ $article->user->fname . ' ' . $article->user->lname }}</p>
-                       
                         <p><a class="btn btn-default" href="{{ 
                                '/articles/' . $article->slug
                            }}">Read Article</a></p> 

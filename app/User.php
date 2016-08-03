@@ -78,6 +78,11 @@ class User extends Authenticatable
     {
         return $this->hasOne(Models\Profile::class);
     }
+    
+     public function idol()
+    {
+        return $this->hasOne(Models\Idol::class);
+    }
 
     public function isIdol()
     {

@@ -74,8 +74,12 @@
                                           </a>
                                         </div>
                                         <div class="media-body" >
-                                         <a href="{{ '/questions/' . $question->slug }}">
-                                          <h3 class="media-heading"><strong>{{ $answer->user->fname . ' ' . $answer->user->lname }}</strong></h3>
+                                         <a href="{{ '/profile/' . $answer->user->username }}">
+                                          <h3 class="media-heading"><strong>{{ $answer->user->fullname() }} 
+                                          @if($answer->user->isIdol()) 
+                                             <span class="idol-mark">Superidol<span>
+                                          @endif 
+                                          </strong></h3>
                                           </a>
                                           <p >{!! str_limit($answer->body, 500) !!}</p>
                                            

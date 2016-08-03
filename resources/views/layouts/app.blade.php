@@ -25,6 +25,7 @@
     <link href="/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="/css/responsive.css" rel="stylesheet" type="text/css" />
     <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/normalise.post.css" rel="stylesheet" type="text/css" />
     
     <link rel="stylesheet" type="text/css" href="/css/chessboard-0.3.0.css">
 

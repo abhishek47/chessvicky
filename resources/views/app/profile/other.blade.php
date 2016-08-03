@@ -25,7 +25,10 @@
                                 <!--  @if(!loggedInUser($user)) 
                                   <button type="button" class="btn btn-danger btn-custom btn-rounded waves-effect waves-light">Challenge</button>
                                  @endif  -->
-                                   <h3>{{ $user->fullname() }}</h3>
+                                   <h3>{{ $user->fullname() }} 
+                                    @if($user->isIdol())
+                                     <span class="idol-mark">SUPERIDOL</span></h3>
+                                    @endif 
                                   <hr>
                                 <h4 class="text-uppercase font-600">About Me</h4>
                                 <br>
@@ -170,7 +173,9 @@
                             </div>
                             <div class="panel-body">
                                 <p>
-                                     {{ $user->profile->bio }}
+                                     @if($user->isIdol())
+                                      {{ $user->idol->desc }}
+                                     @endif 
                                 </p>
                             </div>
                         </div>

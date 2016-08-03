@@ -56,8 +56,8 @@
                             </strong></h3>
 			                    </a>
 			       </div>
-			       <div class="panel-body" >
-			               <p >{{ str_limit($article->body, 150) }}</p>
+			       <div class="panel-body blog-post" >
+			               <p >{!! str_limit($article->body, 150) !!}</p>
 			                
 			              
 			                    

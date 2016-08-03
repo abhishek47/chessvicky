@@ -26,6 +26,12 @@ p {
     font-size: 68px;
   }
 
+ #clockdiv h1.time {
+ 	border: 1px solid #333;
+ 	background-color: rgba(255, 255, 255, 0.8);
+ 	color: #000;
+ }
+
 
 
 
