@@ -77,14 +77,6 @@ class ChallengesController extends Controller
             return redirect('/home');
         }
 
-
-
-        }
-
-
-        $type = 'premium';
-        $page = 'challenges';
-        return view('app.challenges.index', compact('challenge', 'type', 'page')); 
    }
    
 
