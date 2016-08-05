@@ -42,7 +42,7 @@
 
                 <div class="form-group ">
                     <div class="col-xs-12">
-                        <input type="checkbox" checked name="is_premium" id="is_premium" data-plugin="switchery" data-color="#f05050" data-size="small"/><label for="is_premium">Premium</label>
+                        <input type="checkbox" name="is_premium" id="is_premium" data-plugin="switchery" data-color="#f05050" data-size="small" {{ $challenge->is_premium ? 'checked' : '' }}/><label for="is_premium">Premium</label>
                     </div>
                 </div>
   
