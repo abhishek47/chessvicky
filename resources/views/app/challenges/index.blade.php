@@ -18,7 +18,7 @@
                  
                  <p>
                    <a href="/challenges" class="btn btn-inverse">
-                      <i class="fa fa-refresh"></i> New Challenge
+                      <i class="fa fa-refresh"></i> Try New Challenge
                    </a>
                  </p>
               </div>
