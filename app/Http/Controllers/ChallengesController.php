@@ -57,7 +57,7 @@ class ChallengesController extends Controller
    }
 
 
-    public function listPremium()
+    public function listPremium(Request $request)
    {
         
 
