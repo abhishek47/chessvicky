@@ -75,7 +75,7 @@ Route::get('/questions/{id}/unmark', 'QuestionsController@unmark');
 Route::post('/questions/{id}/answers', 'AnswersController@store');
 
 Route::get('/challenges', 'ChallengesController@list');
-Route::get('/challenges/type:{type}', 'ChallengesController@show');
+Route::get('/challenges/type:{type}', 'ChallengesController@listPremium');
 Route::post('/challenges/{slug}', 'ChallengesController@check');
 Route::post('/userchallenges/store', 'UserChallengesController@store');
 

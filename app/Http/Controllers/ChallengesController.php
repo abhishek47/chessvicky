@@ -57,18 +57,27 @@ class ChallengesController extends Controller
    }
 
 
-    public function show()
+    public function listPremium()
    {
         
 
-        while(1) {
-           $challenge = Challenge::where('is_premium', 1)->get()->random(1);
-           if(UserChallenges::where('user_id', \Auth::user()->id)->where('challenge_id', $challenge->id)->exists())
-            {
-               continue; 
-            }
+       
+        $challenges = Challenge::where('is_premium', 1)->get();
+        
+        $challenges = $challenges->except(\Auth::user()->getChallengeIds()->toArray());
 
-            break;
+        if(count($challenges))
+        {
+            $challenge = $challenges->random(1);
+            $type = 'all';
+            $page = 'challenges';
+            return view('app.challenges.index', compact('challenge', 'type', 'page')); 
+        } else {
+            $request->session()->flash('status', 'There are no open challenges yet to play.You will be notified whenever any challenge will be open for contest.Stay tuned!!');
+            return redirect('/home');
+        }
+
+
 
         }
 
