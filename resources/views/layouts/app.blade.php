@@ -61,6 +61,14 @@
         <script src="/js/sweetalert.min.js"></script>
 
 
+        @if(Session::has('status'))
+          <script type="text/javascript">
+            sweetAlert("Oops...", "{{ Session::get('status') }}", "error");
+          </script>
+
+        @endif
+
+
          <!-- Typeahead.js Bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
     <!-- Typeahead Initialization -->

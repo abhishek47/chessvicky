@@ -128,12 +128,10 @@
                                     <li><a href="/admin/quiz/categories"> Manage Categories </a></li>
                                 </ul>
                                 </li>
-                                 <li class="has-submenu">
-                                   <a href="#"> Challenges</a>
-                                   <ul class="submenu">
-                                    <li><a href="/admin/challenges/daily"> Daily Challenges </a></li>
-                                    <li><a href="/admin/challenges/weekly"> Weekly Challenges </a></li>
-                                </ul>
+                                 <li class="">
+                                  
+                                    <a href="{{ url('/admin/challenges') }}"></i>Challenges</a>  
+                                     
                                 </li>
 
                                 <li class="has-submenu">

@@ -21,7 +21,7 @@
                                   @if($firstvideo)
                                    <a href="{{ url('courses/' . $course->slug . '/' . $firstvideo->slug ) }}" class="btn btn-sm  btn-success">Start Course</a>
                                   @endif 
-                                  <a href="#" class="btn btn-sm  btn-warning">Watch Trailer</a>
+                                
                                   <a class="btn btn-sm btn-primary" href="{{ '/favourites/0/' . $course->id }}">
                   @if(isStarred(0, $course->id))
                       <i class="fa fa-star"> Starred</i>
@@ -116,7 +116,9 @@
                                     <img src="{{ $video->poster_url }}" style="height:230px;" class="thumb-img" alt="work-thumbnail">
                                 </a>
                                 <p></p>
-                                <p><strong>
+                                <p>
+
+                                <strong>
                                  @if($video->is_premium)
                                     <i class="fa fa-lock"></i>
                                  @endif

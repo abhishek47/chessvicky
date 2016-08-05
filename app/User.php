@@ -10,6 +10,7 @@ use App\Models\Like;
 
 use App\Models\Notification;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Models\UserChallenges;
 
 class User extends Authenticatable
 {
@@ -72,6 +73,16 @@ class User extends Authenticatable
     public function favourites()
     {
         return $this->hasMany(Models\Favourite::class);
+    }
+
+     public function challenges()
+    {
+        return $this->hasMany(Models\UserChallenges::class);
+    }
+    
+    public function getChallengeIds()
+    {
+        return $this->challenges->lists('challenge_id');
     }
 
       public function profile()

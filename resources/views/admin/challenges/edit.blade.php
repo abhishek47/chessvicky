@@ -33,6 +33,13 @@
                     </div>
                 </div>
 
+                 <div class="form-group">
+                  <div class="col-xs-12">
+                   <label for="points" control-label>Points : </label>
+                   <input type="text" class="form-control" name="points" id="points" value="{{ $challenge->points }}"/>
+                  </div>
+                 </div>
+
                 <div class="form-group ">
                     <div class="col-xs-12">
                         <input type="checkbox" checked name="is_premium" id="is_premium" data-plugin="switchery" data-color="#f05050" data-size="small"/><label for="is_premium">Premium</label>

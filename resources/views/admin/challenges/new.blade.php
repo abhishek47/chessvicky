@@ -32,6 +32,13 @@
                         <input class="form-control" type="text" name="chessboard"  placeholder="Chessboard Url">
                     </div>
                 </div>
+                
+                 <div class="form-group">
+                 <label for="points" control-label>Points : </label>
+                 <input type="text" class="form-control" name="points" id="points" value=""/>
+
+                
+                     </div>
 
                 <div class="form-group ">
                     <div class="col-xs-12">

@@ -8,8 +8,19 @@
          <div class="panel-body">
             <div class="row">
               <div class="col-md-8">
+               @if($type == 'premium')
+                 <h3 style="text-transform: capitalize;"><strong>Premium Challenges</strong></h3>
+                 <p>These challenges are updated once in a week and completing these challenges let you win cash prizes!These are conditions in which one move can check mate the opponent.Think of the move and win the game.</p>
+               @else  
                  <h3 style="text-transform: capitalize;"><strong>Checkmate in one move</strong></h3>
                  <p>These are conditions in which one move can check mate the opponent.Think of the move and win the game.The faster you crack the challenge the more points you get in your skillometer!</p>
+               @endif  
+                 
+                 <p>
+                   <a href="/challenges" class="btn btn-inverse">
+                      <i class="fa fa-refresh"></i> New Challenge
+                   </a>
+                 </p>
               </div>
               <div class="col-md-4">
       
@@ -22,11 +33,11 @@
       </div>
    </div>
 
-   @foreach($challenges as $challenge)
+
       
 			<div class="panel panel-color panel-inverse" >
 			       <div class="panel-heading">
-			       	   <a href="{{ '/challenges/' . $challenge->slug }}">
+			       	   <a >
 			                    <h3 class="panel-title">
                             <strong>
                               @if($challenge->is_premium)
@@ -37,35 +48,20 @@
 			                    </a>
 			       </div>
 			       <div class="panel-body" >
-			               <h3 class="text-muted">{{ $challenge->subtitle }}</h3>
 			                
 			                   <p></p>
 			                   <div class="col-lg-5">
-			                      <img class="img-responsive" src="{{ $challenge->chessboard }}"> 
-			                   	
+			                      <div id="board" style="width: 400px"></div>
+			                   	 
 			                   </div>
 			                   <div class="col-lg-7">
 			                     <div style="margin: 45px;">
-				                   	  <form method="POST" action="{{ url('/challenges/' . $challenge->slug) }}" >
-				                   	  	  <div class="form-group">
-				                   	  	  	  <label for="p1">
-				                   	  	  	  	 Starting Position : 
-				                   	  	  	  </label>
-				                   	  	  	  <input type="text" name="p1" id="p1-{{ $challenge->id }}" class="form-control" placeholder="Eg: e4">
-				                   	  	  </div>
-
-				                   	  	  <div class="form-group">
-				                   	  	  	  <label for="p2">
-				                   	  	  	  	 Final Position : 
-				                   	  	  	  </label>
-				                   	  	  	  <input type="text" name="p2" id="p2-{{ $challenge->id }}" class="form-control" placeholder="Eg: c4">
-				                   	  	  </div>
-
-				                   	  	  <button type="submit" id="challenge-{{ $challenge->id }}" data-id="{{ $challenge->id }}" data-slug="{{ $challenge->slug }}"  class="btn btn-inverse checkchallenge">Submit Answer</button>
-				                   	  </form>
-				                   	  <hr>
-				                   	  <div class="result" id="result-{{ $challenge->id }}">
-				                   	  	  
+				                   	     <h3>{{ $challenge->subtitle }}</h3>
+				                   	  	 <h4>Playing wrong move will snap the piece back to its orignal position!</h4> 
+                                  <p><strong>Status: </strong><span id="status"></span></p>
+                                 <p><strong>Points : </strong> {{ $challenge->points }}</p>
+                                  <p class="text-muted"><a href="javascript:void(0);" onclick="showHint()"><strong><i class="fa fa-lightbulb-o"></i> Take Hint (-10 Points)</strong></a></p>
+                                  <p id="hint" class="hidden"><strong>Hint : {{ $challenge->hint }}</strong></p>
 				                   	  </div>
 
 			                   	  </div>
@@ -74,6 +70,14 @@
 			                  </div>
 			             <div class="panel-footer" >
 
+                          <i id="source" data-val="0" hidden="true"></i>
+                          <i id="dest" data-val="0" hidden="true"></i>
+    
+                           <i id="cId" data-val="{{ $challenge->id }}" hidden="true"></i>
+                            <i id="points" data-val="{{ $challenge->points }}" hidden="true"></i>
+                           <i id="moves" data-val="{{ $challenge->moves }}" hidden="true"></i>
+                           <i id="fen" data-val="{{ $challenge->chessboard }}" hidden="true"></i>
+                           <i id="solution" data-val="{{ $challenge->solution }}" hidden="true"></i>
 			             	
 			                         
 			             </div>    
@@ -84,50 +88,26 @@
 			             
 			            
 
-   @endforeach
 </div> 
 
 @stop
 
 @section('scripts')
- 
+
  <script type="text/javascript">
-  $(document).ready(function(){
+     function showHint() {
 
-        $("body").on("click",".checkchallenge",function(e)
-              {
-              e.preventDefault();
-              var cid=$(this).attr("data-id");
-              var p1=$('#p1-'+cid).val();
-              var p2 = $('#p2-'+cid).val();
-              var slug = $(this).attr("data-slug");
-             
-              var ans = p1.toLowerCase() + ' ' + p2.toLowerCase();
-              var htmldata= '<h4 class="text-success"><b>Congratulations!You have solved the puzzle!</b></h4>';
-              var htmldata2 = '<h4 class="text-danger"><b>Sorry!!This is an Incorrect move!</b></h4>' ;
-              var dataString = 'cid='+ cid +'&solution='+ans;
-              var surl = '/challenges/' + slug;
-              $.ajax({
-              type: "POST",
-              url: surl,
-              data: dataString,
-              cache: false,
-              beforeSend: function(request){ return request.setRequestHeader('X-CSRF-Token', $("meta[name='csrf-token']").attr('content'));},
-              success: function(html)
-              { 
-                if(parseInt(html) == 1)
-                { 
-                    $('#result-'+cid).html(htmldata);
-                } else {
-                	$('#result-'+cid).html(htmldata2);
-                }
-              }
-              });
+          console.log("Hint Clicked");
+          $("#hint").removeClass('hidden');
+          return false;
+      }
 
-              return false;
-              });
+ </script>
 
+ <script src="/js/chess.js"></script>
+ <script src="/js/chessboard-0.3.0.js"></script>
+ <script src="/js/challenge.js"></script>
+  
 
-       });
-  </script>
+ 
 @stop

@@ -67,7 +67,15 @@
               
                <tr class="{{ $cvideo->id == $video->id ? 'success' : '' }}" > 
                  <th scope="row">{{ $cvideo->position }}</th> 
-                 <td>{{ str_limit($cvideo->title, 30) }}</td> 
+                 <td>
+                   @if($cvideo->id == $video->id)
+                     {{ str_limit($cvideo->title, 30) }}
+                   @else 
+                     <a href="{{ url('/courses/' . $course->slug . '/' . $cvideo->slug) }}">
+                       {{ str_limit($cvideo->title, 30) }}
+                     </a>
+                   @endif  
+                 </td> 
                  <td>{{ str_limit($cvideo->desc, 20) }}</td> 
                  <td>{{ $cvideo->duration }}</td>
                   @if($cvideo->id != $video->id)  

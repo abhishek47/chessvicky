@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Challenge;
+use App\Models\UserChallenges;
 
 class ChallengesController extends Controller
 {
@@ -19,12 +20,62 @@ class ChallengesController extends Controller
         $this->middleware('auth');
     }
 
-   public function list()
+   public function list(Request $request)
    {
-        $challenges = Challenge::latest()->paginate(20);
-        $type = 'all';
+        
+
+        $challenges = Challenge::where('is_premium', 0)->get();
+        
+        $challenges = $challenges->except(\Auth::user()->getChallengeIds()->toArray());
+
+        if(count($challenges))
+        {
+            $challenge = $challenges->random(1);
+            $type = 'all';
+            $page = 'challenges';
+            return view('app.challenges.index', compact('challenge', 'type', 'page')); 
+        } else {
+            $request->session()->flash('status', 'You have completed all the challenges uptill now and there are no new challenges added.Stay tuned!!');
+            return redirect('/home');
+        }
+
+
+   
+      /*  while(1) {
+           $challenge = Challenge::where('is_premium', 0)->get()->random(1);
+           if(UserChallenges::where('user_id', \Auth::user()->id)->where('challenge_id', $challenge->id)->exists())
+            {
+               continue; 
+            }
+
+            break;
+
+        }
+*/
+
+        
+   }
+
+
+    public function show()
+   {
+        
+
+        while(1) {
+           $challenge = Challenge::where('is_premium', 1)->get()->random(1);
+           if(UserChallenges::where('user_id', \Auth::user()->id)->where('challenge_id', $challenge->id)->exists())
+            {
+               continue; 
+            }
+
+            break;
+
+        }
+
+
+        $type = 'premium';
         $page = 'challenges';
-        return view('app.challenges.index', compact('challenges', 'type', 'page')); 
+        return view('app.challenges.index', compact('challenge', 'type', 'page')); 
    }
    
 
@@ -39,18 +90,6 @@ class ChallengesController extends Controller
     }
    
 
-     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($slug)
-    {
-        $challenge = challenge::where('slug', $slug)->first();
-        $page = "challenges";
-        return view('app.challenges.show', compact('challenge', 'page'));
-    }
 
     
     public function check(Request $request, $slug)
@@ -80,6 +119,7 @@ class ChallengesController extends Controller
           'solution' => 'required',
           'chessboard' => 'required',
           'moves' => 'required',
+          'points' => 'required',
        	]);
        
        $data = $request->all();

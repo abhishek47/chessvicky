@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Challenge extends Model
+class UserChallenges extends Model
 {
+    protected $table = "users_challenges";
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'title', 'subtitle', 'is_premium',  'slug', 'chessboard', 'moves', 'solution', 'hint', 'points',
+        'user_id', 'challenge_id',
     ];
-
-    
 }
