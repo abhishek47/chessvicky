@@ -12,7 +12,7 @@
                  <h3 style="text-transform: capitalize;"><strong>Premium Challenges</strong></h3>
                  <p>These challenges are updated once in a week and completing these challenges let you win cash prizes!These are conditions in which one move can check mate the opponent.Think of the move and win the game.</p>
                @else  
-                 <h3 style="text-transform: capitalize;"><strong>Checkmate in one move</strong></h3>
+                 <h3 style="text-transform: capitalize;"><strong>CHECKMATE IN ONE MOVE!</strong></h3>
                  <p>These are conditions in which one move can check mate the opponent.Think of the move and win the game.The faster you crack the challenge the more points you get in your skillometer!</p>
                @endif  
                  
