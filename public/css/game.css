@@ -1,0 +1,13 @@
+
+    
+
+    	#board {
+    		width: 70%;
+    	}
+
+    	@media (max-width: 762px)
+    	{
+	    	#board {
+	    		width: 100%;
+	    	}	
+    	}

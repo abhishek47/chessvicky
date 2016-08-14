@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 <br><br/><br>
-    <br><br/><br>
+    
 
 @section('content')
 <div class="container">

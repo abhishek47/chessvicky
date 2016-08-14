@@ -143,7 +143,7 @@ class QuestionsController extends Controller
 
          $question->save();
 
-         return back();
+         return 1;
     }
 
     public function unmark($id)

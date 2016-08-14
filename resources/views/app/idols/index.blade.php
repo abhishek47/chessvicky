@@ -9,7 +9,7 @@
          <div class="panel-body">
             <div class="row">
               <div class="col-md-8">
-                 <h3 style="text-transform: capitalize;"><strong>SuperIdols On ChessVicky</strong></h3>
+                 <h3 style="text-transform: capitalize;"><strong>SUPERIDOLS ON CHESSVICKY</strong></h3>
                  <p>These great personalities in the world of Chess are here on ChessVicky to help you with your carreer in chess!They would answer you in forum and even in discussions on courses and videos!</p>
               </div>
               <div class="col-md-4">

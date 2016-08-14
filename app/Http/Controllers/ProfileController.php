@@ -93,6 +93,7 @@ class ProfileController extends Controller
       }
    }
 
+  
    public function grade(Request $request)
    {
    	        $answer1 = $request->get('question-1-answers');

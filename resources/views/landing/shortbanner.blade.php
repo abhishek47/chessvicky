@@ -4,8 +4,8 @@
 		   @include('landing.header')
 
 		   <div class="hero text-center">
-		   	   <h2>Be A Premium Member</h2>
-		   	   <h3>And Get One Move Ahead</h3>
+		   	   <h2 class="whitebox">Be A Premium Member</h2>
+		   	   <h3 class="blackbox">And Get One Move Ahead</h3>
 
 		   	  
 		   </div>

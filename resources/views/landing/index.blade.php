@@ -211,7 +211,7 @@
                   
                   <div class="col-xs-12">
                       <h2>Vision 2020</h2>
-                    <p>Vinayak Wadile,The Core Founder of ChessVicky,aims to make a grandmaster through our courses and other resources.
+                    <p>Teaching is the greatest act of optimism.Here at ChessVicky we want people to learn and persue their passion of chess in a different way at low costs.In future years we look forward to make a grandmaster in chess through ChessVicky.
                     </p>
                   </div>
                  </div>

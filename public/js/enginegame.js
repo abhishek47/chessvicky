@@ -9,6 +9,10 @@ function engineGame(options) {
     var playerColor = 'white';
     var clockTimeoutID = null;
     var isEngineRunning = false;
+    var timeOver = false;
+    
+      var statusEl = $('#status');
+   
 
     // do not pick up pieces if the game is over
     // only pick up pieces for White
@@ -26,7 +30,7 @@ function engineGame(options) {
     uciCmd('uci');
 
     function displayStatus() {
-        var status = 'Engine: ';
+        var status = '<b>Engine: </b> ';
         if(!engineStatus.engineLoaded) {
             status += 'loading...';
         } else if(!engineStatus.engineReady) {
@@ -34,11 +38,11 @@ function engineGame(options) {
         } else {
             status += 'ready.';
         }
-        status += ' Book: ' + engineStatus.book;
+        status += ' <b>Book: </b>' + engineStatus.book;
         if(engineStatus.search) {
-            status += '<br>' + engineStatus.search;
+            status += '<br><b>' + engineStatus.search + '</b> | ';
             if(engineStatus.score && displayScore) {
-                status += ' Score: ' + engineStatus.score;
+                status += ' <b>Score: </b>' + engineStatus.score;
             }
         }
         $('#engineStatus').html(status);
@@ -69,10 +73,20 @@ function engineGame(options) {
     }
 
     function clockTick() {
-        updateClock();
+       
+         if(time.wtime == 0)
+            {
+                timeOver = true;
+                swal("Oops...", "White ran out of time!", "error");
+            } else if(time.btime == 0) {
+                timeOver = true;
+                swal("Oops...", "Black ran out of time!", "error");
+            } else {
+                 updateClock();
         var t = (time.clockColor == 'white' ? time.wtime : time.btime) + time.startTime - Date.now();
         var timeToNextSecond = (t % 1000) + 1;
         clockTimeoutID = setTimeout(clockTick, timeToNextSecond);
+       }
     }
 
     function stopClock() {
@@ -85,6 +99,7 @@ function engineGame(options) {
             time.startTime = null;
             if(time.clockColor == 'white') {
                 time.wtime = Math.max(0, time.wtime - elapsed);
+
             } else {
                 time.btime = Math.max(0, time.btime - elapsed);
             }
@@ -93,6 +108,7 @@ function engineGame(options) {
 
     function startClock() {
         if(game.turn() == 'w') {
+           
             time.wtime += time.winc;
             time.clockColor = 'white';
         } else {
@@ -103,13 +119,94 @@ function engineGame(options) {
         clockTick();
     }
 
+          //used for clickable moves in gametext
+    //not used for buttons for efficiency
+    function goToMove(ply) {
+         /*gameHistory = game.history({verbose: true});
+      if (ply > gameHistory.length - 1) 
+          {
+            ply = gameHistory.length - 1;
+        }
+      game.reset();
+      for (var i = 0; i <= ply; i++) {
+        game.move(gameHistory[i].san);
+      }
+      currentPly = i - 1;
+      board.position(game.fen());*/
+      alert("Hello");
+      return false;
+    }
+
+
+
+
+    var onChange = function onChange() { //fires when the board position changes
+      //highlight the current move
+      $("[class^='gameMove']").removeClass('highlight');
+      $('.gameMove' + currentPly).addClass('highlight');
+    }
+
+
+    function updatePgn()
+    {  
+        var h = game.header();
+        var gameHeaderText = '<h4>' + h.White + ' (' + h.WhiteElo + ') - ' + h.Black + ' (' + h.BlackElo + ')</h4>';
+        gameHeaderText += '<h5>' + h.Event + ', ' + h.Site + ' ' + h.EventDate + '</h5>';
+        var pgn = game.pgn();
+        var gameMoves = pgn.replace(/\[(.*?)\]/gm, '').replace(h.Result, '').trim();
+
+          //format the moves so each one is individually identified, so it can be highlighted
+          moveArray = gameMoves.split(/([0-9]+\.\s)/).filter(function(n) {return n;});
+          for (var i = 0, l = moveArray.length; i < l; ++i) {
+            var s = $.trim(moveArray[i]);
+            if (!/^[0-9]+\.$/.test(s)) { //move numbers
+              m = s.split(/\s+/);
+              for (var j = 0, ll = m.length; j < ll; ++j) {
+                m[j] = '<span class="gameMove' + (i + j - 1) + '"><a class="myLink" data-move="' + (i + j - 1) + '" href="#">' + m[j] + '</a></span>';
+              }
+              s = m.join(' ');
+            }
+            moveArray[i] = s;
+          }
+          $("#game-data").html('<div class="gameMoves">' + moveArray.join(' ') + ' <span class="gameResult">'  + '</span></div>');
+          
+          var moveColor = 'White';
+        if (game.turn() === 'b') {
+          moveColor = 'Black';
+        }
+
+        // checkmate?
+        if (game.in_checkmate() === true) {
+          status = 'chess over, ' + moveColor + ' is in checkmate.';
+
+        }
+
+        // draw?
+        else if (game.in_draw() === true) {
+          status = 'chess over, drawn position';
+        }
+
+        // chess still on
+        else {
+          status = moveColor + ' to move';
+
+          // check?
+          if (game.in_check() === true) {
+            status += ', ' + moveColor + ' is in check';
+          }
+        }
+
+        statusEl.html(status);
+    }
+
+
     function prepareMove() {
         stopClock();
-        $('#pgn').text(game.pgn());
+        updatePgn();
         board.position(game.fen());
         updateClock();
         var turn = game.turn() == 'w' ? 'white' : 'black';
-        if(!game.game_over()) {
+        if(!game.game_over() && !timeOver) {
             if(turn != playerColor) {
                 var moves = '';
                 var history = game.history({verbose: true});
@@ -131,6 +228,37 @@ function engineGame(options) {
             if(game.history().length >= 2 && !time.depth && !time.nodes) {
                 startClock();
             }
+        } else if(playerColor == turn) {
+            swal("Check And Mate!", "You lose the game and lost 150 skillometer points!", "error");
+            var dataString = 'operation=decrement' + '&points='+150;
+  
+              $.ajax({
+              type: "POST",
+              url: '/user/game/stats/',
+              data: dataString,
+              cache: false,
+              beforeSend: function(request){ return request.setRequestHeader('X-CSRF-Token', $("meta[name='csrf-token']").attr('content'));},
+              success: function(html, window)
+              { 
+                  console.log("LOST");
+  
+              }
+              });
+        } else {
+            swal("Woohoo", "You win the game and gain 250 skillometer points!", "success");
+             var dataString = 'operation=increment' + '&points='+250;
+  
+              $.ajax({
+              type: "POST",
+              url: '/user/game/stats/',
+              data: dataString,
+              cache: false,
+              beforeSend: function(request){ return request.setRequestHeader('X-CSRF-Token', $("meta[name='csrf-token']").attr('content'));},
+              success: function(html, window)
+              { 
+                    
+              }
+              });
         }
     }
 
@@ -220,7 +348,7 @@ var playAudio = function() {
 
 function clickOnSquare(evt) {
   
-   if (game.game_over()) {
+   if (game.game_over() || timeOver) {
                 return false;
             }
 
@@ -330,6 +458,7 @@ $("#board").on("click", ".square-55d63", clickOnSquare);
             uciCmd('isready');
             engineStatus.engineReady = false;
             engineStatus.search = null;
+            timeOver = false;
             displayStatus();
             prepareMove();
         },

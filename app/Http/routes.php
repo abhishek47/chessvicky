@@ -94,7 +94,7 @@ Route::get('/enginegame', 'GamesController@engine');
 
 
 Route::get('/leaderboard', 'LeaderboardController@index');
-
+Route::post('user/game/stats', 'GamesController@stats');
 
 Route::get('/findusers', 'SearchController@findusers');
 

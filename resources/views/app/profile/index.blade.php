@@ -78,7 +78,7 @@
 
                                     <div class="table-detail">
                                        <h4 class="m-t-0 m-b-5"><b>Won</b></h4>
-                                       <h5 class="text-muted m-b-0 m-t-0">95 Games</h5>
+                                       <h5 class="text-muted m-b-0 m-t-0">{{ $user->profile->games_won }} Games</h5>
                                     </div>
                                     <div class="table-detail text-right">
                                         <span data-plugin="peity-pie" data-colors="#5fbeaa,#ebeff2" data-width="50" data-height="45" style="display: none;">1/5</span><svg class="peity" height="45" width="50"><path d="M 25 0 A 22.5 22.5 0 0 1 46.39877161664096 15.547117626563683 L 25 22.5" fill="#5fbeaa"></path><path d="M 46.39877161664096 15.547117626563683 A 22.5 22.5 0 1 1 24.999999999999996 0 L 25 22.5" fill="#ebeff2"></path></svg>
@@ -100,7 +100,7 @@
 
                                     <div class="table-detail">
                                        <h4 class="m-t-0 m-b-5"><b>Lost</b></h4>
-                                       <h5 class="text-muted m-b-0 m-t-0">85 Games</h5>
+                                       <h5 class="text-muted m-b-0 m-t-0">{{ $user->profile->games_lost }} Games</h5>
                                     </div>
                                     <div class="table-detail text-right">
                                         <span data-plugin="peity-donut" data-colors="#f05050,#ebeff2" data-width="50" data-height="45" style="display: none;">1/5</span><svg class="peity" height="45" width="50"><path d="M 25 0 A 22.5 22.5 0 0 1 46.39877161664096 15.547117626563683 L 35.69938580832048 19.02355881328184 A 11.25 11.25 0 0 0 25 11.25" fill="#f05050"></path><path d="M 46.39877161664096 15.547117626563683 A 22.5 22.5 0 1 1 24.999999999999996 0 L 24.999999999999996 11.25 A 11.25 11.25 0 1 0 35.69938580832048 19.02355881328184" fill="#ebeff2"></path></svg>
@@ -121,7 +121,7 @@
 
                                     <div class="table-detail">
                                        <h4 class="m-t-0 m-b-5"><b>Drawn</b></h4>
-                                       <h5 class="text-muted m-b-0 m-t-0">15 Games</h5>
+                                       <h5 class="text-muted m-b-0 m-t-0">{{ $user->profile->games_drawn }} Games</h5>
                                     </div>
                                     <div class="table-detail text-right">
                                         <span data-plugin="peity-pie" data-colors="#5fbeaa,#ebeff2" data-width="50" data-height="45" style="display: none;">1/5</span><svg class="peity" height="45" width="50"><path d="M 25 0 A 22.5 22.5 0 0 1 46.39877161664096 15.547117626563683 L 25 22.5" fill="#5fbeaa"></path><path d="M 46.39877161664096 15.547117626563683 A 22.5 22.5 0 1 1 24.999999999999996 0 L 25 22.5" fill="#ebeff2"></path></svg>

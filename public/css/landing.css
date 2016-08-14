@@ -32,6 +32,27 @@ p {
  	color: #000;
  }
 
+ .whitebox {
+ 	 width: 500px;
+    color: black !important;
+    margin: 0 auto;
+    padding: 8px;
+    margin-top: 15px; 
+    font-size: 68px;
+ 	border: 1px solid #333;
+ 	background-color: rgba(255, 255, 255, 0.8);
+ }
+
+
+ .blackbox {
+ 	 background-color: rgba(0, 0, 0, 0.6);
+    width: 450px;
+    padding: 8px;
+    margin: 0 auto;
+    margin-top: 15px; 
+    font-size: 68px;
+ }
+
 
 
 
@@ -58,8 +79,8 @@ p {
 }
 
 .jumbotron.short {
-	height: 300px;
-	margin-bottom: 75px;
+	height: 300px;/*
+	margin-bottom: 75px;*/
 
 }
 

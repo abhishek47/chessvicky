@@ -94,7 +94,7 @@
 
                                      &nbsp;
                                         @if($question->user->id == Auth::user()->id)
-                                <a  href="{{ '/questions/' . $question->id . '/answered/' . 
+                                <a class="markAnswer" data-id="{{ $answer->id }}" id="mark-{{ $answer->id }}" data-question="{{ $question->id }}" href="{{ '/questions/' . $question->id . '/answered/' . 
                                $answer->id }}">
                                   @if($question->answered && $question->canswer_id == $answer->id)
                                     <i class="fa fa-check"> Answer</i>
@@ -160,6 +160,40 @@
 
                    $("#like-"+ansId).attr("data-likes", parseInt(html));
                 }
+              }
+              });
+
+              return false;
+              });
+
+        $("body").on("click",".markAnswer",function(e)
+              {
+              e.preventDefault();
+              var ansId=$(this).attr("data-id");
+              var question = $(this).attr("data-question");
+             
+              var htmlData='<i class="fa fa-check"> Answer</i> ' ;
+              var htmlData2='<i class="fa fa-check"></i> ' ;
+              var dataString = '';
+  
+              $.ajax({
+              type: "GET",
+              url: '/questions/' + question + '/answered/' + 
+                               ansId,
+              data: dataString,
+              cache: false,
+              beforeSend: function(request){ return request.setRequestHeader('X-CSRF-Token', $("meta[name='csrf-token']").attr('content'));},
+              success: function(html)
+              { 
+                if(parseInt(html) > -1)
+                { 
+                    $('.markAnswer').html(htmlData2);
+                    $("#mark-"+ansId).html(htmlData);
+                  } else 
+                  {
+                    $("#mark-"+ansId).html(htmlData2);
+                  }
+
               }
               });
 

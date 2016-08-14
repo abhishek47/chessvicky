@@ -23,6 +23,7 @@
     <link href="/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="/css/pages.css" rel="stylesheet" type="text/css" />
     <link href="/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="/css/game.css" rel="stylesheet" type="text/css" />
     <link href="/css/responsive.css" rel="stylesheet" type="text/css" />
     <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/normalise.post.css" rel="stylesheet" type="text/css" />
@@ -63,7 +64,7 @@
 
         @if(Session::has('status'))
           <script type="text/javascript">
-            sweetAlert("Oops...", "{{ Session::get('status') }}", "error");
+            sweetAlert("{{ Session::get('tag', 'Oops!!') }}", "{{ Session::get('status') }}", "{{ Session::get('type', 'error') }}");
           </script>
 
         @endif
