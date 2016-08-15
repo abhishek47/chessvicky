@@ -45,7 +45,7 @@
               
                 <div class="form-group ">
                     <div class="col-xs-12">
-                        <textarea id="body" name="body">{{ $course->desc }}</textarea>
+                        <textarea id="body" name="desc">{{ $course->desc }}</textarea>
                     </div>
                 </div>
 
