@@ -10,7 +10,7 @@
                     </div>
                     <div class="panel-body">
                        <div class="blog-post">
-                        <p >{!! str_limit($book->body, 120) !!}</p>
+                        <p >{!! str_limit($book->desc, 120) !!}</p>
                         
                      </div>  
                         <p><strong>Topic : </strong>{{ $book->category->name }}</p>
