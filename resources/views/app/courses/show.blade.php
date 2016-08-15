@@ -16,7 +16,7 @@
                                 Course : {{ $course->title }}</h3>
                             </div>
                             <div class="panel-body">
-                              <p>{{ $course->desc }}</p>
+                              <p> {!! $course->desc  !!}</p>
                                <p>
                                   @if($firstvideo)
                                    <a href="{{ url('courses/' . $course->slug . '/' . $firstvideo->slug ) }}" class="btn btn-sm  btn-success">Start Course</a>
