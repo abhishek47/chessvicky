@@ -144,9 +144,9 @@
                                 <li>
                                     <a href="{{ url('/favourites') }}">Favourites</a>
                                 </li>
-                                <li>
+                               <!--  <li>
                                     <a href="{{ url('/soon') }}">Explore</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
                         <li class="has-submenu {{ active($page, 'library') }}">
@@ -161,9 +161,9 @@
                                 <li>
                                     <a href="{{ url('/books') }}">Books</a>
                                 </li>
-                                <li>
+                               <!--  <li>
                                     <a href="{{ url('/soon') }}">Tutorials</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
 
@@ -186,19 +186,26 @@
                             </ul>
                         </li>
 
-                        <li class="has-submenu {{ active($page, 'challenges') }}">
+                      <!--   <li class="has-submenu {{ active($page, 'challenges') }}">
                             <a href="#"></i>Challenges</a>
                               <ul class="submenu">
                                 <li>
                                     <a href="{{ url('/challenges') }}">Daily Challenges</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="{{ url('/challenges/type:premium') }}">Premium Challenges</a>
-                                </li>
+                                </li> -->
                               
                                
                             </ul>
+                        </li> -->
+
+                         <li class="{{ active($page, 'challenges') }}">
+                          
+                            <a href="{{ url('/challenges') }}"></i>Challenges</a>  
+                             
                         </li>
+
 
                          <li class="">
                           
