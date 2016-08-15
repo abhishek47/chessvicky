@@ -166,9 +166,14 @@
                                 </li> -->
                             </ul>
                         </li>
+                        
+                          <li class="{{ active($page, 'articles') }}">
+                          
+                            <a href="{{ url('/articles/') }}"></i>Articles</a>  
+                             
+                        </li>
 
-
-                        <li class="has-submenu {{ active($page, 'articles') }}">
+                      <!--   <li class="has-submenu {{ active($page, 'articles') }}">
                             <a href="#"></i>Articles</a>
                               <ul class="submenu">
                                 <li>
@@ -180,11 +185,11 @@
                                 <li>
                                     <a href="{{ url('/articles/type:starred') }}">Starred</a>
                                 </li>
-                               <!--  <li>
+                                <li>
                                     <a href="{{ url('/articles/type:trending') }}">Trending</a>
-                                </li> -->
+                                </li> 
                             </ul>
-                        </li>
+                        </li> -->
 
                       <!--   <li class="has-submenu {{ active($page, 'challenges') }}">
                             <a href="#"></i>Challenges</a>
