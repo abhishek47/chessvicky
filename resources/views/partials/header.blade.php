@@ -192,9 +192,9 @@
                                 <li>
                                     <a href="{{ url('/challenges') }}">Daily Challenges</a>
                                 </li>
-                                <!-- <li>
+                                <li>
                                     <a href="{{ url('/challenges/type:premium') }}">Premium Challenges</a>
-                                </li> -->
+                                </li> 
                               
                                
                             </ul>
