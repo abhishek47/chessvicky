@@ -43,11 +43,9 @@
                     </div>
                 </div>
   
-
-                <div class="form-group ">
+  <div class="form-group ">
                     <div class="col-xs-12">
-                       <label for="desc" class="">Description : </label>
-                        <textarea class="form-control" type="text" rows="5" name="desc" placeholder="Book Description">{{ $book->desc }}</textarea>
+                        <textarea id="body" name="desc">{{ $book->desc }}</textarea>
                     </div>
                 </div>
 
@@ -87,4 +85,52 @@
        </div> 
      </div>  
    </div>
+@stop
+
+
+
+@section('scripts')
+    
+    <style type="text/css">
+      
+      .tinymce-content p {
+          padding: 0;
+          margin: 1px 0;
+      }
+    </style>
+    
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+      <script type='text/javascript'>
+       var default_value = 'Hello!'
+   </script>
+    <script type="text/javascript">
+          $(document).ready(function () {
+          if($("#body").length > 0){
+              tinymce.init({
+                  selector: "textarea#body",
+                  theme: "modern",
+                  height:500,
+                  force_br_newlines : true,
+                  force_p_newlines : false,
+  plugins: [
+    'advlist autolink lists link image charmap print preview hr anchor pagebreak ',
+    'searchreplace wordcount visualblocks visualchars code fullscreen',
+    'insertdatetime media nonbreaking save table contextmenu directionality',
+    'emoticons template paste textcolor colorpicker textpattern imagetools',
+    
+  ],
+  toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+  toolbar2: 'print preview media | forecolor backcolor emoticons | fontsizeselect ',
+  image_advtab: true,
+  templates: [
+    { title: 'Test template 1', content: 'Test 1' },
+    { title: 'Test template 2', content: 'Test 2' }
+  ],
+  content_css: [
+    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i'
+  ]
+              });
+          }
+      });
+        </script>
 @stop
