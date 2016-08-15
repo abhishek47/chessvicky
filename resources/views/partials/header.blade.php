@@ -236,11 +236,11 @@
                                     <a href="{{ url('/game') }}">Play With Computer</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/live?gameid=') }}">Challenge Friend</a>
+                                    <a href="{{ url('/live?gameid=') }}">Play With Friend</a>
                                 </li>
-                                <li>
+                               <!--  <li>
                                     <a href="{{ url('/game/tournaments') }}">Tournaments</a>
-                                </li>
+                                </li> -->
                               <!--   <li>
                                     <a href="{{ url('/leaderboard') }}">Leaderboard</a>
                                 </li> -->
