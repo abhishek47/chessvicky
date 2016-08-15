@@ -9,7 +9,10 @@
                     </h3></a>
                     </div>
                     <div class="panel-body">
-                        <p >{{ str_limit($book->desc, 100) }}</p>
+                       <div class="blog-post">
+                        <p >{!! str_limit($book->body, 120) !!}</p>
+                        
+                     </div>  
                         <p><strong>Topic : </strong>{{ $book->category->name }}</p>
                        
                         <p><a class="btn btn-default" href="{{ 
