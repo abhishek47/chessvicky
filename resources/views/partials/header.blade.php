@@ -104,8 +104,8 @@
                                 <a href="" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ Gravatar::get(\Auth::user()->email) }}" alt="user-img" class="img-circle"> </a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ url('/profile/' . \Auth::user()->username) }}"><i class="fa fa-user"></i> Profile</a></li>
-                                    <li><a href="{{ url('/settings') }}"><i class="fa fa-cog"></i> Settings</a></li>
-                                    <li><a href="javascript:void(0)"><i class="fa fa-credit-card"></i> Subscribe</a></li>
+                                   <!--  <li><a href="{{ url('/settings') }}"><i class="fa fa-cog"></i> Settings</a></li> -->
+                                   <!--  <li><a href="javascript:void(0)"><i class="fa fa-credit-card"></i> Subscribe</a></li> -->
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
                                 </ul>
                             </li>
