@@ -97,7 +97,6 @@
                        <div class="blog-post">
                         <p >{!! str_limit($course->desc, 150) !!}</p>
                        </div> 
-                       <br/>
                         <p><strong>Topic : </strong>{{ $course->category->name }}</p>
                        
                         <p><a class="btn btn-default" href="{{ 
