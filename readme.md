@@ -33,12 +33,14 @@ Remember, before you can access your server, you will need to add a public key v
 
 Server Details:
 
-Name:	chessvicky
-IP Address:	104.131.2.218
+
+Name:	chessvicky-main
+IP Address:	198.211.99.143
 Username:	forge
-Sudo Password:	TuqrEgHR9WuAqLLHuvEo
+Sudo Password:	hp4a5BKtd8turFcS6emC
 Database Username:	forge
-Database Password:	7sbFFsSsedqKrEEc9k9b
+Database Password:	Kdosx6iBUQ9hW9JHLyNn
+
 
 
 ENV :

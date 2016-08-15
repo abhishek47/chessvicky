@@ -15,7 +15,7 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
   
     
-      <link href="http://vjs.zencdn.net/5.9.2/video-js.css" rel="stylesheet">
+      <link href="https://vjs.zencdn.net/5.9.2/video-js.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/swipebox.min.css">
     <link href="/css/app.css" rel="stylesheet">
@@ -28,7 +28,7 @@
      <link href="/css/switchery.min.css" rel="stylesheet" />
    
 
-  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
 
 
@@ -42,38 +42,88 @@
           @yield('content')
 
     
-  
-        <script src="/js/detect.js"></script>
-        <script src="/js/fastclick.js"></script>
-        <script src="/js/jquery.slimscroll.js"></script>
-        <script src="/js/jquery.blockUI.js"></script>
-        <script src="/js/waves.js"></script>
-        <script src="/js/wow.min.js"></script>
-        <script src="/js/jquery.nicescroll.js"></script>
-        <script src="/js/jquery.scrollTo.min.js"></script>
-
-        <script src="/js/jquery.core.js"></script>
-        <script src="/js/jquery.app.js"></script> 
-
+ 
+        <!-- JavaScripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
+      
+     
         <script src="/js/sweetalert.min.js"></script>
-            <!-- Bootstrap-tagsinput  -->
+
+
+        @if(Session::has('status'))
+          <script type="text/javascript">
+            sweetAlert("{{ Session::get('tag', 'Oops!!') }}", "{{ Session::get('status') }}", "{{ Session::get('type', 'error') }}");
+          </script>
+
+        @endif
+
+
+         <!-- Typeahead.js Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <!-- Typeahead Initialization -->
+    <script>
+        jQuery(document).ready(function($) {
+            // Set the Options for "Bloodhound" suggestion engine
+            var engine = new Bloodhound({
+                remote: {
+                    url: '/findusers?q=%QUERY%',
+                    wildcard: '%QUERY%'
+                },
+                datumTokenizer: Bloodhound.tokenizers.whitespace('q'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace
+            });
+
+            $("#user-search").typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            }, {
+                source: engine.ttAdapter(),
+
+                // This will be appended to "tt-dataset-" to form the class name of the suggestion menu.
+                name: 'usersList',
+
+                // the key from the array we want to display (name,id,email,etc...)
+                templates: {
+                    empty: [
+                        '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+                    ],
+                    header: [
+                        '<ul class="dropdown-menu dropdown-menu-lg"><li class="list-group nicescroll notification-list" tabindex="5000" style="overflow: hidden; outline: none;">'
+                    ],
+
+                    footer: [
+                         '</li></ul>'
+                    ],
+                    suggestion: function (data) {
+                        return '<a href="/profile/' + data.username + '" class="list-group-item">' + '<div class="media"><div class="pull-left p-r-10"></div><div class="media-body"><h5 class="media-heading">' + data.fname + ' ' + data.lname + ' @' + data.username + '</h5><p class="m-0"><small>' + data.email  + '</small></p></div></div>' + '</a>'
+
+              }
+                }
+            });
+        });
+    </script>
+
 
       
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/auth.js"></script> 
-   
- <script src="http://vjs.zencdn.net/5.9.2/video.js"></script>
 
+    
+
+ <script src="https://vjs.zencdn.net/5.9.2/video.js"></script>
 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-      
-        <script src="/js/bootstrap-tagsinput.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>    
+
+<script src="/js/bootstrap-tagsinput.min.js"></script>
+ 
 
 @yield('scripts')
 
@@ -108,11 +158,6 @@
 
 })(jQuery)
 
-
-
 </script>
-
-
-
 </body>
 </html>
