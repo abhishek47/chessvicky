@@ -20,7 +20,8 @@
 				    </div>
 				  </div>
 			  </div>
-  
+    
+   {!! $articles->render() !!} 
  
 
   <table class="table table-striped">

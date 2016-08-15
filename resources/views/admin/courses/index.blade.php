@@ -28,6 +28,8 @@
 				      <b><a href="/admin/categories">Add More</a></b>
 				  </div>
 			  </div>
+  
+  {!! $courses->render() !!} 
 
   <table class="table table-striped">
     <thead> 

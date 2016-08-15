@@ -29,6 +29,8 @@
 				  </div>
 			  </div>
 
+        {!! $books->render() !!} 
+
   <table class="table table-striped">
     <thead> 
       <tr> 
