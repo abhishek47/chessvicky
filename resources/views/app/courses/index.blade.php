@@ -93,8 +93,10 @@
                        {{ str_limit($course->title, 40) }}
                     </h3></a>
                     </div>
-                    <div class="panel-body blog-post">
+                    <div class="panel-body">
+                       <div class="blog-post">
                         <p >{!! str_limit($course->desc, 100) !!}</p>
+                       </div> 
                         <p><strong>Topic : </strong>{{ $course->category->name }}</p>
                        
                         <p><a class="btn btn-default" href="{{ 
