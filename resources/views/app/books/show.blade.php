@@ -33,7 +33,7 @@
               </div>
 				  <div class="panel-body">
 				     <p><b>Author : </b> {{ $book->author }}</p>
-                     <p>{{ $book->desc }}</p>
+                     <p>{!! $book->desc !!}</p>
                   <p>   
                       <a class="btn btn-sm btn-primary" href="{{ '/favourites/3/' . $book->id }}">
                   @if(isStarred(3, $book->id))
