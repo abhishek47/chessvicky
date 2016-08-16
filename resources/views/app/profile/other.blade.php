@@ -143,7 +143,7 @@
                         </div>
                        </div>
 
-                       <div class="col-lg-6">
+                     <!--   <div class="col-lg-6">
                          <div class="card-box">
                             <div class="bar-widget">
                                 <div class="table-box">
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                        </div>
+                        </div> -->
                      
 
                     <div class="col-lg-12 panel panel-border panel-inverse">
