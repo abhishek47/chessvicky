@@ -8,7 +8,7 @@
 		   <div class="hero text-center">
                 <div id="clockdiv">
 				  <div>
-				   <h1> <span class="days"></span> DAYS </h1>
+				   <h1> <span class="days"></span> DAY </h1>
 				   <h1 class="time"><span class="hours"></span> : <span class="minutes"></span> : <span class="seconds"></span></h1> 
 				   <h1>TO GO.</h1>
 				    
