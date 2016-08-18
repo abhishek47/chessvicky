@@ -26,7 +26,7 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
+                <ul id="account-buttons" class="nav navbar-nav navbar-right hidden">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                      <li class="box"><a href="{{ url('/register') }}">Create Account</a></li>

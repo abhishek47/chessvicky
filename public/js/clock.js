@@ -32,6 +32,7 @@ function initializeClock(id, endtime) {
       clearInterval(timeinterval);
       $("#clockdiv").addClass("hidden");
       $("#head").removeClass("hidden");
+      $("#account-buttons").removeClass("hidden");
     }
   }
 
