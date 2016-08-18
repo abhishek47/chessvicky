@@ -35,7 +35,7 @@ class GamesController extends Controller
     public function live()
     {
         $page = 'game';
-        return view('app.game.live');
+        return view('app.game.live', compact('page'));
     }
 
     public function stats(Request $request)
