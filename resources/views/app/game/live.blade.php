@@ -40,11 +40,11 @@
     </div>
     <div class="panel-body">
       <div class="col-sm-7 col-md-6">
-        <p><b>Computer</b> (<span class="text-primary" id="time1">0:05:00</span>)</p>
+        <p><b><i class="fa fa-sync"></i>Waiting For User To Join</b> <!-- (<span class="text-primary" id="time1">0:05:00</span>) --></p>
         <br>
         <div id="board"></div>
         <br>
-        <p><b>{{ Auth::user()->fullname() }}</b> (<span class=" text-primary" id="time2">0:05:00</span>)</p>
+        <p><b>{{ Auth::user()->fullname() }}</b> <!-- (<span class=" text-primary" id="time2">0:05:00</span>) --></p>
        
         
         <!-- -->
@@ -72,6 +72,61 @@
     </div>
   </div>
 
+
+   <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title">Choose Game Preferences</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                
+                                               <form class="form-horizontal">
+                                                      <!-- <div class="form-group">
+                                                        <label for="timeBase" class="control-label col-xs-4 col-sm-6 col-md-4">Base time (min)</label>
+                                                        <div class="col-xs-4 col-sm-6 col-md-4">
+                                                          <input type="number" class="form-control" id="timeBase" value="5"></input>
+                                                        </div>
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <label for="timeInc" class="control-label col-xs-4 col-sm-6 col-md-4">Increment (sec)</label>
+                                                        <div class="col-xs-4 col-sm-6 col-md-4">
+                                                          <input type="number" class="form-control" id="timeInc" value="2"></input>
+                                                        </div>
+                                                      </div> -->
+                                                      <div class="form-group">
+                                                        <label for="gameid" class="control-label col-xs-4 col-sm-6 col-md-4">Game Id </label>
+                                                        <div class="col-xs-6 col-sm-6 col-md-4">
+                                                          <input type="text" disabled="true" class="form-control" id="gameid" ></input>
+                                                          <p class="text-muted">Share this id with your friend with whom you want to play chess.</p>
+                                                        </div>
+
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <label for="color" class="control-label col-xs-4 col-sm-6 col-md-4">I play</label>
+                                                        <div class="col-xs-4 col-sm-6 col-md-4">
+                                                          <div class="btn-group" data-toggle="buttons">
+                                                            <label class="btn btn-default active" id="color-white"><input type="radio" name="color">White</label>
+                                                            <label class="btn btn-inverse" id="color-black"><input type="radio" name="color">Black</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    
+                                                    
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-info waves-effect waves-light" onclick="newGame()" data-dismiss="modal">Start Playing</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                 </div>
+                            </div><!-- /.modal -->
+
     
 
 
@@ -84,5 +139,8 @@
    <script src="/js/chessboard-0.3.0.js"></script>
    <script src="/js/utils.js"></script>
    <script src="/js/game.js"></script>
+    <script type="text/javascript">
+      $("#con-close-modal").modal()
+    </script>
   
 @stop

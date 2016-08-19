@@ -1,5 +1,7 @@
   $(document).ready(function() {
-       
+     
+    $("#gameid").val(makeid());
+
     var socket = io.connect('http://localhost:3000');
                                         //initiated socket client
     socket.emit('join', getParameterByName('gameid'));  //join room as defined by query parameter in URL bar
@@ -16,6 +18,10 @@
           var audio = new Audio('../audio/mov.wav');
           audio.play();
       };
+      
+      var newGame = function() {
+        
+      }
 
       var updateStatus = function() {
         var status = '';
@@ -159,6 +165,16 @@
                $('#board .square-' + move.from).css('background', background);
                 playAudio();
       });
+      
+      function makeid()
+      {
+          var text = "";
+          var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+          for( var i=0; i < 5; i++ )
+              text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+          return text;
+      }
  //the example code goes here
  });
