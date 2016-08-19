@@ -1,5 +1,7 @@
   $(document).ready(function() {
      
+    var pcolor;
+      
     $("#gameid").val(makeid());
 
     var socket = io.connect('http://localhost:3000');
@@ -19,9 +21,10 @@
           audio.play();
       };
       
-      var newGame = function() {
-        
-      }
+     $("#newGame").on("click", function() {
+         pcolor = $('#color-white').hasClass('active') ? 'white' : 'black';
+         board.orientation(pcolor);
+      });
 
       var updateStatus = function() {
         var status = '';
@@ -119,6 +122,9 @@
                   background = '#696969';
                 }
                  $('#board .square-' + source).css('background', background);
+              $('#opponentStatus').removeClass("hidden");
+        $('#playerStatus').addClass("hidden"); 
+
             playAudio();
            
             
@@ -150,6 +156,10 @@
         }
         updateStatus();
         board.position(game.fen());
+        
+        $('#opponentStatus').addClass("hidden");
+        $('#playerStatus').removeClass("hidden");  
+
          $('#board .square-55d63').css('background', '');
 
                 var background = '#a9a9a9';

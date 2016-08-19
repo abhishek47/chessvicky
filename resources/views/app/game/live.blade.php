@@ -40,11 +40,11 @@
     </div>
     <div class="panel-body">
       <div class="col-sm-7 col-md-6">
-        <p><b><i class="fa fa-sync"></i>Waiting For User To Join</b> <!-- (<span class="text-primary" id="time1">0:05:00</span>) --></p>
+        <p><b><i class="fa fa-circle" id="opponentStatus" class="hidden" style="color: green"></i> Waiting For User To Join</b> <!-- (<span class="text-primary" id="time1">0:05:00</span>) --></p>
         <br>
         <div id="board"></div>
         <br>
-        <p><b>{{ Auth::user()->fullname() }}</b> <!-- (<span class=" text-primary" id="time2">0:05:00</span>) --></p>
+        <p><b ><i class="fa fa-circle" id="playerStatus" class="hidden" style="color: green"></i> {{ Auth::user()->fullname() }}</b> <!-- (<span class=" text-primary" id="time2">0:05:00</span>) --></p>
        
         
         <!-- -->
@@ -119,7 +119,7 @@
 
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-info waves-effect waves-light" onclick="newGame()" data-dismiss="modal">Start Playing</button>
+                                            <button type="button" id="newGame" class="btn btn-info waves-effect waves-light"  data-dismiss="modal">Start Playing</button>
                                             </form>
                                         </div>
                                     </div>

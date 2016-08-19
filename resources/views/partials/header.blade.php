@@ -240,9 +240,9 @@
                                 <li>
                                     <a href="{{ url('/game') }}">Play With Computer</a>
                                 </li>
-                                <li>
+                              <!--   <li>
                                     <a href="{{ url('/live?gameid=') }}">Play With Friend</a>
-                                </li>
+                                </li> -->
                                <!--  <li>
                                     <a href="{{ url('/game/tournaments') }}">Tournaments</a>
                                 </li> -->
