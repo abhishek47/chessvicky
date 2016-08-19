@@ -93,7 +93,7 @@ class ProfileController extends Controller
       }
    }
 
-  
+
    public function grade(Request $request)
    {
    	        $answer1 = $request->get('question-1-answers');
@@ -152,6 +152,12 @@ class ProfileController extends Controller
             \Auth::user()->save();
          
             $page = 'more';
+
+            $request->session()->flash('tag', "Welcome!!");
+
+            $request->session()->flash('type', 'success');
+            
+            $request->session()->flash('status', 'Here we begin!!We have begun our journey to connect people intereted in chess on 19th August 2016 with more and more resources we have!Our all content and resources is being checked for quality assuarance!So stay tuned as the content is daily goin to be updated!!');
 
    	       return view('app.profile.grade', compact('result', 'correct', 'skillometer', 'page'));
    }

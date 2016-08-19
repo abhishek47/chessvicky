@@ -66,7 +66,5 @@
 @stop
 
 @section('scripts')
-<script type="text/javascript">
-  $('#panel-modal').modal('show');
-</script> 
+
 @stop
