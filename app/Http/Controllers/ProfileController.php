@@ -159,6 +159,6 @@ class ProfileController extends Controller
             
             $request->session()->flash('status', 'Here we begin!!We have begun our journey to connect people intereted in chess on 19th August 2016 with more and more resources we have!Our all content and resources is being checked for quality assuarance!So stay tuned as the content is daily goin to be updated!!');
 
-   	       return view('app.profile.grade', compact('result', 'correct', 'skillometer', 'page'));
+   	       return redirect('/home');
    }
 }
