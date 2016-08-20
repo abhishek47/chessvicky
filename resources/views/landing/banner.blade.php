@@ -21,7 +21,7 @@
 		   	   <h3>Be Always One Move Ahead</h3>
               
 		   	   <a href="/register" class="btn btn-default green">Join Us Now</a>
-		   	   <a rel="vimeo" href="http://vimeo.com/29193046" class="btn btn-default swipebox"><i class="fa fa-play-circle-o"></i> Watch Demo</a>
+		   	   <a rel="youtube" href="https://www.youtube.com/watch?v=J7JrjvFB0t4" class="btn btn-default swipebox"><i class="fa fa-play-circle-o"></i> Watch Demo</a>
 
 		   	   </div>
 		   </div>

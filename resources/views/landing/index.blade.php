@@ -10,6 +10,7 @@
          <section id="partners">
             <div class="container">
                 <div class="row">
+                   
                    <a target="_blank" href="http://www.trumpetstechnologies.com" class="col-md-3 col-xs-6">
                       <img  src="/images/partners/trumpets.png">
                    </a>
@@ -32,6 +33,7 @@
                 <h1 class="text-center">Seamless Features</h1>
                 <br/><br/><br/><br/>
                   <div class="row">
+
                      <div class="col-md-4 col-xs-12 item">
                        <div class="col-xs-3">
                           <img src="/images/graphics/play.svg">
