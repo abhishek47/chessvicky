@@ -51,7 +51,7 @@
 			                
 			                   <p></p>
 			                   <div class="col-lg-5">
-			                      <div id="board" style="width: 400px"></div>
+			                      <div id="board"></div>
 			                   	 
 			                   </div>
 			                   <div class="col-lg-7">
