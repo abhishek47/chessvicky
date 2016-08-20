@@ -58,7 +58,7 @@
                 <th>#</th> 
                 <th>Title</th> 
                 <th>Description</th> 
-                <th>Duration</th>
+               <!--  <th>Duration</th> -->
                 <th>Actions</th>
               </tr> 
              </thead> 
@@ -77,7 +77,7 @@
                    @endif  
                  </td> 
                  <td>{{ str_limit($cvideo->desc, 20) }}</td> 
-                 <td>{{ $cvideo->duration }}</td>
+                <!--  <td>{{ $cvideo->duration }}</td> -->
                   @if($cvideo->id != $video->id)  
                    <td>
                     <a href="{{ url('/courses/' . $course->slug . '/' . $cvideo->slug) }}" class="btn  btn-success btn-xs" >Watch Now</a>
