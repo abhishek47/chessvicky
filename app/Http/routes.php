@@ -198,6 +198,7 @@ Route::get('/profile/{username}', 'ProfileController@show');
 Route::post('/profile/update', 'ProfileController@update');
 Route::post('/profile/update/password', 'ProfileController@updatePassword');
 
+
 /************ ADMIN ROUTES END HERE **********/
 
 

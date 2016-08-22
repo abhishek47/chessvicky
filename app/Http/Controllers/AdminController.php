@@ -127,14 +127,37 @@ class AdminController extends Controller
 
     public function sendNotification(Request $request)
     {
-
+/*
         $user = \Auth::user();
          $user->newNotification()
         ->withType('CourseAdded')
         ->withSubject('New Course Added.')
         ->withBody('New Course has been added on topic \'Attacks\'!')
         ->regarding(null)
-        ->deliver();
+        ->deliver();*/
+
+         $title = $request->input('title');
+        $content = $request->input('content');
+        $link = $request->input('link');
+
+       // $users = User::all();
+
+        $user = \Auth::user();
+
+        foreach ($users as $key => $user) {
+            Mail::send('emails.notify', [
+                        'title' => $title, 
+                        'content' => $content, 
+                        'link' => $link], function ($message) use ($user)
+        {
+
+            $message->to($user->email);
+
+        });
+        }
+
+        
+
 
         return back();
     }

@@ -52,14 +52,14 @@
                                         <div class="form-group">
                                             <label for="notifytitle" class="col-sm-3 control-label">Subject</label>
                                             <div class="col-sm-9">
-                                              <input type="text" class="form-control" id="notifytitle" name="subject" placeholder="Title">
+                                              <input type="text" class="form-control" id="notifytitle" name="title" placeholder="Title">
                                             </div>
                                         </div>
 
                                          <div class="form-group">
                                             <label for="notifydesc" class="col-sm-3 control-label">Description</label>
                                             <div class="col-sm-9">
-                                               <textarea name="body" id="body" class="form-control" rows="5">
+                                               <textarea name="content" id="body" class="form-control" rows="5">
                                                    
                                                </textarea>
                                             </div>
@@ -68,7 +68,7 @@
                                         <div class="form-group">
                                             <label for="notifylink" class="col-sm-3 control-label">Link</label>
                                             <div class="col-sm-9">
-                                              <input type="text" class="form-control" id="notifylink" name="notifylink" placeholder="Link">
+                                              <input type="text" class="form-control" id="notifylink" name="link" placeholder="Link">
                                             </div>
                                         </div>
                                          
