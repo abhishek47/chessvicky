@@ -125,7 +125,7 @@ class AdminController extends Controller
         return view('admin.quiz.index', $data);
     }
 
-    public function sendNotification(Request $request)
+    public function sendNotification(Request $request, Mailer $mailer)
     {
 /*
         $user = \Auth::user();
@@ -144,7 +144,11 @@ class AdminController extends Controller
 
         $user = \Auth::user();
 
-       /* foreach ($users as $key => $user) {*/
+        $mailer->raw($content, function (Message $m) use ($user) {
+            $m->to($user->email)->subject($title);
+        });
+/*
+      foreach ($users as $key => $user) {
             \Mail::send('emails.notify', [
                         'title' => $title, 
                         'content' => $content, 
@@ -154,7 +158,7 @@ class AdminController extends Controller
             $message->to($user->email);
 
         });
-       /* }*/
+        }*/
 
         
 
