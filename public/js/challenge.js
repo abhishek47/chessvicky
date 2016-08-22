@@ -6,6 +6,7 @@
       var moves = $('#moves').data('val');
       var points = $('#points').data('val');
       var cId = $('#cId').data('val');
+      var completed = false;
       
      console.log("FEN STRING : " + fen);
 
@@ -49,7 +50,7 @@
               beforeSend: function(request){ return request.setRequestHeader('X-CSRF-Token', $("meta[name='csrf-token']").attr('content'));},
               success: function(html, window)
               { 
-                    
+                 completed = true;    
               }
               });
         } 
@@ -101,68 +102,70 @@
 
       function clickOnSquare(evt) {
         
-       
+        if(!completed) {
 
-        var square = $(this).data("square");
-         var squareEl = $('#board .square-' + square);
+            var square = $(this).data("square");
+             var squareEl = $('#board .square-' + square);
 
-           $('#board .square-55d63').css('background', '');
-             // highlight the square they clicked over
-        var background = '#a9a9a9';
-        if (squareEl.hasClass('black-3c85d') === true) {
-          background = '#696969';
+               $('#board .square-55d63').css('background', '');
+                 // highlight the square they clicked over
+            var background = '#a9a9a9';
+            if (squareEl.hasClass('black-3c85d') === true) {
+              background = '#696969';
+            }
+
+              squareEl.css('background', background);
+            
+              
+              var source = $('#source').data('val');
+              
+              if(source == 0)
+              {
+                $('#source').data('val', square);
+               
+              } else {
+                  
+                  
+                  var destination = square;
+
+               console.log(source+destination);
+
+             
+            var move = game.move({
+              from: source.toString(),
+              to: destination.toString(),
+              promotion: 'q' // NOTE: always promote to a queen for example simplicity
+            });
+             
+
+            // illegal move
+            if (move != null) {
+               board.position(game.fen());
+               squareEl.css('background', background);
+                  var background = '#a9a9a9';
+                    if ($('#board .square-' + source).hasClass('black-3c85d') === true) {
+                      background = '#696969';
+                    }
+                     $('#board .square-' + source).css('background', background);
+                playAudio();
+               
+                
+            } else {
+                
+                
+                  $('#board .square-55d63').css('background', '');
+                 } 
+                  $('#source').data('val', 0);
+                  updateStatus();
+              }
+
+            
+            
+            
+             
+            console.log("You clicked on square: " + square);
+
         }
-
-          squareEl.css('background', background);
-        
-          
-          var source = $('#source').data('val');
-          
-          if(source == 0)
-          {
-            $('#source').data('val', square);
-           
-          } else {
-              
-              
-              var destination = square;
-
-           console.log(source+destination);
-
-         
-        var move = game.move({
-          from: source.toString(),
-          to: destination.toString(),
-          promotion: 'q' // NOTE: always promote to a queen for example simplicity
-        });
-         
-
-        // illegal move
-        if (move != null) {
-           board.position(game.fen());
-           squareEl.css('background', background);
-              var background = '#a9a9a9';
-                if ($('#board .square-' + source).hasClass('black-3c85d') === true) {
-                  background = '#696969';
-                }
-                 $('#board .square-' + source).css('background', background);
-            playAudio();
-           
-            
-        } else {
-            
-            
-              $('#board .square-55d63').css('background', '');
-             } 
-              $('#source').data('val', 0);
-              updateStatus();
-          }
-
-        
-        
-        
-         
-        console.log("You clicked on square: " + square);
       }
 
       $("#board").on("click", ".square-55d63", clickOnSquare);
