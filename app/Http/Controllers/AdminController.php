@@ -145,7 +145,7 @@ class AdminController extends Controller
         $user = \Auth::user();
 
        /* foreach ($users as $key => $user) {*/
-            Mail::send('emails.notify', [
+            \Mail::send('emails.notify', [
                         'title' => $title, 
                         'content' => $content, 
                         'link' => $link], function ($message) use ($user)
