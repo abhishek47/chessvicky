@@ -104,6 +104,8 @@
     <script src="/js/jquery.swipebox.min.js"></script>
     <script src="/js/pages.js"></script> 
     <script src="/js/clock.js"></script> 
+
+    @yield("scripts")
     
     <script type="text/javascript">
 ;( function( $ ) {

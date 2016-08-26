@@ -228,3 +228,27 @@
 
    </div>
 @stop
+
+
+@section('scripts')
+  
+ <style type="text/css">
+     
+     #features .item {
+         cursor: pointer;
+     }
+
+ </style> 
+
+ <script type="text/javascript"> 
+       $(document).ready(function () {
+          $("#features .item").on("click", function () {
+
+            window.location.assign("/login");
+            // body...
+          }); 
+       });
+  </script>
+
+
+@stop
