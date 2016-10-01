@@ -68,7 +68,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-       $data['password'] = \Hash::make($data['password']);
+        $data['password'] = \Hash::make($data['password']);
         $user = User::create(
            $data
         );

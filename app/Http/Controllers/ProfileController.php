@@ -30,6 +30,7 @@ class ProfileController extends Controller
           if($data['user']->username == \Auth::user()->username){
            
            $data['page'] = 'home';
+           
           return view('app.profile.index', $data);
             } else {
            $data['page'] = 'home';

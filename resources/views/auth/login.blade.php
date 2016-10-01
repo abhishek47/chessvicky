@@ -11,8 +11,8 @@
         <div class="clearfix"></div>
         <div class="wrapper-page">
             <div class=" card-box">
-            <div class="panel-heading"> 
-                <h3 class="text-center"> Sign In to <strong class="text-custom">ChessVicky</strong> </h3>
+            <div class="panel-heading">     
+                <h3 class="text-center"> Sign In to <strong class="text-custom">ChessWiki</strong> </h3>
                  @include('partials.errors')
                     <p></p>
             </div> 
