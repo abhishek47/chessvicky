@@ -57,7 +57,7 @@
 			                    </a>
 			       </div>
 			       <div class="panel-body blog-post" >
-			               <p >{!! str_limit($article->body, 150) !!}</p>
+			               <!-- <p >{!! str_limit($article->body, 150) !!}</p> -->
 			                
 			              
 			                    
